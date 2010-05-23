@@ -1,0 +1,8 @@
+startup_message off
+caption always
+
+defscrollback 10000
+
+screen -t "python" 2 python
+screen -t "ghci"   1 ghci
+screen -t "main"   0
