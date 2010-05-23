@@ -8,6 +8,7 @@
 " - bufexplorer
 " - surround
 " - align
+" - supertab
 
 " shortcut conventions:
 " - control    : window command
