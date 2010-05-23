@@ -149,9 +149,6 @@ nmap <M-=> v$hr=
 " set filetype
 nmap <M-i> :set filetype=
 
-" call Sum() on current selection
-vmap <M-s> y:call Sum()<CR>
-
 " execute current line or selection in screen
 vmap <buffer> <silent> <M-e> y:SendToScreen "<CR>
 nmap <buffer> <silent> <M-e> m'^v$hy:SendToScreen "<CR>''
@@ -186,29 +183,6 @@ command! -nargs=+ SearchFile vimgrep /<args>/j % | cw 30
 
 " foo it!
 command! -range=% FooIt <line1>,<line2>s;\<\w*\>;foo;g
-
-" insert code-block for RST
-command! -nargs=1 InsertCodeBlockDirective norm o.. code-block:: <args><Esc>
-
-
-" functions
-" ---------
-
-" sum column of numbers in yanked register, save result to " register
-function! Sum()
-python << EOF
-import vim
-
-# find total from input
-items = vim.eval("@0").split("\n")
-floatsList = map(float, filter(bool, items))
-total = sum(floatsList)
-
-# set register and echo result
-vim.command("call setreg('\"', '%s\n')" % total)
-vim.command("echo '%s saved to clipboard'" % total)
-EOF
-endfunction
 
 
 " plugin specific shortcuts
@@ -269,42 +243,3 @@ command!          ClearRunTimeOptions let b:runTimeOpts=""
 
 " send text to active window
 command! -nargs=+ SendToScreen call SendToScreenWindow("", <q-args>)
-
-
-" system-specific settings
-" ========================
-
-" shortcuts to various places
-nmap \b :e ~/.bashrc<CR>
-nmap \d :e ~/Desktop/<C-d>
-nmap \v :e ~/.vimrc<CR>
-nmap \f :e ~/.vim/ftplugin/
-nmap \j :e ~/journal.txt<CR>QW
-nmap \r :e ~/scratch.txt<CR>
-nmap \jj :e ~/journal.txtQWGo---!!dateo
-nmap \h :NERDTree ~/Documents/haskell/<CR>
-nmap \t :e ~/todo.txt<CR>
-
-" make meta work on the mac
-set macmeta
-
-" file rst blog post into html
-nmap <M-f> :%!python2.5 /Users/thanthese/RstTools/rst2html-highlight
-  \ --initial-header-level=3<CR>
-  \ /class="document"<CR>vit"+y
-  \ u:echo "RST post filed into clipboard"<CR>
-
-" make it easier to hit an escape key
-vmap <C-l> <Esc>
-imap <C-l> <Esc>
-
-
-" for testing
-" ===========
-
-function! Start()
-  10new *typing*
-  set buftype=nofile
-  set bufhidden=hide
-  setlocal noswapfile
-endfunction
