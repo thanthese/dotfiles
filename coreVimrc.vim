@@ -243,13 +243,6 @@ function! SwitchToScreenWindow(window)
   call system("screen -X select " . a:window)
 endfunction
 
-" initialize buffer variables
-function! InitBuffer()
-  if !exists("b:runTimeOpts")
-    let b:runTimeOpts = ""
-  endif
-endfunction
-
 
 " commands
 " --------
@@ -257,9 +250,20 @@ endfunction
 " switch window
 command! -nargs=1 SwitchToWindow call SwitchToScreenWindow(<q-args>)
 
+" send text to active window
+command! -nargs=+ SendToScreen call SendToScreenWindow("", <q-args>)
+
+
+" runtime options (not always used)
+" ---------------------------------
+
+" initialize buffer variables
+function! InitBuffer()
+  if !exists("b:runTimeOpts")
+    let b:runTimeOpts = ""
+  endif
+endfunction
+
 " set run-time options
 command! -nargs=+ SetRunTimeOptions   let b:runTimeOpts=<q-args>
 command!          ClearRunTimeOptions let b:runTimeOpts=""
-
-" send text to active window
-command! -nargs=+ SendToScreen call SendToScreenWindow("", <q-args>)
