@@ -1,12 +1,19 @@
 ""
 " Stephen Mann
+" May 2010
 "
 
 " preferred plugins
-" - NERDTree
-" - bufexplorer
-" - surround
 " - align
+" - bufexplorer
+" - delimitMate, closes off "({< automatically
+" - matchit
+" - NERD_commenter (with ,c leader changed to <M-c>)
+" - NERD_tree
+" - ragtag, <c-x><space> to expand tag
+" - snipMate, tab to complete supported snippets
+" - surround (with repeat.vim)
+" - tortoiseTyping
 
 " shortcut conventions:
 " - control    : window command
@@ -59,6 +66,7 @@ set smartindent
 set ignorecase
 set smartcase
 set incsearch
+set gdefault  " assume gflag for :s substitutions
 
 " omni-completion
 set omnifunc=syntaxcomplete#Complete
@@ -84,6 +92,17 @@ autocmd! BufWritePost *.vim source %
 " ================
 
 
+" shortcuts for lazy people
+" -------------------------
+
+" easier ex command access
+nmap <space> :
+
+" paste last yanked text
+nmap yp "0p
+nmap yP "0P
+
+
 " make keys work as expected
 " --------------------------
 
@@ -97,7 +116,7 @@ nnoremap j gj
 vnoremap k gk
 vnoremap j gj
 
-" yanking matches changing conventions
+" yank matches change convention
 nmap Y y$
 
 
@@ -115,12 +134,6 @@ nmap <M-Y> ggVG"+y'':echo "Yanked file"<CR>
 vmap <M-p> "+P
 nmap <M-p> "+P
 imap <M-p> <C-o>"+p
-
-" paste last yanked text
-nmap yp "0p
-nmap yP "0P
-vmap yp "0p
-vmap yP "0P
 
 " toggle highlight search
 nmap <M-h> :setlocal hlsearch!<CR>:setlocal hlsearch?<CR>
@@ -162,9 +175,8 @@ vmap <buffer> <silent> <M-e> y:SendToScreen "<CR>
 nmap <buffer> <silent> <M-e> m'^v$hy:SendToScreen "<CR>''
 
 " standardized meta commands across filetype plugins:
-"   <M-c>: insert/remove comment
 "   <M-d>: insert debug line
-"   <M-r>: run
+"   <M-t>: test
 
 
 " control (for windows)
