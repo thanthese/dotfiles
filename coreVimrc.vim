@@ -63,6 +63,9 @@ set incsearch
 " omni-completion
 set omnifunc=syntaxcomplete#Complete
 
+" folding
+set foldmethod=marker
+
 " show whitespace characters
 set list listchars=tab:>-
 
@@ -73,8 +76,8 @@ set list listchars=tab:>-
 " on save any: trim trailing whitespace
 autocmd! BufWrite * mark ` | silent! %s/\s\+$// | norm ``
 
-" on save .vimrc: source .vimrc
-autocmd! BufWritePost .vimrc source %
+" on save a .vim file: source file
+autocmd! BufWritePost *.vim source %
 
 
 " helpful mappings

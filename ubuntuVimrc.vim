@@ -34,6 +34,7 @@ nmap \v :e ~/.vimrc<CR>
 nmap \w :e /home/thanthese/What\ I\'ve\ done.txt<CR>
 nmap \f :e ~/.vim/ftplugin/
 nmap \e :NERDTree /home/thanthese/NetBeansProjects/EOC/<CR><C-l>\t
+nmap \n :NERDTree /home/thanthese/NetBeansProjects/<CR>
 
 
 " switch windows
