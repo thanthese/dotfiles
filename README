@@ -5,5 +5,5 @@ ubuntuVim : modifications on my work computer
 My actual .vimrc points to the .vimrc files I use on a given system.  For
 example, on my mac it looks like this (at the moment):
 
-  source ~/dotfiles/coreVimrc
-  source ~/dotfiles/macVimrc
+  source ~/dotfiles/coreVimrc.vim
+  source ~/dotfiles/macVimrc.vim
