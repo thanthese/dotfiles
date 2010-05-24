@@ -8,7 +8,6 @@
 " - bufexplorer
 " - surround
 " - align
-" - supertab
 
 " shortcut conventions:
 " - control    : window command
@@ -73,7 +72,7 @@ set list listchars=tab:>-
 " ======
 
 " on save any: trim trailing whitespace
-autocmd! BufWrite * mark ' | silent! %s/\s\+$// | norm ''
+autocmd! BufWrite * mark ` | silent! %s/\s\+$// | norm ``
 
 " on save .vimrc: source .vimrc
 autocmd! BufWritePost .vimrc source %
@@ -114,6 +113,10 @@ nmap <M-Y> ggVG"+y'':echo "Yanked file"<CR>
 vmap <M-p> "+P
 nmap <M-p> "+P
 imap <M-p> <C-o>"+p
+
+" paste last yanked text
+nmap yp "0p
+nmap yP "0P
 
 " toggle highlight search
 nmap <M-h> :setlocal hlsearch!<CR>:setlocal hlsearch?<CR>
