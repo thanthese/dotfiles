@@ -1,6 +1,5 @@
 ""
 " Stephen Mann
-" Mon Mar 22 08:12:48 CDT 2010
 "
 
 " preferred plugins
@@ -14,7 +13,7 @@
 " - meta       : command shortcut
 " - meta-shift : opposite meta command, or meta command harder
 " - shift      : (not used)
-" - \          : navigation, aka shorcuts-to-files
+" - \          : navigation, aka shortcuts-to-files
 " - ,          : buffers
 
 
@@ -117,6 +116,8 @@ imap <M-p> <C-o>"+p
 " paste last yanked text
 nmap yp "0p
 nmap yP "0P
+vmap yp "0p
+vmap yP "0P
 
 " toggle highlight search
 nmap <M-h> :setlocal hlsearch!<CR>:setlocal hlsearch?<CR>
