@@ -6,7 +6,6 @@
 " preferred plugins
 " - align
 " - bufexplorer (with q map changed to esc)
-" - delimitMate, closes off "({< automatically
 " - matchit
 " - NERD_commenter (with ,c leader changed to <M-c>)
 " - NERD_tree
