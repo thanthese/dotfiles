@@ -27,14 +27,17 @@ set dictionary+=/usr/share/dict/words
 
 nmap \b :e ~/.bashrc<CR>
 nmap \d :e ~/Desktop/
+nmap \e :NERDTree /home/thanthese/NetBeansProjects/EOC/<CR><C-l>\t
+nmap \f :e ~/.vim/ftplugin/
+nmap \h :e ~/
+nmap \n :NERDTree /home/thanthese/NetBeansProjects/<CR>
+nmap \o :e ~/todo.txt<CR>
 nmap \r :e ~/scratch.txt<CR>
 nmap \t :e ~/todo.txt<CR>
-nmap \o :e ~/todo.txt<CR>
 nmap \v :e ~/.vimrc<CR>
+nmap \v1 :e ~/dotfiles/coreVimrc.vim<CR>
+nmap \v2 :e ~/dotfiles/ubuntuVimrc.vim<CR>
 nmap \w :e /home/thanthese/What\ I\'ve\ done.txt<CR>
-nmap \f :e ~/.vim/ftplugin/
-nmap \e :NERDTree /home/thanthese/NetBeansProjects/EOC/<CR><C-l>\t
-nmap \n :NERDTree /home/thanthese/NetBeansProjects/<CR>
 
 
 " switch windows

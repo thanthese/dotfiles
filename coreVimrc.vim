@@ -5,7 +5,7 @@
 
 " preferred plugins
 " - align
-" - bufexplorer
+" - bufexplorer (with q map changed to esc)
 " - delimitMate, closes off "({< automatically
 " - matchit
 " - NERD_commenter (with ,c leader changed to <M-c>)
@@ -97,6 +97,7 @@ autocmd! BufWritePost *.vim source %
 
 " easier ex command access
 nmap <space> :
+vmap <space> :
 
 " paste last yanked text
 nmap yp "0p
@@ -140,7 +141,7 @@ nmap <M-h> :setlocal hlsearch!<CR>:setlocal hlsearch?<CR>
 
 " toggle highlight word under cursor
 nmap <M-H> :setlocal hlsearch!<CR>m'*''
-vmap <M-H> y:setlocal hlsearch!<CR>m'/"<CR>''
+vmap <M-H> y:setlocal hlsearch!<CR>m'/<c-r>"<CR>''
 
 " toggle wrap
 nmap <M-w> :setlocal wrap!<CR>:setlocal wrap?<CR>
@@ -156,7 +157,7 @@ nmap <M-u> :! uptime<CR>
 
 " search file for argument
 nmap <M-g> :SearchFile<Space>
-vmap <M-g> y:SearchFile<Space>"<CR>
+vmap <M-g> y:SearchFile<Space><c-r>"<CR>
 
 " quickfix navigation
 nmap <M-j> :cn<CR>
@@ -171,8 +172,8 @@ nmap <M-=> v$hr=
 nmap <M-i> :set filetype=
 
 " execute current line or selection in screen
-vmap <buffer> <silent> <M-e> y:SendToScreen "<CR>
-nmap <buffer> <silent> <M-e> m'^v$hy:SendToScreen "<CR>''
+vmap <buffer> <silent> <M-e> y:SendToScreen <c-r>"<CR>
+nmap <buffer> <silent> <M-e> m'^v$hy:SendToScreen <c-r>"<CR>''
 
 " standardized meta commands across filetype plugins:
 "   <M-d>: insert debug line
@@ -207,9 +208,6 @@ command! -range=% FooIt <line1>,<line2>s;\<\w*\>;foo;g
 
 " plugin specific shortcuts
 " -------------------------
-
-" NERDTree
-nmap \n :NERDTree<CR>
 
 " bufexplorer
 nmap , \be
