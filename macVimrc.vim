@@ -51,7 +51,10 @@ command! -nargs=1 InsertCodeBlockDirective norm o.. code-block:: <args><Esc>
 " shortcuts to various places
 nmap \b :e ~/.bashrc<CR>
 nmap \d :e ~/Desktop/<C-d>
-nmap \v :e ~/.vimrc<CR>
 nmap \f :e ~/.vim/ftplugin/
+nmap \h :e ~/
 nmap \r :e ~/scratch.txt<CR>
 nmap \t :e ~/todo.txt<CR>
+nmap \v :e ~/.vimrc<CR>
+nmap \v1 :e ~/dotfiles/coreVimrc.vim<CR>
+nmap \v2 :e ~/dotfiles/macVimrc.vim<CR>
