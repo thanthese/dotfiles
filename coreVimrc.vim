@@ -38,6 +38,8 @@ set viminfo^=%
 " gui options
 set guioptions-=T  " no tool bar
 set guioptions-=m  " no menu bar
+set guioptions-=r  " no right scroll bar
+set guioptions-=l  " no left  scroll bar
 set guioptions+=c  " use console dialogs
 
 " appearance
