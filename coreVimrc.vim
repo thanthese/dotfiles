@@ -7,7 +7,7 @@
 " - align
 " - bufexplorer (with q map changed to esc)
 " - matchit
-" - NERD_commenter (with ,c leader changed to <M-c>)
+" - NERD_commenter (with ,c leader changed to <m-c>)
 " - NERD_tree
 " - ragtag, <c-x><space> to expand tag
 " - snipMate, tab to complete supported snippets
@@ -124,59 +124,59 @@ nmap Y y$
 " ------------------------
 
 " saving
-nmap <M-s> :update<CR>
-nmap <M-S> :wa<CR>
+nmap <m-s> :update<CR>
+nmap <m-S> :wa<CR>
 
 " yank-paste from system clipboard
-vmap <M-y> "+y:echo       "Yanked selection"<CR>
-nmap <M-y> v$h"+y:echo    "Yanked to end-of-line"<CR>
-nmap <M-Y> ggVG"+y'':echo "Yanked file"<CR>
-vmap <M-p> "+P
-nmap <M-p> "+P
-imap <M-p> <C-o>"+p
+vmap <m-y> "+y:echo       "Yanked selection"<CR>
+nmap <m-y> v$h"+y:echo    "Yanked to end-of-line"<CR>
+nmap <m-Y> ggVG"+y'':echo "Yanked file"<CR>
+vmap <m-p> "+P
+nmap <m-p> "+P
+imap <m-p> <C-o>"+p
 
 " toggle highlight search
-nmap <M-h> :setlocal hlsearch!<CR>:setlocal hlsearch?<CR>
+nmap <m-h> :setlocal hlsearch!<CR>:setlocal hlsearch?<CR>
 
 " toggle highlight word under cursor
-nmap <M-H> :setlocal hlsearch!<CR>:let @/="<c-r><c-w>"<CR>
-vmap <M-H> y:setlocal hlsearch!<CR>:let @/=@"<CR>
+nmap <m-H> :setlocal hlsearch!<CR>:let @/="<c-r><c-w>"<CR>
+vmap <m-H> y:setlocal hlsearch!<CR>:let @/=@"<CR>
 
 " toggle wrap
-nmap <M-w> :setlocal wrap!<CR>:setlocal wrap?<CR>
+nmap <m-w> :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 " toggle spell
-nmap <M-q> :setlocal spell!<CR>:setlocal spell?<CR>
+nmap <m-q> :setlocal spell!<CR>:setlocal spell?<CR>
 
 " source vimrc and retab
-nmap <M-o> :so ~/.vimrc<CR>:retab<CR>
+nmap <m-o> :so ~/.vimrc<CR>:retab<CR>
 
 " show system uptime
-nmap <M-u> :! uptime<CR>
+nmap <m-u> :! uptime<CR>
 
 " search file for argument
-nmap <M-g> :SearchFile<Space>
-vmap <M-g> y:SearchFile<Space><c-r>"<CR>
+nmap <m-g> :SearchFile<Space>
+vmap <m-g> y:SearchFile<Space><c-r>"<CR>
 
 " quickfix navigation
-nmap <M-j> :cn<CR>
-nmap <M-k> :cp<CR>
-nmap <M-l> :cclose<CR>
+nmap <m-j> :cn<CR>
+nmap <m-k> :cp<CR>
+nmap <m-l> :cclose<CR>
 
 " fill with char to end of line; useful for headers
-nmap <M--> v$hr-
-nmap <M-=> v$hr=
+nmap <m--> v$hr-
+nmap <m-=> v$hr=
 
 " set filetype
-nmap <M-i> :set filetype=
+nmap <m-i> :set filetype=
 
 " execute current line or selection in screen
-vmap <buffer> <silent> <M-e> y:SendToScreen <c-r>"<CR>
-nmap <buffer> <silent> <M-e> m'^v$hy:SendToScreen <c-r>"<CR>''
+vmap <buffer> <silent> <m-e> y:SendToScreen <c-r>"<CR>
+nmap <buffer> <silent> <m-e> m'^v$hy:SendToScreen <c-r>"<CR>''
 
 " standardized meta commands across filetype plugins:
-"   <M-d>: insert debug line
-"   <M-t>: test
+"   <m-d>: insert debug line
+"   <m-t>: test
 
 
 " control (for windows)
@@ -209,14 +209,16 @@ command! -range=% FooIt <line1>,<line2>s;\<\w*\>;foo;g
 " -------------------------
 
 " NERD_commenter
-nmap <m-c><m-c> <m-c>c
-vmap <m-c><m-c> <m-c>c
+nmap <m-/> <m-c>l
+vmap <m-/> <m-c>l
+nmap <m-?> <m-c>u
+vmap <m-?> <m-c>u
 
 " bufexplorer
 nmap , \be
 
 " align
-vmap <M-a> :Align<Space>
+vmap <m-a> :Align<Space>
 
 
 " interacting with screen
@@ -231,12 +233,12 @@ vmap <M-a> :Align<Space>
 " - %p expands to full path
 " - %r expands to root of file name, no extension
 function! SendToScreenWindow(window, text)
-  let pArg = a:window == "" ? "" : "-p " . a:window
-  let toStuff = substitute(a:text,  "%p", fnamemodify(@%, ":p"  ), "g")
-  let toStuff = substitute(toStuff, "%r", fnamemodify(@%, ":p:r"), "g")
-  let toStuff = substitute(toStuff, '"', '\\\"', "g")
-  let toStuff = substitute(toStuff, '`', '\\\`', "g")
-  call system('screen ' . pArg . ' -X stuff "' . toStuff . '"')
+ let pArg = a:window == "" ? "" : "-p " . a:window
+ let toStuff = substitute(a:text,  "%p", fnamemodify(@%, ":p"  ), "g")
+ let toStuff = substitute(toStuff, "%r", fnamemodify(@%, ":p:r"), "g")
+ let toStuff = substitute(toStuff, '"', '\\\"', "g")
+ let toStuff = substitute(toStuff, '`', '\\\`', "g")
+ call system('screen ' . pArg . ' -X stuff "' . toStuff . '"')
 endfunction
 
 " switch to window
