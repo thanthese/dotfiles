@@ -137,12 +137,9 @@ vmap <m-p> "+P
 nmap <m-p> "+P
 imap <m-p> <C-o>"+p
 
-" toggle highlight search
-nmap <m-h> :setlocal hlsearch!<CR>:setlocal hlsearch?<CR>
-
 " toggle highlight word under cursor
-nmap <m-H> :setlocal hlsearch!<CR>:let @/="<c-r><c-w>"<CR>
-vmap <m-H> y:setlocal hlsearch!<CR>:let @/=@"<CR>
+nmap <m-h> :setlocal hlsearch!<CR>:let @/="<c-r><c-w>"<CR>
+vmap <m-h> y:setlocal hlsearch!<CR>:let @/=@"<CR>
 
 " toggle wrap
 nmap <m-w> :setlocal wrap!<CR>:setlocal wrap?<CR>
