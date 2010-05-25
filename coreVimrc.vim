@@ -201,6 +201,7 @@ nmap <C-Right> <C-W>>
 command! -nargs=1 Commit !git commit -a -m <q-args>
 command! -nargs=0 Log    !git log
 command! -nargs=0 Status !git status
+command! -nargs=0 Push   !git push
 
 " search file for argument
 command! -nargs=+ SearchFile vimgrep /<args>/j % | cw 30
