@@ -1,3 +1,7 @@
+" fonts and colors
+colorscheme ir_black
+
+
 " mac specific
 " ============
 

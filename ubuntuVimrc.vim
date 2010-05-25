@@ -1,5 +1,5 @@
 " fonts and colors
-colors ir_black
+colorscheme ir_black
 
 " configure grails
 " ================
