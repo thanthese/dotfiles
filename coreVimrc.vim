@@ -139,8 +139,8 @@ imap <M-p> <C-o>"+p
 nmap <M-h> :setlocal hlsearch!<CR>:setlocal hlsearch?<CR>
 
 " toggle highlight word under cursor
-nmap <M-H> :setlocal hlsearch!<CR>m'*''
-vmap <M-H> y:setlocal hlsearch!<CR>m'/<c-r>"<CR>''
+nmap <M-H> :setlocal hlsearch!<CR>:let @/="<c-r><c-w>"<CR>
+vmap <M-H> y:setlocal hlsearch!<CR>:let @/=@"<CR>
 
 " toggle wrap
 nmap <M-w> :setlocal wrap!<CR>:setlocal wrap?<CR>
@@ -207,6 +207,10 @@ command! -range=% FooIt <line1>,<line2>s;\<\w*\>;foo;g
 
 " plugin specific shortcuts
 " -------------------------
+
+" NERD_commenter
+nmap <m-c><m-c> <m-c>c
+vmap <m-c><m-c> <m-c>c
 
 " bufexplorer
 nmap , \be
