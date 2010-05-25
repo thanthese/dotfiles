@@ -1,3 +1,6 @@
+" fonts and colors
+colors ir_black
+
 " configure grails
 " ================
 
