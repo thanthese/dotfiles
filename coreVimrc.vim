@@ -139,6 +139,9 @@ com! Spell setlocal spell!
 com! HlSearch setlocal hlsearch! | norm :let @/="<c-r><c-w>"<CR>
 com! SourceVimrc source ~/.vimrc
 com! Uptime !uptime
+com! YLine norm v$h"+y
+com! YFile norm m'gg"+yG''
+com! PutClipboard norm "+P
 com! -nargs=1 FileType setlocal filetype=<args>
 com! -nargs=1 Title norm v$hr<args>
 
