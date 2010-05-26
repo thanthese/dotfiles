@@ -18,8 +18,8 @@
 
 " shortcut conventions:
 " - preference for custom Ex commands
-" - \ : navigation, aka shortcuts-to-files
-" - , : buffers
+" - \    : navigation, aka shortcuts-to-files
+" - ctrl : window management
 
 " function key conventions:
 " - F5: run
