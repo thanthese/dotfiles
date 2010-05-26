@@ -1,12 +1,5 @@
-" fonts and colors
-colorscheme ir_black
-
-
 " mac specific
 " ============
-
-" make meta work on the mac
-set macmeta
 
 " make it easier to hit an escape key
 vmap <C-l> <Esc>
@@ -40,13 +33,13 @@ endfunction
 " =================
 
 " file rst blog post into html
-nmap <M-f> :%!python2.5 /Users/thanthese/RstTools/rst2html-highlight
+com! FileRst :%!python2.5 /Users/thanthese/RstTools/rst2html-highlight
   \ --initial-header-level=3<CR>
   \ /class="document"<CR>vit"+y
   \ u:echo "RST post filed into clipboard"<CR>
 
 " insert code-block for RST
-command! -nargs=1 InsertCodeBlockDirective norm o.. code-block:: <args><Esc>
+com! -nargs=1 InsertCodeBlockDirective norm o.. code-block:: <args><Esc>
 
 
 " file and directory mappings

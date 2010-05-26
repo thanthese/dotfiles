@@ -13,7 +13,7 @@
 " - snipMate, tab to complete supported snippets
 " - surround (with repeat.vim)
 " - tortoiseTyping
-" - SApprox, makes colorschemes work in terminals
+" - CSApprox, makes colorschemes work in terminals
 " - ir_black, preferred colorscheme
 
 " shortcut conventions:
@@ -143,7 +143,7 @@ com! YLine norm v$h"+y
 com! YFile norm m'gg"+yG''
 com! PutClipboard norm "+P
 com! -nargs=1 FileType setlocal filetype=<args>
-com! -nargs=1 Title norm v$hr<args>
+com! -nargs=1 Header norm v$hr<args>
 
 " external commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes
