@@ -1,6 +1,14 @@
 " fonts and colors
 colorscheme ir_black
 
+
+" commands
+" ========
+
+" insert function header
+command! InsertFunctionHeader norm yiwoprintln "p()"yypwwvi"r=kbOprintln ""^
+
+
 " configure grails
 " ================
 
@@ -42,20 +50,6 @@ nmap \v1 :e ~/dotfiles/coreVimrc.vim<CR>
 nmap \v2 :e ~/dotfiles/ubuntuVimrc.vim<CR>
 nmap \w :e /home/thanthese/What\ I\'ve\ done.txt<CR>
 
-
-" switch windows
-" ==============
-
-nmap \0 :SwitchToWindow 0<CR>
-nmap \1 :SwitchToWindow 1<CR>
-nmap \2 :SwitchToWindow 2<CR>
-nmap \3 :SwitchToWindow 3<CR>
-nmap \4 :SwitchToWindow 4<CR>
-nmap \5 :SwitchToWindow 5<CR>
-nmap \6 :SwitchToWindow 6<CR>
-nmap \7 :SwitchToWindow 7<CR>
-nmap \8 :SwitchToWindow 8<CR>
-nmap \9 :SwitchToWindow 9<CR>
 
 " search EOC
 " ==========

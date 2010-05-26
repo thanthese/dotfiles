@@ -6,6 +6,7 @@
 " preferred plugins
 " - align
 " - bufexplorer (with q map changed to esc)
+" - fuzzyfinder (for now...)
 " - matchit
 " - NERD_commenter (with ,c leader changed to <m-c>)
 " - NERD_tree
@@ -100,10 +101,6 @@ autocmd! BufWritePost *.vim source %
 nmap <space> :
 vmap <space> :
 
-" paste last yanked text
-nmap yp "0p
-nmap yP "0P
-
 
 " make keys work as expected
 " --------------------------
@@ -197,6 +194,9 @@ nmap <C-Right> <C-W>>
 " commands
 " --------
 
+" tidy xml/html
+command! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes
+
 " git commands
 command! -nargs=1 Commit !git commit -a -m <q-args>
 command! -nargs=0 Log    !git log
@@ -260,6 +260,21 @@ command! -nargs=1 SwitchToWindow call SwitchToScreenWindow(<q-args>)
 
 " send text to active window
 command! -nargs=+ SendToScreen call SendToScreenWindow("", <q-args>)
+
+
+" switch windows
+" --------------
+
+nmap \0 :SwitchToWindow 0<CR>
+nmap \1 :SwitchToWindow 1<CR>
+nmap \2 :SwitchToWindow 2<CR>
+nmap \3 :SwitchToWindow 3<CR>
+nmap \4 :SwitchToWindow 4<CR>
+nmap \5 :SwitchToWindow 5<CR>
+nmap \6 :SwitchToWindow 6<CR>
+nmap \7 :SwitchToWindow 7<CR>
+nmap \8 :SwitchToWindow 8<CR>
+nmap \9 :SwitchToWindow 9<CR>
 
 
 " runtime options (not always used)
