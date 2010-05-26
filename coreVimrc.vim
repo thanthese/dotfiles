@@ -1,27 +1,31 @@
 ""
 " Stephen Mann
-" May 2010
 "
 
 " preferred plugins
 " - align
 " - bufexplorer (with q map changed to esc)
-" - fuzzyfinder (for now...)
+" - fuzzyfinder (still deciding...)
 " - matchit
-" - NERD_commenter (with ,c leader changed to <m-c>)
+" - NERD_commenter (with ,c leader changed: _ to toggle)
 " - NERD_tree
 " - ragtag, <c-x><space> to expand tag
 " - snipMate, tab to complete supported snippets
 " - surround (with repeat.vim)
 " - tortoiseTyping
+" - SApprox, makes colorschemes work in terminals
+" - ir_black, preferred colorscheme
 
 " shortcut conventions:
-" - control    : window command
-" - meta       : command shortcut
-" - meta-shift : opposite meta command, or meta command harder
-" - shift      : (not used)
-" - \          : navigation, aka shortcuts-to-files
-" - ,          : buffers
+" - preference for custom Ex commands
+" - \ : navigation, aka shortcuts-to-files
+" - , : buffers
+
+" function key conventions:
+" - F5: run
+" - F6: run, version 2
+" - F7: test
+" - F8: send to screen
 
 
 " look and feel, passive settings
@@ -40,15 +44,17 @@ set viminfo^=%
 set guioptions-=T  " no tool bar
 set guioptions-=m  " no menu bar
 set guioptions-=r  " no right scroll bar
-set guioptions-=l  " no left  scroll bar
+set guioptions-=L  " no left  scroll bar
 set guioptions+=c  " use console dialogs
 
 " appearance
-colors slate
+colorscheme ir_black
+set cursorline
 set nowrap
 set number
 set ruler
 set showcmd
+set showmode
 set wildmenu
 
 " expected behaviors settings
@@ -76,15 +82,12 @@ set omnifunc=syntaxcomplete#Complete
 " folding
 set foldmethod=marker
 
-" show whitespace characters
-set list listchars=tab:>-
-
 
 " events
 " ======
 
 " on save any: trim trailing whitespace
-autocmd! BufWrite * mark ` | silent! %s/\s\+$// | norm ``
+autocmd! BufWrite * mark ' | silent! %s/\s\+$// | ''
 
 " on save a .vim file: source file
 autocmd! BufWritePost *.vim source %
@@ -92,14 +95,6 @@ autocmd! BufWritePost *.vim source %
 
 " helpful mappings
 " ================
-
-
-" shortcuts for lazy people
-" -------------------------
-
-" easier ex command access
-nmap <space> :
-vmap <space> :
 
 
 " make keys work as expected
@@ -119,64 +114,44 @@ vnoremap j gj
 nmap Y y$
 
 
-" meta (shortcut commands)
-" ------------------------
+" Ex command laziness
+" -------------------
 
-" saving
-nmap <m-s> :update<CR>
-nmap <m-S> :wa<CR>
+" easy entry into Ex command line
+nmap <space> :
+vmap <space> :
 
-" yank-paste from system clipboard
-vmap <m-y> "+y:echo       "Yanked selection"<CR>
-nmap <m-y> v$h"+y:echo    "Yanked to end-of-line"<CR>
-nmap <m-Y> ggVG"+y'':echo "Yanked file"<CR>
-vmap <m-p> "+P
-nmap <m-p> "+P
-imap <m-p> <C-o>"+p
+" easy enry into Ex command window
+nmap Q q:
+vmap Q q:
 
-" toggle highlight word under cursor
-nmap <m-h> :setlocal hlsearch!<CR>:let @/="<c-r><c-w>"<CR>
-vmap <m-h> y:setlocal hlsearch!<CR>:let @/=@"<CR>
-
-" toggle wrap
-nmap <m-w> :setlocal wrap!<CR>:setlocal wrap?<CR>
-
-" toggle spell
-nmap <m-q> :setlocal spell!<CR>:setlocal spell?<CR>
-
-" source vimrc and retab
-nmap <m-o> :so ~/.vimrc<CR>:retab<CR>
-
-" show system uptime
-nmap <m-u> :! uptime<CR>
-
-" search file for argument
-nmap <m-g> :SearchFile<Space>
-vmap <m-g> y:SearchFile<Space><c-r>"<CR>
-
-" quickfix navigation
-nmap <m-j> :cn<CR>
-nmap <m-k> :cp<CR>
-nmap <m-l> :cclose<CR>
-
-" fill with char to end of line; useful for headers
-nmap <m--> v$hr-
-nmap <m-=> v$hr=
-
-" set filetype
-nmap <m-i> :set filetype=
-
-" execute current line or selection in screen
-vmap <buffer> <silent> <m-e> y:SendToScreen <c-r>"<CR>
-nmap <buffer> <silent> <m-e> m'^v$hy:SendToScreen <c-r>"<CR>''
-
-" standardized meta commands across filetype plugins:
-"   <m-d>: insert debug line
-"   <m-t>: test
+" repeat last Ex command
+nmap <tab> @:
+vmap <tab> @:
 
 
-" control (for windows)
-" ---------------------
+" commands
+" --------
+
+" internal commands
+com! Wrap setlocal wrap!
+com! Spell setlocal spell!
+com! HlSearch setlocal hlsearch! | norm :let @/="<c-r><c-w>"<CR>
+com! SourceVimrc source ~/.vimrc
+com! Uptime !uptime
+com! -nargs=1 FileType setlocal filetype=<args>
+com! -nargs=1 Title norm v$hr<args>
+
+" external commands
+com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes
+com! -nargs=1 Commit !git commit -a -m <q-args>
+com! -nargs=0 Log    !git log
+com! -nargs=0 Status !git status
+com! -nargs=0 Push   !git push
+
+
+" manipulate windows
+" ------------------
 
 " switch window
 nmap <C-h> <C-w>h
@@ -191,39 +166,11 @@ nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
 
 
-" commands
-" --------
-
-" tidy xml/html
-command! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes
-
-" git commands
-command! -nargs=1 Commit !git commit -a -m <q-args>
-command! -nargs=0 Log    !git log
-command! -nargs=0 Status !git status
-command! -nargs=0 Push   !git push
-
-" search file for argument
-command! -nargs=+ SearchFile vimgrep /<args>/j % | cw 30
-
-" foo it!
-command! -range=% FooIt <line1>,<line2>s;\<\w*\>;foo;g
-
-
 " plugin specific shortcuts
 " -------------------------
 
-" NERD_commenter
-nmap <m-/> <m-c>l
-vmap <m-/> <m-c>l
-nmap <m-?> <m-c>u
-vmap <m-?> <m-c>u
-
 " bufexplorer
 nmap , \be
-
-" align
-vmap <m-a> :Align<Space>
 
 
 " interacting with screen
@@ -256,10 +203,18 @@ endfunction
 " --------
 
 " switch window
-command! -nargs=1 SwitchToWindow call SwitchToScreenWindow(<q-args>)
+com! -nargs=1 SwitchToWindow call SwitchToScreenWindow(<q-args>)
 
 " send text to active window
-command! -nargs=+ SendToScreen call SendToScreenWindow("", <q-args>)
+com! -nargs=+ SendToScreen call SendToScreenWindow("", <q-args>)
+
+
+" quick execute
+" -------------
+
+" execute current line or selection in screen
+vmap <buffer> <silent> <F8> y:SendToScreen <c-r>"<CR>
+nmap <buffer> <silent> <F8> ^v$hy:SendToScreen <c-r>"<CR>
 
 
 " switch windows
@@ -288,5 +243,5 @@ function! InitBuffer()
 endfunction
 
 " set run-time options
-command! -nargs=+ SetRunTimeOptions   let b:runTimeOpts=<q-args>
-command!          ClearRunTimeOptions let b:runTimeOpts=""
+com! -nargs=+ SetRunTimeOptions   let b:runTimeOpts=<q-args>
+com!          ClearRunTimeOptions let b:runTimeOpts=""
