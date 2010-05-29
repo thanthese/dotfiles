@@ -5,6 +5,10 @@
 vmap <C-l> <Esc>
 imap <C-l> <Esc>
 
+" colors in terminal
+syntax on
+colorscheme darkblue
+
 
 " summing
 " =======
