@@ -130,7 +130,7 @@ nmap <tab> @:
 vmap <tab> @:
 
 
-" low-hanging fruit mappings
+" low-hanging-fruit mappings
 " --------------------------
 
 " headers
@@ -147,7 +147,7 @@ com! Spell setlocal spell!
 com! HlSearch setlocal hlsearch! | norm :let @/="<c-r><c-w>"<CR>
 com! SourceVimrc source ~/.vimrc
 com! Uptime !uptime
-com! -nargs=1 FileType setlocal filetype=<args>
+com! -nargs=1 SetFileType setlocal filetype=<args>
 
 " external commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes
@@ -155,6 +155,7 @@ com! -nargs=1 Commit !git commit -a -m <q-args>
 com! -nargs=0 Log    !git log
 com! -nargs=0 Status !git status
 com! -nargs=0 Push   !git push
+com! -nargs=0 Pull   !git pull origin master
 
 
 " manipulate windows

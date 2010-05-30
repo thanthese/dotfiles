@@ -9,6 +9,7 @@ imap <C-l> <Esc>
 " terminal-specific commands
 " ==========================
 
+" all about colors
 syntax on
 colorscheme darkblue
 set nocursorline
