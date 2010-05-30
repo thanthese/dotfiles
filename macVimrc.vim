@@ -5,9 +5,13 @@
 vmap <C-l> <Esc>
 imap <C-l> <Esc>
 
-" colors in terminal
+
+" terminal-specific commands
+" ==========================
+
 syntax on
 colorscheme darkblue
+set nocursorline
 
 
 " summing
