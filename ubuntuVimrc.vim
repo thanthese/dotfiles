@@ -10,12 +10,11 @@ command! InsertFunctionHeader norm yiwoprintln "p()"yypwwvi"r=kbOprintln ""^
 
 " creating a pseudo-grails type
 function! ConfigureGrails()
-  call InitBuffer()
 
   " deploys grails from vim
-  nmap <silent> <F5> :wa<CR> :silent !pkill -f grails<CR> :call SendToScreenWindow("eoc", "clear; date; grails run-war"  . b:runTimeOpts)<CR>
-  nmap <silent> <F6> :wa<CR> :silent !pkill -f grails<CR> :call SendToScreenWindow("eoc", "clear; date; grails run-app"  . b:runTimeOpts)<CR>
-  nmap <silent> <F7> :wa<CR> :silent !pkill -f grails<CR> :call SendToScreenWindow("eoc", "clear; date; grails test-app" . b:runTimeOpts)<CR>
+  nmap <silent> <F5> :wa<CR> :silent !pkill -f grails<CR> :call SendToScreenWindow("eoc", "clear; date; grails run-war" )<CR>
+  nmap <silent> <F6> :wa<CR> :silent !pkill -f grails<CR> :call SendToScreenWindow("eoc", "clear; date; grails run-app" )<CR>
+  nmap <silent> <F7> :wa<CR> :silent !pkill -f grails<CR> :call SendToScreenWindow("eoc", "clear; date; grails test-app")<CR>
 endfunction
 
 " configure for grails
