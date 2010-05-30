@@ -130,6 +130,14 @@ nmap <tab> @:
 vmap <tab> @:
 
 
+" low-hanging-fruit mappings
+" --------------------------
+
+" headers
+nmap -- v$hr-
+nmap -= v$hr=
+
+
 " commands
 " --------
 
@@ -139,8 +147,7 @@ com! Spell setlocal spell!
 com! HlSearch setlocal hlsearch! | norm :let @/="<c-r><c-w>"<CR>
 com! SourceVimrc source ~/.vimrc
 com! Uptime !uptime
-com! -nargs=1 FileType setlocal filetype=<args>
-com! -nargs=1 Header norm v$hr<args>
+com! -nargs=1 SetFileType setlocal filetype=<args>
 
 " external commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes
@@ -148,6 +155,7 @@ com! -nargs=1 Commit !git commit -a -m <q-args>
 com! -nargs=0 Log    !git log
 com! -nargs=0 Status !git status
 com! -nargs=0 Push   !git push
+com! -nargs=0 Pull   !git pull origin master
 
 
 " manipulate windows
@@ -176,25 +184,27 @@ nmap , \be
 " interacting with screen
 " =======================
 
-
 " core functions
 " --------------
 
-" sending function
-" - window can be blank
-" - %p expands to full path
-" - %r expands to root of file name, no extension
+" sending function, window can be blank
 function! SendToScreenWindow(window, text)
- let pArg = a:window == "" ? "" : "-p " . a:window
- let toStuff = substitute(a:text,  "%p", fnamemodify(@%, ":p"  ), "g")
- let toStuff = substitute(toStuff, "%r", fnamemodify(@%, ":p:r"), "g")
- let toStuff = substitute(toStuff, '"', '\\\"', "g")
- let toStuff = substitute(toStuff, '`', '\\\`', "g")
- call system('screen ' . pArg . ' -X stuff "' . toStuff . '"')
+  let win = a:window == "" ? "" : "-p " . a:window
+  let toStuff = substitute(a:text,  '"', '\\\"', "g")
+  let toStuff = substitute(toStuff, '`', '\\\`', "g")
+  call system('screen ' . win . ' -X stuff "' . toStuff . '"')
+endfunction
+
+" send text to current b:target
+function! SendToScreenTarget(text)
+  if !exists("b:target")
+    let b:target = ""
+  endif
+  call SendToScreenWindow(b:target, a:text)
 endfunction
 
 " switch to window
-function! SwitchToScreenWindow(window)
+function! SwitchToScreen(window)
   call system("screen -X select " . a:window)
 endfunction
 
@@ -202,11 +212,13 @@ endfunction
 " commands
 " --------
 
-" switch window
-com! -nargs=1 SwitchToWindow call SwitchToScreenWindow(<q-args>)
+" basic
+com! -nargs=1 SwitchToWindow call SwitchToScreen(<q-args>)
+com! -nargs=+ SendToScreen call SendToScreenTarget(<q-args>)
 
-" send text to active window
-com! -nargs=+ SendToScreen call SendToScreenWindow("", <q-args>)
+" target getters/setters
+com! -nargs=1 SetTarget let b:target=<q-args>
+com!          GetTarget echo "screen target is " . b:target
 
 
 " quick execute
@@ -217,8 +229,8 @@ vmap <buffer> <silent> <F8> y:SendToScreen <c-r>"<CR>
 nmap <buffer> <silent> <F8> ^v$hy:SendToScreen <c-r>"<CR>
 
 
-" switch windows
-" --------------
+" quick switch window
+" -------------------
 
 nmap \0 :SwitchToWindow 0<CR>
 nmap \1 :SwitchToWindow 1<CR>
@@ -230,18 +242,3 @@ nmap \6 :SwitchToWindow 6<CR>
 nmap \7 :SwitchToWindow 7<CR>
 nmap \8 :SwitchToWindow 8<CR>
 nmap \9 :SwitchToWindow 9<CR>
-
-
-" runtime options (not always used)
-" ---------------------------------
-
-" initialize buffer variables
-function! InitBuffer()
-  if !exists("b:runTimeOpts")
-    let b:runTimeOpts = ""
-  endif
-endfunction
-
-" set run-time options
-com! -nargs=+ SetRunTimeOptions   let b:runTimeOpts=<q-args>
-com!          ClearRunTimeOptions let b:runTimeOpts=""
