@@ -1,3 +1,18 @@
+" music/wacm workshop
+" ===================
+
+" play current *EVENTS*
+com! Play norm :SendToScreen (saveit)<CR>
+  \ :silent !open ~/WACM/programs/MIDIs/playthis.mid &<CR>
+
+com! Clear norm :SendToScreen :q<CR>
+com! RestartCcl norm :SendToScreen (quit)<CR>:SendToScreen ccl<CR>
+
+nmap m v%R
+
+nmap \o 0v$hy:silent !open "<CR>
+
+
 " mac specific
 " ============
 
@@ -10,9 +25,26 @@ imap <C-l> <Esc>
 " ==========================
 
 " all about colors
-syntax on
-colorscheme darkblue
-set nocursorline
+"syntax on
+"colorscheme darkblue
+"set nocursorline
+
+" execute current line or selection in screen (specific to terminal)
+vmap <buffer> <silent> R y:SendToScreen <c-r>"<CR>
+nmap <buffer> <silent> R ^v$hy:SendToScreen <c-r>"<CR>
+
+
+" macvim-specific commands
+" ========================
+
+" set colors for macvim
+com! FixColors colorscheme ir_black | set cursorline
+
+
+" running tests
+" =============
+nmap <F6> :wa\|silent make<CR>
+nmap T <F6>
 
 
 " file and directory mappings
@@ -23,6 +55,8 @@ nmap \b :e ~/.bashrc<CR>
 nmap \d :e ~/Desktop/<C-d>
 nmap \f :e ~/.vim/ftplugin/
 nmap \h :e ~/
+nmap \i :e ~/interesting<CR>
+nmap \j :e ~/WACM/journal.txt<CR>
 nmap \r :e ~/scratch.txt<CR>
 nmap \t :e ~/todo.txt<CR>
 nmap \v :e ~/.vimrc<CR>
@@ -34,10 +68,10 @@ nmap \v2 :e ~/dotfiles/macVimrc.vim<CR>
 " =================
 
 " file rst blog post into html
-com! FileRst :%!python2.5 /Users/thanthese/RstTools/rst2html-highlight
+com! FileRst w | norm :%!python2.5 /Users/thanthese/RstTools/rst2html-highlight
   \ --initial-header-level=3<CR>
   \ /class="document"<CR>vit"+y
-  \ u:echo "RST post filed into clipboard"<CR>
+  \u:echo "RST post filed into clipboard"<CR>
 
 " insert code-block for RST
 com! -nargs=1 InsertCodeBlockDirective norm o.. code-block:: <args><Esc>
