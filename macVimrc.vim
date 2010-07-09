@@ -1,18 +1,3 @@
-" music/wacm workshop
-" ===================
-
-" play current *EVENTS*
-com! Play norm :SendToScreen (saveit)<CR>
-  \ :silent !open ~/WACM/programs/MIDIs/playthis.mid &<CR>
-
-com! Clear norm :SendToScreen :q<CR>
-com! RestartCcl norm :SendToScreen (quit)<CR>:SendToScreen ccl<CR>
-
-nmap m v%R
-
-nmap \o 0v$hy:silent !open "<CR>
-
-
 " mac specific
 " ============
 
