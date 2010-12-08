@@ -44,6 +44,7 @@ set ruler
 set showcmd
 set showmode
 set wildmenu
+set wildmode=list:longest
 
 " expected behaviors settings
 set hidden      " allows changing of buffers without saving
@@ -91,13 +92,16 @@ vnoremap j gj
 " yank matches change convention
 nmap Y y$
 
+" better jumping
+nnoremap ` '
+
 
 " extras
 " ------
 
-" copy/paste magic
-nmap <M-c> :%yank<CR>
-vmap <M-c> "+y
+" yank/put to system clipboard
+nmap <M-y> :%yank<CR>
+vmap <M-y> "+y
 nmap <M-p> "+P
 
 " switch window
@@ -112,7 +116,5 @@ nmap <C-Down>  <C-W>+
 nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
 
-
 " commands
-" --------
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes
