@@ -117,4 +117,4 @@ nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
 
 " commands
-com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes
+com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes --sort-attributes alpha
