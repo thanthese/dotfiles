@@ -93,7 +93,7 @@ vnoremap j gj
 nmap Y y$
 
 " better jumping
-nnoremap ` '
+nnoremap ' `
 
 
 " extras
