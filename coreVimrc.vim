@@ -102,7 +102,7 @@ nnoremap ' `
 " ------
 
 " yank/put to system clipboard
-nmap <M-y> :%yank<CR>
+nmap <M-y> :%yank +<CR>
 vmap <M-y> "+y
 nmap <M-p> "+P
 
