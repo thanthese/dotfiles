@@ -113,12 +113,6 @@ nmap <C-j> <C-w>j
 nmap <C-l> <C-w>l
 nmap <C-k> <C-w>k
 
-" resize window
-nmap <C-Up>    <C-W>-
-nmap <C-Down>  <C-W>+
-nmap <C-Left>  <C-W><
-nmap <C-Right> <C-W>>
-
 " commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes --sort-attributes alpha
 
@@ -127,4 +121,4 @@ com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attri
 " ========================
 
 " command-t
-set wildignore+=*.o,*.obj,.git,target/**,test/**
+set wildignore+=*.o,*.obj,.git,test/**,*.class,*.war
