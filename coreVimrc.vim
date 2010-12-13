@@ -122,7 +122,7 @@ com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attri
 " ========================
 
 " command-t
-set wildignore+=*.o,*.obj,.git,test/**,*.class,*.war
+set wildignore+=.git,test/**,*.class,*.war
 
 " ack
 let g:ackprg="ack-grep"
