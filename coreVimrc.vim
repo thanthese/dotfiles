@@ -114,8 +114,14 @@ nmap <C-j> <C-w>j
 nmap <C-l> <C-w>l
 nmap <C-k> <C-w>k
 
+" resize window
+nmap <C-Up>    <C-W>-
+nmap <C-Down>  <C-W>+
+nmap <C-Left>  <C-W><
+nmap <C-Right> <C-W>>
+
 " commands
-com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attributes yes --sort-attributes alpha
+ com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap
 
 
 " plugin-specific settings
@@ -126,6 +132,13 @@ set wildignore+=.git,test/**,*.class,*.war
 
 " ack
 let g:ackprg="ack-grep"
+nmap \a :Ack<Space>
+
+" fugitive
+nmap \gs :Gstatus<CR>
+nmap \gd :Gdiff<CR>
+nmap \gw :Gwrite<CR>
+nmap \gc :Gcommit<CR>
 
 
 " refactoring and code manipulation commands
