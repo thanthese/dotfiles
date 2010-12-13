@@ -16,14 +16,3 @@ nmap \s :e ~/scratch.txt<CR>
 nmap \v1 :e ~/dotfiles/coreVimrc.vim<CR>
 nmap \v2 :e ~/dotfiles/ubuntuVimrc.vim<CR>
 nmap \v :e ~/.vimrc<CR>
-
-
-" refactoring and code manipulation commands
-" ==========================================
-
-nmap \rp ^Yiprintln "A is ${pA}"^
-
-
-" plugin-specific
-" ===============
-let g:ackprg="ack-grep"

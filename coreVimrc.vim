@@ -3,7 +3,6 @@
 "
 
 " preferred plugins
-" - align
 " - bufexplorer (with q map changed to esc)
 " - command-t
 " - conque
@@ -13,6 +12,7 @@
 " - matchit
 " - NERD_tree
 " - surround (with repeat.vim)
+" - fugitive (git plugin)
 
 " shortcut conventions:
 " - preference for custom Ex commands
@@ -106,6 +106,7 @@ nnoremap ' `
 nmap <M-y> :%yank +<CR>
 vmap <M-y> "+y
 nmap <M-p> "+P
+vmap <M-p> "+P
 
 " switch window
 nmap <C-h> <C-w>h
@@ -122,3 +123,13 @@ com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent -wrap --indent-attri
 
 " command-t
 set wildignore+=*.o,*.obj,.git,test/**,*.class,*.war
+
+" ack
+let g:ackprg="ack-grep"
+
+
+" refactoring and code manipulation commands
+" ==========================================
+nmap \rp ^Yiprintln "A is ${pA}"^
+nmap \rf !!par<CR>
+vmap \rf !par<CR>
