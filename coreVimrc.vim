@@ -130,6 +130,6 @@ let g:ackprg="ack-grep"
 
 " refactoring and code manipulation commands
 " ==========================================
-nmap \rp ^Yiprintln "A is ${pA}"^
+nmap \rp ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
 nmap \rf !!par<CR>
 vmap \rf !par<CR>
