@@ -9,6 +9,7 @@ set dictionary+=/usr/share/dict/words
 
 nmap \b :e ~/.bashrc<CR>
 nmap \d :e ~/Desktop/
+nmap \e :cd ~/NetBeansProjects/EOC/<CR>
 nmap \h :e ~/
 nmap \n :NERDTree<CR>
 nmap \s :e ~/scratch.txt<CR>
@@ -20,3 +21,7 @@ nmap \v :e ~/.vimrc<CR>
 " ========
 
 nmap \p ^Yiprintln "A is ${pA}"^
+
+" plugin-specific
+" ===============
+let g:ackprg="ack-grep"
