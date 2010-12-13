@@ -43,6 +43,7 @@ set nowrap
 set number
 set ruler
 set showcmd
+set showmatch
 set showmode
 set wildmenu
 set wildmode=list:longest
