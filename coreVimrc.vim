@@ -12,7 +12,7 @@
 " - lustyExplorer
 " - matchit
 " - NERD_tree
-" - sparkup (html expander>
+" - sparkup (html expander)
 " - surround (with repeat.vim)
 
 " shortcut conventions:
