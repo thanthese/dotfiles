@@ -7,12 +7,13 @@
 " - command-t
 " - conque
 " - CSApprox, makes colorschemes work in terminals
+" - fugitive (git plugin)
 " - ir_black, preferred colorscheme
 " - lustyExplorer
 " - matchit
 " - NERD_tree
+" - sparkup (html expander>
 " - surround (with repeat.vim)
-" - fugitive (git plugin)
 
 " shortcut conventions:
 " - preference for custom Ex commands
@@ -69,6 +70,9 @@ set incsearch
 " omni-completion
 set omnifunc=syntaxcomplete#Complete
 
+" put all swap files together in one place
+set directory^=$HOME/.vim_swap//
+
 
 " events
 " ======
@@ -121,7 +125,7 @@ nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
 
 " commands
- com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap
+com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap
 
 
 " plugin-specific settings
