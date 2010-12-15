@@ -4,8 +4,8 @@
 set dictionary+=/usr/share/dict/words
 
 
-" navigation
-" ==========
+" navigation to files
+" ===================
 
 nmap \b :e ~/.bashrc<CR>
 nmap \d :e ~/Desktop/

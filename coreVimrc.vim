@@ -3,7 +3,7 @@
 "
 
 " preferred plugins
-" - bufexplorer (with q map changed to esc)
+" - bufexplorer
 " - command-t
 " - conque
 " - CSApprox, makes colorschemes work in terminals
@@ -147,6 +147,10 @@ nmap \gc :Gcommit<CR>
 
 " refactoring and code manipulation commands
 " ==========================================
+
+" printlns
 nmap \rp ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
+
+" par
 nmap \rf !!par<CR>
 vmap \rf !par<CR>
