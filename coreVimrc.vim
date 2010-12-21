@@ -111,6 +111,7 @@ nmap <M-y> :%yank +<CR>
 vmap <M-y> "+y
 nmap <M-p> "+P
 vmap <M-p> "+P
+imap <M-p> <C-r>+
 
 " switch window
 nmap <C-h> <C-w>h
