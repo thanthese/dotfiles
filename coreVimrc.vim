@@ -148,9 +148,19 @@ nmap \gc :Gcommit<CR>
 " refactoring and code manipulation commands
 " ==========================================
 
+" note: all refactoring commands start with the '\r' leader
+
 " printlns
-nmap \rp ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
+nmap \rd ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
 
 " par
-nmap \rf !!par<CR>
-vmap \rf !par<CR>
+nmap \rp !!par<CR>
+vmap \rp !par<CR>
+
+" sort
+nmap \rs :%!sort<CR>
+vmap \rs !sort<CR>
+
+" tidy
+nmap \rt :Tidy<CR>
+vmap \rt :Tidy<CR>
