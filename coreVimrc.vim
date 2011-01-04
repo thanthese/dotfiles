@@ -5,13 +5,13 @@
 " preferred plugins
 " - bufexplorer
 " - command-t
-" - conque
 " - CSApprox, makes colorschemes work in terminals
 " - fugitive (git plugin)
 " - ir_black, preferred colorscheme
 " - lustyExplorer
 " - matchit
 " - NERD_tree
+" - slime.vim
 " - sparkup (html expander)
 " - surround (with repeat.vim)
 
