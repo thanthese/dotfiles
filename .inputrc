@@ -1,3 +1,2 @@
 # bash completion
 set completion-ignore-case on
-source /etc/bash_completion
