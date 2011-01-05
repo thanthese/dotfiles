@@ -13,10 +13,6 @@ set -o vi
 # colors in terminal
 export TERM="xterm-256color"
 
-# bash completion
-set completion-ignore-case on
-source /etc/bash_completion
-
 # one-characters, and combinations
 alias a="ack-grep"
 alias b=". ~/.bashrc"
