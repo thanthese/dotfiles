@@ -21,12 +21,17 @@ alias a="ack-grep"
 alias b=". ~/.bashrc"
 alias c="clear"
 alias d="cd ~/Desktop; ls"
+alias f="find . | g "
 alias g="grep"
 alias o="gnome-open"
 alias t="tree"
 alias up="uptime"
 alias vb="vi ~/.bashrc; b"
 alias x="exit"
+
+# ls on cd, plus pushd instead of cd
+push() { pushd ${1} ; ls -lth ; }
+alias cc="push"
 
 # git
 alias ga="git add ."
@@ -35,6 +40,12 @@ alias gd="git diff"
 alias gl="git log"
 alias gs="git status"
 alias gb="git branch"
+
+# read nytimes
+alias nytimes="lynx mobile.nytimes.com"
+
+# start python server in current directory
+alias start-simple-web-server="python -m SimpleHTTPServer"
 
 # show uptime on terminal open
 up

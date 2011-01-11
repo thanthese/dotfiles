@@ -29,6 +29,7 @@ set nocompatible
 
 " filetype plugins and detection
 filetype plugin on
+syntax on
 
 " gui options
 set guioptions-=T  " no tool bar

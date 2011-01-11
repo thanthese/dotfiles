@@ -1,3 +1,4 @@
 --type-set=groovy=.groovy
 --type-set=gsp=.gsp
+--type-set=ftl=.ftl
 --smart-case
