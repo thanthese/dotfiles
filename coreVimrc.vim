@@ -12,7 +12,6 @@
 " - matchit
 " - NERD_tree
 " - slime.vim
-" - sparkup (html expander)
 " - surround (with repeat.vim)
 
 " shortcut conventions:
@@ -39,7 +38,7 @@ set guioptions-=L  " no left  scroll bar
 set guioptions+=c  " use console dialogs
 
 " appearance
-colorscheme ir_black
+colorscheme molokai
 set cursorline
 set nowrap
 set number
@@ -110,9 +109,17 @@ nnoremap ' `
 " yank/put to system clipboard
 nmap <M-y> :%yank +<CR>
 vmap <M-y> "+y
+
+nmap <M-c> :%yank +<CR>
+vmap <M-c> "+y
+
 nmap <M-p> "+P
 vmap <M-p> "+P
 imap <M-p> <C-r>+
+
+nmap <M-v> "+P
+vmap <M-v> "+P
+imap <M-v> <C-r>+
 
 " switch window
 nmap <C-h> <C-w>h
@@ -128,23 +135,6 @@ nmap <C-Right> <C-W>>
 
 " commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap
-
-
-" plugin-specific settings
-" ========================
-
-" command-t
-set wildignore+=.git,test/**,*.class,*.war
-
-" ack
-let g:ackprg="ack-grep"
-nmap \a :Ack<Space>
-
-" fugitive
-nmap \gs :Gstatus<CR>
-nmap \gd :Gdiff<CR>
-nmap \gw :Gwrite<CR>
-nmap \gc :Gcommit<CR>
 
 
 " refactoring and code manipulation commands
@@ -166,3 +156,23 @@ vmap \rs !sort<CR>
 " tidy
 nmap \rt :Tidy<CR>
 vmap \rt :Tidy<CR>
+
+" toggle wrap
+nmap \rw :set wrap!<CR>
+
+
+" plugin-specific settings
+" ========================
+
+" command-t
+set wildignore+=.git,test/**,*.class,*.war
+
+" ack
+let g:ackprg="ack-grep"
+nmap \a :Ack<Space>
+
+" fugitive
+nmap \gs :Gstatus<CR>
+nmap \gd :Gdiff<CR>
+nmap \gw :Gwrite<CR>
+nmap \gc :Gcommit<CR>
