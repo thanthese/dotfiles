@@ -153,12 +153,21 @@ vmap \rp !par<CR>
 nmap \rs :%!sort<CR>
 vmap \rs !sort<CR>
 
+" sparkup
+nmap \rsu !!~/sparkup/sparkup<CR>
+vmap \rsu !~/sparkup/sparkup<CR>
+
 " tidy
 nmap \rt :Tidy<CR>
 vmap \rt :Tidy<CR>
 
 " toggle wrap
-nmap \rw :set wrap!<CR>
+nmap \rw :set wrap! linebreak!<CR>
+
+" unique
+nmap \ru :%!uniq<CR>
+vmap \ru !uniq<CR>
+
 
 
 " plugin-specific settings
