@@ -27,6 +27,7 @@ alias o="gnome-open"
 alias t="tree"
 alias up="uptime"
 alias vb="vi ~/.bashrc; b"
+alias s="cd /sandbox; ls"
 alias v="grep -v"
 alias x="exit"
 

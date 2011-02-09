@@ -38,7 +38,7 @@ set guioptions-=L  " no left  scroll bar
 set guioptions+=c  " use console dialogs
 
 " appearance
-colorscheme molokai
+colorscheme ir_black
 set cursorline
 set nowrap
 set number

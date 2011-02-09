@@ -7,7 +7,7 @@ nmap \e :cd ~/NetBeansProjects/EOC/<CR>
 nmap \h :e ~/
 nmap \nn :cd ~/NN/04/<CR>
 nmap \n :NERDTree<CR>
-nmap \o :e ~/todo.rm<CR>
+nmap \o :e ~/Dropbox/all-notes.txt<CR>
 nmap \v1 :e ~/dotfiles/coreVimrc.vim<CR>
 nmap \v2 :e ~/dotfiles/ubuntuVimrc.vim<CR>
 nmap \v :e ~/.vimrc<CR>
