@@ -1,8 +1,12 @@
 ""
 " Stephen Mann
 "
+" Contains system-independent vim settings.
+"
 
-" preferred plugins
+" # Documentation
+
+" ## preferred plugins
 " - bufexplorer
 " - command-t
 " - CSApprox, makes colorschemes work in terminals
@@ -14,14 +18,14 @@
 " - slime.vim
 " - surround (with repeat.vim)
 
-" shortcut conventions:
-" - preference for custom Ex commands
+" ## shortcut conventions
+" - prefer custom Ex commands
 " - \    : navigation, aka shortcuts-to-files
+" - \r   : run a command that will have an effect on the code
 " - ctrl : window management
+" - alt  : - not used -
 
-
-" look and feel, passive settings
-" ===============================
+" # Look and feel, passive settings
 
 " vi compatibility mode
 set nocompatible
@@ -73,9 +77,7 @@ set omnifunc=syntaxcomplete#Complete
 " put all swap files together in one place
 set directory^=$HOME/.vim_swap//
 
-
-" events
-" ======
+" # On events
 
 " on save any: trim trailing whitespace
 autocmd! BufWrite * mark ' | silent! %s/\s\+$// | ''
@@ -83,12 +85,9 @@ autocmd! BufWrite * mark ' | silent! %s/\s\+$// | ''
 " on save a .vim file: source file
 autocmd! BufWritePost *.vim source %
 
+" # Helpful mappings
 
-" helpful mappings
-" ================
-
-" make keys work as expected
-" --------------------------
+" ## make keys work as expected
 
 " move cursor by screen lines, not by logical lines
 nnoremap k gk
@@ -102,9 +101,7 @@ nmap Y y$
 " better jumping
 nnoremap ' `
 
-
-" extras
-" ------
+" ## extras
 
 " yank/put to system clipboard
 nmap <M-y> :%yank +<CR>
@@ -133,17 +130,7 @@ nmap <C-Down>  <C-W>+
 nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
 
-" commands
-com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap
-
-
-" refactoring and code manipulation commands
-" ==========================================
-
-" note: all refactoring commands start with the '\r' leader
-
-" printlns
-nmap \rd ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
+" ## refactoring and code manipulation mappings (\r)
 
 " par
 nmap \rp !!par<CR>
@@ -152,6 +139,14 @@ vmap \rp !par<CR>
 " sort
 nmap \rs :%!sort<CR>
 vmap \rs !sort<CR>
+
+" unique
+nmap \ru :%!uniq<CR>
+vmap \ru !uniq<CR>
+
+" dc
+nmap \rd yyp!!dc<CR>
+vmap \rd !dc<CR>
 
 " sparkup
 nmap \rsu !!~/sparkup/sparkup<CR>
@@ -164,17 +159,13 @@ vmap \rt :Tidy<CR>
 " toggle wrap
 nmap \rw :set wrap! linebreak!<CR>
 
-" unique
-nmap \ru :%!uniq<CR>
-vmap \ru !uniq<CR>
+" add println
+nmap \rr ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
 
-" dc
-nmap \rd yyp!!dc<CR>
-vmap \rd !dc<CR>
+" # Commands
+com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap
 
-
-" plugin-specific settings
-" ========================
+" # Plugin-specific settings
 
 " command-t
 set wildignore+=.git,test/**,*.class,*.war
