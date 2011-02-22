@@ -168,6 +168,9 @@ nmap \rw :set wrap! linebreak!<CR>
 nmap \ru :%!uniq<CR>
 vmap \ru !uniq<CR>
 
+" dc
+nmap \rd yyp!!dc<CR>
+vmap \rd !dc<CR>
 
 
 " plugin-specific settings
