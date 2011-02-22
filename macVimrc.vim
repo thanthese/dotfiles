@@ -6,6 +6,7 @@ nmap \b :e ~/.bashrc<CR>
 nmap \d :e ~/Desktop/<C-d>
 nmap \h :e ~/
 nmap \r :e ~/scratch.txt<CR>
+nmap \o :e ~/all-notes.txt
 nmap \v :e ~/.vimrc<CR>
 nmap \v1 :e ~/dotfiles/coreVimrc.vim<CR>
 nmap \v2 :e ~/dotfiles/macVimrc.vim<CR>
