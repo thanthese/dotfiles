@@ -77,6 +77,9 @@ set omnifunc=syntaxcomplete#Complete
 " put all swap files together in one place
 set directory^=$HOME/.vim_swap//
 
+" put all tilde files together in one place
+set backupdir^=$HOME/.vim_swap//
+
 " # On events
 
 " on save any: trim trailing whitespace
@@ -163,7 +166,7 @@ nmap \rw :set wrap! linebreak!<CR>
 nmap \rr ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
 
 " # Commands
-com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap
+com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
 
 " # Plugin-specific settings
 
