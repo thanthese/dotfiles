@@ -75,10 +75,10 @@ set incsearch
 set omnifunc=syntaxcomplete#Complete
 
 " put all swap files together in one place
-set directory^=$HOME/.vim_swap//
+set directory^=$HOME/.vim_swap
 
 " put all tilde files together in one place
-set backupdir^=$HOME/.vim_swap//
+set backupdir^=$HOME/.vim_swap
 
 " # On events
 

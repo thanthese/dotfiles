@@ -1,10 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" source: https://github.com/jpalardy/vim-slime/
+" original source: https://github.com/jpalardy/vim-slime/
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function Send_to_Screen(text)
+function! Send_to_Screen(text)
   if !exists("b:slime")
     call Screen_Vars()
   end
@@ -13,11 +13,11 @@ function Send_to_Screen(text)
   call system("screen -S " . b:slime["sessionname"] . " -p " . b:slime["windowname"] . " -X stuff " . escaped_text)
 endfunction
 
-function Screen_Session_Names(A,L,P)
+function! Screen_Session_Names(A,L,P)
   return system("screen -ls | awk '/Attached/ {print $1}'")
 endfunction
 
-function Screen_Vars()
+function! Screen_Vars()
   if !exists("b:slime")
     let b:slime = {"sessionname": "", "windowname": "0"}
   end
@@ -33,3 +33,4 @@ nmap <C-c><C-c> vip<C-c><C-c>
 
 nmap <C-c>v :call Screen_Vars()<CR>
 
+nmap <C-c><CR> :call Send_to_Screen("\n")<CR>
