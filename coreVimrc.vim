@@ -165,6 +165,9 @@ nmap \rw :set wrap! linebreak!<CR>
 " add println
 nmap \rr ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
 
+" insert timestamp
+imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
+
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
 
