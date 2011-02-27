@@ -104,7 +104,7 @@ nmap Y y$
 " better jumping
 nnoremap ' `
 
-" ## extras
+" ## extras (system commands, ctrl/alt based)
 
 " yank/put to system clipboard
 nmap <M-y> :%yank +<CR>
@@ -161,6 +161,9 @@ vmap \rt :Tidy<CR>
 
 " toggle wrap
 nmap \rw :set wrap! linebreak!<CR>
+
+" toggle spell
+nmap \rsp :set spell!<CR>
 
 " add println
 nmap \rr ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
