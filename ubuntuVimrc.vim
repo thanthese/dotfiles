@@ -32,3 +32,9 @@ au BufNewFile,BufRead *.ftl setfiletype html
 " ==========
 
 set dictionary+=/usr/share/dict/words
+
+
+" notes file
+" ==========
+
+autocmd! BufWritePost all-notes.txt silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.txt -o ~/Dropbox/view-notes.html
