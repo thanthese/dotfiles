@@ -19,4 +19,4 @@ alias x=exit
 alias b=bash
 
 unsetopt caseglob
-
+export TERM='xterm-256color'
