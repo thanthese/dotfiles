@@ -7,22 +7,25 @@ autoload zmv
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
+bindkey '^L' push-line
 
 setopt auto_cd
 setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups
 setopt extendedglob
-setopt glob_dots
 setopt hist_ignore_dups
 setopt share_history
 unsetopt caseglob
 
-reporttime=5
+export reporttime=2
 histsize=10000
 savehist=10000
 prompt="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}:%{$fg[cyan]%}%~%{$fg[white]%}$ "
 
 export TERM='xterm-256color'
 export EDITOR=vim
+
+# set terminal title to args
+function title { print -Pn "\e]0;$*\a" }
 
 
 ## -----------------------------------------------
@@ -43,6 +46,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # short aliases
 alias b=bash
 alias c=clear
+alias py=python
 alias vz="vi ~/.zshrc; b"
 alias x=exit
 alias z=". ~/.zshrc"
@@ -61,11 +65,12 @@ alias start-simple-web-server="python -m SimpleHTTPServer"
 
 # command aliases
 alias grep="grep --color=auto"
-alias ls="ls -G"
+alias ls="ls --color=auto"
 
 # global aliases
 alias -g G=" | grep -i"
 alias -g L=" | less"
+alias -g S=" | sort"
 alias -g V=" | grep -iv"
 alias -g X=' | xargs'
 alias -g ...='../..'
@@ -88,18 +93,48 @@ export PATH=$PATH:/opt/local/bin
 ##################################################
 ## work specific
 
+# path variables
+export GEOSERVER_HOME="/home/thanthese/geoserver-2.0.1/"
+export GRAILS_HOME="/home/thanthese/grails-1.3.5"
+export JAVA_HOME="/usr/lib/jvm/java-6-sun/"
+export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"  ## NN
+PATH=/home/thanthese/.cabal/bin/:$PATH
+PATH=/home/thanthese/grails-1.3.5/bin:$PATH
+PATH=/home/thanthese/sparkup/:$PATH
+#export GRAILS_HOME="/home/thanthese/grails-1.1.1"
+#export PATH=/home/thanthese/apache-maven-2.0.9/bin:$PATH
+#export PATH=/home/thanthese/.gem/ruby/1.8/bin:$PATH
+#export PGPORT=5432
+#PATH=/home/thanthese/grails-1.1.1/bin:$PATH
+#PATH=/opt/google/chrome:$PATH
+#PATH=/usr/lib/jvm/java-6-sun-1.6.0.13/bin:$PATH
+#source /usr/local/bin/ferret_paths
+
+# host completion
+zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo4.geocent.com
+
 # directory aliases
 hash -d nn=~/NN/04/
-
-# completion
-zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo4.geocent.com
+hash -d e=~/NetBeansProjects/EOC/
 
 # quick open aliases
 alias o="gnome-open"
-alias n="nautilis"
+alias n="nautilus"
+
+# for building EOC
+alias grails-build="grails prod war"
+alias grails-app="grails run-app"
+alias grails-war="grails run-war"
+
+# starting programs
+alias start-geoserver="sh ~/geoserver-2.0.1/bin/startup.sh"
+alias start-jboss-4="sh ~/jboss-4.2.3/jboss-4.2.3.GA/bin/run.sh -c OpenSSO -b sjm.test.com"
+alias start-jboss-5="sh ~/jboss-5.1.0/jboss-5.1.0.GA/bin/run.sh"
+alias s4="start-jboss-4"
+alias s5="start-jboss-5"
 
 
 ##################################################
-## loading file complete
+## loading complete
 
 uptime
