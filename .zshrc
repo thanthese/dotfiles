@@ -16,11 +16,12 @@ setopt hist_ignore_dups
 setopt share_history
 unsetopt caseglob
 
-export reporttime=2
-histsize=10000
-savehist=10000
+histsize=1000
+savehist=1000
+histfile=~/.history
 prompt="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}:%{$fg[cyan]%}%~%{$fg[white]%}$ "
 
+export reporttime=2
 export TERM='xterm-256color'
 export EDITOR=vim
 
@@ -46,6 +47,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # short aliases
 alias b=bash
 alias c=clear
+alias f=find
 alias py=python
 alias vz="vi ~/.zshrc; b"
 alias x=exit
