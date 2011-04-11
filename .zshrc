@@ -13,8 +13,8 @@ setopt auto_cd
 setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups
 setopt extendedglob
 setopt hist_ignore_dups
+setopt no_case_glob
 setopt share_history
-unsetopt caseglob
 
 histsize=1000
 savehist=1000
@@ -48,7 +48,9 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 alias b=bash
 alias c=clear
 alias f=find
+alias g=grep
 alias py=python
+alias p="print -l"
 alias vz="vi ~/.zshrc; b"
 alias x=exit
 alias z=". ~/.zshrc"
@@ -61,23 +63,32 @@ alias gd="git diff"
 alias gl="git log"
 alias gs="git status"
 
+# svn aliases
+alias sc="svn commit"
+alias sd="svn diff | colordiff"
+alias ss="svn status"
+alias su="svn update"
+
 # long aliases
 alias nytimes="lynx -tna --accept-all-cookies mobile.nytimes.com"
 alias start-simple-web-server="python -m SimpleHTTPServer"
 
 # command aliases
-alias grep="grep --color=auto"
-alias ls="ls --color=auto"
+alias -g grep="grep -i --color=auto"
+alias -g less="less -R"
+alias -g ls="ls --color=auto"
 
 # global aliases
-alias -g G=" | grep -i"
-alias -g L=" | less"
+alias -g B=" && beep"
+alias -g G=" | grep -i --color=auto"
+alias -g L=" | less -R"
 alias -g S=" | sort"
 alias -g V=" | grep -iv"
 alias -g X=' | xargs'
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
+alias -g ......='../../../../..'
 
 # open-with aliases
 alias -s md=vim
