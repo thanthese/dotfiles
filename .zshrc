@@ -73,6 +73,7 @@ alias su="svn update"
 # long aliases
 alias nytimes="lynx -tna --accept-all-cookies mobile.nytimes.com"
 alias start-simple-web-server="python -m SimpleHTTPServer"
+alias pwgen-standard="pwgen -sy 20 1"
 
 # command aliases
 alias -g grep="grep -i --color=auto"
