@@ -45,6 +45,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 ## aliases
 
 # short aliases
+alias a=ack-grep
 alias b=bash
 alias c=clear
 alias f=find
@@ -59,14 +60,16 @@ alias z=". ~/.zshrc"
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
-alias gd="git diff"
+alias gd="git diff --ignore-all-space"
 alias gl="git log"
 alias gp="git push origin master"
+alias gpush="git push origin master"
+alias gpull="git pull origin master"
 alias gs="git status"
 
 # svn aliases
 alias sc="svn commit"
-alias sd="svn diff | colordiff"
+alias sd="svn diff -x --ignore-all-space"
 alias ss="svn status"
 alias su="svn update"
 
@@ -74,17 +77,19 @@ alias su="svn update"
 alias nytimes="lynx -tna --accept-all-cookies mobile.nytimes.com"
 alias start-simple-web-server="python -m SimpleHTTPServer"
 
-# command aliases
+# command aliases (add constant options)
 alias -g grep="grep -i --color=auto"
 alias -g less="less -R"
 alias -g ls="ls --color=auto"
 
 # global aliases
-alias -g B=" && beep"
+alias -g B="; beep"
+alias -g C=" | colordiff"
 alias -g G=" | grep -i --color=auto"
 alias -g L=" | less -R"
 alias -g S=" | sort"
 alias -g V=" | grep -iv"
+alias -g W=' | wc'
 alias -g X=' | xargs'
 alias -g ...='../..'
 alias -g ....='../../..'
@@ -95,6 +100,7 @@ alias -g ......='../../../../..'
 alias -s md=vim
 alias -s txt=vim
 alias -s xml=vim
+alias -s java=vim
 
 
 ##################################################
@@ -146,6 +152,7 @@ alias start-jboss-4="sh ~/jboss-4.2.3/jboss-4.2.3.GA/bin/run.sh -c OpenSSO -b sj
 alias start-jboss-5="sh ~/jboss-5.1.0/jboss-5.1.0.GA/bin/run.sh"
 alias s4="start-jboss-4"
 alias s5="start-jboss-5"
+alias clear-jboss-5="rm -rf ~/jboss-5.1.0/jboss-5.1.0.GA/**/(tmp|work)(/) ~/jboss-5.1.0/jboss-5.1.0.GA/**/*.ear(.)"
 
 
 ##################################################
