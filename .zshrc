@@ -35,7 +35,7 @@ function title { print -Pn "\e]0;$*\a" }
 # "Change Directory to File"
 #
 # Change to directory containing the given filename. Only enough of the
-# inital characters of the filename are required to create uniqueness.
+# initial characters of the filename are required to create uniqueness.
 function cdf { cd **/$1*(.:h) }
 
 # "Change Directory to Directory"
@@ -45,7 +45,7 @@ function cdd { cd **/$1*(/) }
 
 # "Vi a File"
 #
-# Like `cdf`, opens the matching file in vim.
+# Like `cdf`, but opens the matching file in vim.
 function vif { vim **/$1*(.) }
 
 # ls after every cd
@@ -53,7 +53,7 @@ function vif { vim **/$1*(.) }
 # source: http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-ever-cd
 function chpwd() {
   emulate -LR zsh
-  ls
+  ls --color=auto
 }
 
 
