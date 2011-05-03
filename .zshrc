@@ -112,6 +112,7 @@ alias apt-get-all="sudo apt-get -y check; sudo apt-get -y update; sudo apt-get -
 alias -g grep="grep -i --color=auto"
 alias -g less="less -R"
 alias -g ls="ls --color=auto"
+alias -g ll="ls --color=auto -l"
 
 # pipe aliases
 alias -g B="; beep"
