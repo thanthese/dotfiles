@@ -37,7 +37,7 @@ autoload -U compinit && compinit
 
 # completion styles
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
-zstyle ':completion:*' menu select
+#zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 
@@ -70,6 +70,7 @@ alias gs="git status"
 # svn aliases
 alias sc="svn commit"
 alias sd="svn diff -x --ignore-all-space"
+alias sda="svn diff -x --ignore-all-space | colordiff | less"
 alias ss="svn status"
 alias su="svn update"
 
@@ -77,6 +78,7 @@ alias su="svn update"
 alias nytimes="lynx -tna --accept-all-cookies mobile.nytimes.com"
 alias start-simple-web-server="python -m SimpleHTTPServer"
 alias pwgen-standard="pwgen -sy 20 1"
+alias apt-get-all="sudo apt-get -y check; sudo apt-get -y update; sudo apt-get -y upgrade; sudo apt-get -y autoremove; sudo apt-get -y clean; sudo apt-get -y autoclean; sudo apt-get -y dist-upgrade;"
 
 # command aliases (add constant options)
 alias -g grep="grep -i --color=auto"

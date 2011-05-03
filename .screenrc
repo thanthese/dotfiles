@@ -11,6 +11,6 @@ bind ^k resize -5
 bind ^h resize 5
 bind ^l resize =
 
-screen -t "python" 2 python
-screen -t "ghci"   1 ghci
-screen -t "main"   0
+# screen -t "python" 2 python
+# screen -t "ghci"   1 ghci
+# screen -t "main"   0
