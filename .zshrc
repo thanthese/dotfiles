@@ -25,8 +25,36 @@ export reporttime=2
 export TERM='xterm-256color'
 export EDITOR=vim
 
+
+## -----------------------------------------------
+## functions
+
 # set terminal title to args
 function title { print -Pn "\e]0;$*\a" }
+
+# "Change Directory to File"
+#
+# Change to directory containing the given filename. Only enough of the
+# inital characters of the filename are required to create uniqueness.
+function cdf { cd **/$1*(.:h) }
+
+# "Change Directory to Directory"
+#
+# Like `cdf`, but takes a directory name instead of a file name.
+function cdd { cd **/$1*(/) }
+
+# "Vi a File"
+#
+# Like `cdf`, opens the matching file in vim.
+function vif { vim **/$1*(.) }
+
+# ls after every cd
+#
+# source: http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-ever-cd
+function chpwd() {
+  emulate -LR zsh
+  ls
+}
 
 
 ## -----------------------------------------------
@@ -85,7 +113,7 @@ alias -g grep="grep -i --color=auto"
 alias -g less="less -R"
 alias -g ls="ls --color=auto"
 
-# global aliases
+# pipe aliases
 alias -g B="; beep"
 alias -g C=" | colordiff"
 alias -g G=" | grep -i --color=auto"
@@ -94,6 +122,8 @@ alias -g S=" | sort"
 alias -g V=" | grep -iv"
 alias -g W=' | wc'
 alias -g X=' | xargs'
+
+# cd aliases
 alias -g ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
