@@ -16,9 +16,9 @@ setopt hist_ignore_dups
 setopt no_case_glob
 setopt share_history
 
-histsize=1000
-savehist=1000
-histfile=~/.history
+HISTSIZE=1000
+HISTFILE=~/.history
+SAVEHIST=1000
 prompt="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}:%{$fg[cyan]%}%~%{$fg[white]%}$ "
 
 export reporttime=2
