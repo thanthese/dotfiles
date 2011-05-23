@@ -188,3 +188,10 @@ nmap \gs :Gstatus<CR>
 nmap \gd :Gdiff<CR>
 nmap \gw :Gwrite<CR>
 nmap \gc :Gcommit<CR>
+
+" # Filetype-specific settings
+" Note: only the most simple settings can live in the .vimrc
+
+" clojure, navigating (), [], and {}
+au FileType clojure nmap <buffer> ) /[([{]<CR>
+au FileType clojure nmap <buffer> ( ?[([{]<CR>

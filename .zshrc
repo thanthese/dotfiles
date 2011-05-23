@@ -9,19 +9,20 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^L' push-line
 
-setopt auto_cd
-setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups
-setopt extendedglob
-setopt hist_ignore_dups
-setopt no_case_glob
-setopt share_history
+setopt AUTO_CD
+setopt AUTOPUSHD PUSHDMINUS PUSHDSILENT PUSHDTOHOME PUSHDIGNOREDUPS
+setopt EXTENDEDGLOB
+setopt HIST_IGNORE_DUPS
+setopt NO_CASE_GLOB
+setopt SHARE_HISTORY
 
 HISTSIZE=1000
 HISTFILE=~/.history
 SAVEHIST=1000
-prompt="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}:%{$fg[cyan]%}%~%{$fg[white]%}$ "
 
-export reporttime=2
+PROMPT="%{$fg[red]%}%n%{$fg[white]%}@%{$fg[green]%}%m%{$fg[white]%}:%{$fg[cyan]%}%~%{$fg[white]%}$ "
+
+export REPORTTIME=2
 export TERM='xterm-256color'
 export EDITOR=vim
 
@@ -107,12 +108,13 @@ alias nytimes="lynx -tna --accept-all-cookies mobile.nytimes.com"
 alias start-simple-web-server="python -m SimpleHTTPServer"
 alias pwgen-standard="pwgen -sy 20 1"
 alias apt-get-all="sudo apt-get -y check; sudo apt-get -y update; sudo apt-get -y upgrade; sudo apt-get -y autoremove; sudo apt-get -y clean; sudo apt-get -y autoclean; sudo apt-get -y dist-upgrade;"
+alias today="p **/*(m0)"
 
 # command aliases (add constant options)
 alias -g grep="grep -i --color=auto"
 alias -g less="less -R"
 alias -g ls="ls --color=auto"
-alias -g ll="ls --color=auto -l"
+alias -g ll="ls --color=auto -lthr"
 
 # pipe aliases
 alias -g B="; beep"
@@ -174,11 +176,6 @@ hash -d e=~/NetBeansProjects/EOC/
 # quick open aliases
 alias o="gnome-open"
 alias n="nautilus"
-
-# for building EOC
-alias grails-build="grails prod war"
-alias grails-app="grails run-app"
-alias grails-war="grails run-war"
 
 # starting programs
 alias start-geoserver="sh ~/geoserver-2.0.1/bin/startup.sh"
