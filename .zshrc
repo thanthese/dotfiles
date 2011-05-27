@@ -54,7 +54,7 @@ function vif { vim **/$1*(.) }
 # source: http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-ever-cd
 function chpwd() {
   emulate -LR zsh
-  ls --color=auto
+  ls
 }
 
 
@@ -144,6 +144,7 @@ alias -s java=vim
 
 # path for git
 export PATH=$PATH:/opt/local/bin
+export PATH=$PATH:/Applications/Racket-v5.1.1/bin
 
 
 ##################################################
