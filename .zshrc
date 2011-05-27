@@ -113,8 +113,8 @@ alias today="p **/*(m0)"
 # command aliases (add constant options)
 alias -g grep="grep -i --color=auto"
 alias -g less="less -R"
-alias -g ls="ls --color=auto"
-alias -g ll="ls --color=auto -lthr"
+alias -g ls="ls "
+alias -g ll="ls -lthr"
 
 # pipe aliases
 alias -g B="; beep"
