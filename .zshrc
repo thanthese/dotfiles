@@ -146,6 +146,9 @@ alias -s java=vim
 export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:/Applications/Racket-v5.1.1/bin
 
+# clojure
+alias clj="java -jar /Applications/clojure-1.2.0/clojure.jar"
+
 
 ##################################################
 ## work specific

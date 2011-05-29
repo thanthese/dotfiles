@@ -31,7 +31,7 @@
 set nocompatible
 
 " filetype plugins and detection
-filetype plugin on
+filetype plugin indent on
 syntax on
 
 " gui options
@@ -194,4 +194,11 @@ nmap \gc :Gcommit<CR>
 
 " clojure, navigating (), [], and {}
 au FileType clojure nmap <buffer> ) /[([{]<CR>
+au FileType clojure vmap <buffer> ) /[([{]<CR>
+au FileType clojure omap <buffer> ) /[([{]<CR>
+
 au FileType clojure nmap <buffer> ( ?[([{]<CR>
+au FileType clojure vmap <buffer> ( ?[([{]<CR>
+au FileType clojure omap <buffer> ( ?[([{]<CR>
+
+"let g:clj_paren_rainbow=1  " Rainbow parentheses'!
