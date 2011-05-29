@@ -31,7 +31,7 @@ endfunction
 "" default maps
 ""
 
-vmap <C-c><C-c> "ry :call Send_to_Screen(@r)<CR>
+vmap <C-c><C-c> "ry :call Send_to_Screen(@r . "\n")<CR>
 nmap <C-c>v :call Screen_Vars()<CR>
 
 
@@ -64,5 +64,5 @@ endfunction
 
 function! Clojure_finddoc()
   let find_doc = input("clojure find doc: ")
-  call Send_to_Screen("(find-doc " . find_doc . ")\n")
+  call Send_to_Screen("(find-doc \"" . find_doc . "\")\n")
 endfunction
