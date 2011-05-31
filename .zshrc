@@ -54,7 +54,7 @@ function vif { vim **/$1*(.) }
 # source: http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-ever-cd
 function chpwd() {
   emulate -LR zsh
-  ls --color=auto
+  ls
 }
 
 
