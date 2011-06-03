@@ -148,7 +148,7 @@ nmap \ru :%!uniq<CR>
 vmap \ru !uniq<CR>
 
 " dc
-nmap \rd yyp!!dc<CR>
+nmap \rd yip}O<Esc>pvip!dc<CR>
 vmap \rd !dc<CR>
 
 " sparkup
