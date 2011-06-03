@@ -49,6 +49,7 @@ nmap <C-c><Space> ggVG<C-c><C-c><C-o><C-o>
 ""
 
 nmap Kd :call Clojure_lookup_doc()<CR>
+nmap KK :call Clojure_lookup_doc()<CR>
 nmap Ks :call Clojure_lookup_source()<CR>
 nmap Kf :call Clojure_finddoc()<CR>
 

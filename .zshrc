@@ -176,6 +176,7 @@ zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo4.geocen
 # directory aliases
 hash -d nn=~/NN/04/
 hash -d e=~/NetBeansProjects/EOC/
+hash -d n=~/nutrition
 
 # quick open aliases
 alias o="gnome-open"
