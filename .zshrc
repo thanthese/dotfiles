@@ -141,6 +141,7 @@ alias gm="git merge"
 alias gpush="git push"
 alias gpull="git pull"
 alias gs="git status"
+alias gtoday="git log --since=\"today\""
 
 
 ## -----------------------------------------------
@@ -216,6 +217,10 @@ alias start-jboss-5="sh ~/jboss-5.1.0/jboss-5.1.0.GA/bin/run.sh"
 alias s4="start-jboss-4"
 alias s5="start-jboss-5"
 alias clear-jboss-5="rm -rf ~/jboss-5.1.0/jboss-5.1.0.GA/**/(tmp|work)(/) ~/jboss-5.1.0/jboss-5.1.0.GA/**/*.ear(.)"
+
+# servers
+alias stage="ssh smann@geo-demo4.geocent.com"
+alias demo="ssh smann@demo.geocent.com"
 
 
 ##################################################
