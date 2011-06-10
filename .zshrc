@@ -141,7 +141,7 @@ alias gm="git merge"
 alias gpush="git push"
 alias gpull="git pull"
 alias gs="git status"
-alias gtoday="git log --since=\"today\""
+alias gtoday="git log --since=\"6am\""
 
 
 ## -----------------------------------------------
