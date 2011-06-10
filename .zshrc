@@ -138,8 +138,8 @@ alias gd="git diff --ignore-all-space"
 alias gl="git log"
 alias gk="git checkout"
 alias gm="git merge"
-alias gpush="git push origin master"
-alias gpull="git pull origin master"
+alias gpush="git push"
+alias gpull="git pull"
 alias gs="git status"
 
 
