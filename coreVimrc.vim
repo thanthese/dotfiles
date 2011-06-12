@@ -107,19 +107,12 @@ nnoremap ' `
 " ## extras (system commands, ctrl/alt based)
 
 " yank/put to system clipboard
-nmap <M-y> :%yank +<CR>
-vmap <M-y> "+y
-
-nmap <M-c> :%yank +<CR>
-vmap <M-c> "+y
+nmap <M-y> "+yy:echo "-- Line Yanked to Clipboard --"<CR>
+vmap <M-y> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 
 nmap <M-p> "+P
 vmap <M-p> "+P
 imap <M-p> <C-r>+
-
-nmap <M-v> "+P
-vmap <M-v> "+P
-imap <M-v> <C-r>+
 
 " switch window
 nmap <C-h> <C-w>h
