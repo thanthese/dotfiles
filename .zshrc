@@ -100,15 +100,15 @@ alias apt-get-all="sudo apt-get -y check; sudo apt-get -y update; sudo apt-get -
 alias today="p **/*(m0)"
 
 # command aliases (add constant options)
-alias -g grep="grep -i --color=auto"
+alias -g grep="grep -i"
 alias -g less="less -R"
-alias -g ls="ls --color=auto"
-alias -g ll="ls --color=auto -lthr"
+alias -g ls="ls"
+alias -g ll="ls -lthr"
 
 # pipe aliases
 alias -g B="; beep"
 alias -g C=" | colordiff"
-alias -g G=" | grep -i --color=auto"
+alias -g G=" | grep -i"
 alias -g L=" | less -R"
 alias -g S=" | sort"
 alias -g V=" | grep -iv"
@@ -142,30 +142,6 @@ alias gpush="git push"
 alias gpull="git pull"
 alias gs="git status"
 alias gtoday="git log --since=\"today\""
-
-
-## -----------------------------------------------
-## git prompt
-
-# source: http://stackoverflow.com/questions/1128496/to-get-a-prompt-which-indicates-git-branch-in-zsh
-setopt prompt_subst
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' actionformats \
-    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
-zstyle ':vcs_info:*' formats       \
-    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-
-zstyle ':vcs_info:*' enable git cvs svn
-
-# or use pre_cmd, see man zshcontrib
-vcs_info_wrapper() {
-  vcs_info
-  if [ -n "$vcs_info_msg_0_" ]; then
-    echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
-  fi
-}
-RPROMPT=$'$(vcs_info_wrapper)'
 
 
 ##################################################
