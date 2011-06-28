@@ -141,8 +141,7 @@ alias gm="git merge"
 alias gpush="git push"
 alias gpull="git pull"
 alias gs="git status"
-alias gtoday="git log --since=\"6am\""
-
+alias gtoday="git log --since=\"1am\" --author=\"Stephen Mann\" --no-merges --oneline"
 
 ##################################################
 ## mac specific
