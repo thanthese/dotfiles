@@ -186,6 +186,7 @@ export GEOSERVER_HOME="/home/thanthese/geoserver-2.0.1/"
 export GRAILS_HOME="/home/thanthese/grails-1.3.5"
 export JAVA_HOME="/usr/lib/jvm/java-6-sun/"
 export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"  ## NN
+export PATH=$PATH:/home/thanthese/leiningen
 PATH=/home/thanthese/.cabal/bin/:$PATH
 PATH=/home/thanthese/grails-1.3.5/bin:$PATH
 PATH=/home/thanthese/sparkup/:$PATH
@@ -204,6 +205,7 @@ zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo4.geocen
 # directory aliases
 hash -d nn=~/NN/04/
 hash -d e=~/NetBeansProjects/EOC/
+hash -d n=~/Nutrition/
 
 # quick open aliases
 alias o="gnome-open"
@@ -216,6 +218,10 @@ alias start-jboss-5="sh ~/jboss-5.1.0/jboss-5.1.0.GA/bin/run.sh"
 alias s4="start-jboss-4"
 alias s5="start-jboss-5"
 alias clear-jboss-5="rm -rf ~/jboss-5.1.0/jboss-5.1.0.GA/**/(tmp|work)(/) ~/jboss-5.1.0/jboss-5.1.0.GA/**/*.ear(.)"
+
+# grails
+alias war="grails run-war"
+alias app="grails run-app"
 
 # servers
 alias stage="ssh smann@geo-demo4.geocent.com"
