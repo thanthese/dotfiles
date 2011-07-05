@@ -49,12 +49,12 @@ function cdd { cd **/$1*(/) }
 # Like `cdf`, but opens the matching file in vim.
 function vif { vim **/$1*(.) }
 
-# ls after every cd
+# ll after every cd
 #
 # source: http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-ever-cd
 function chpwd() {
   emulate -LR zsh
-  ls
+  ls --color=auto -lthr
 }
 
 
