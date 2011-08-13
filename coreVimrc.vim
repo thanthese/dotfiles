@@ -165,6 +165,18 @@ nmap \rr ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
 " insert timestamp
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
 
+" sum column
+vmap \s1 !awk '{s+=$1}END{print s}'<CR>
+vmap \s2 !awk '{s+=$2}END{print s}'<CR>
+vmap \s3 !awk '{s+=$3}END{print s}'<CR>
+vmap \s4 !awk '{s+=$4}END{print s}'<CR>
+vmap \s5 !awk '{s+=$5}END{print s}'<CR>
+nmap \s1 yip}o<Esc>kpvip\s1{{j
+nmap \s2 yip}o<Esc>kpvip\s2{{j
+nmap \s3 yip}o<Esc>kpvip\s3{{j
+nmap \s4 yip}o<Esc>kpvip\s4{{j
+nmap \s5 yip}o<Esc>kpvip\s5{{j
+
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
 
