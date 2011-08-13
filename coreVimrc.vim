@@ -107,6 +107,7 @@ nnoremap ' `
 " ## extras (system commands, ctrl/alt based)
 
 " yank/put to system clipboard
+nmap <M-Y> gg"+yG<C-o><C-o>:echo "-- File Yanked to Clipboard --"<CR>
 nmap <M-y> "+yy:echo "-- Line Yanked to Clipboard --"<CR>
 vmap <M-y> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 
