@@ -149,10 +149,12 @@ alias gtoday="git log --since=\"1am\" --author=\"Stephen Mann\" --no-merges --on
 # path for git
 export PATH=$PATH:/opt/local/bin
 export PATH=$PATH:/Applications/Racket-v5.1.1/bin
+export PATH=$PATH:/Library/PostgreSQL/8.4/bin
 
 # clojure
 export PATH=$PATH:/Users/thanthese/leiningen
 alias clj="java -server -jar /Applications/clojure-1.2.0/clojure.jar"
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 
 
 ##################################################
