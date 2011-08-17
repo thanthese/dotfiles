@@ -188,6 +188,7 @@ export GRAILS_HOME="/home/thanthese/grails-1.3.5"
 export JAVA_HOME="/usr/lib/jvm/java-6-sun/"
 export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"  ## NN
 export PATH=$PATH:/home/thanthese/leiningen
+export PATH=$PATH:/home/thanthese/android-sdk-linux_x86/tools
 PATH=/home/thanthese/.cabal/bin/:$PATH
 PATH=/home/thanthese/grails-1.3.5/bin:$PATH
 PATH=/home/thanthese/sparkup/:$PATH
@@ -201,7 +202,7 @@ PATH=/home/thanthese/sparkup/:$PATH
 #source /usr/local/bin/ferret_paths
 
 # host completion
-zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo4.geocent.com
+zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo.geocent.com smann@geo-demo4.geocent.com
 
 # directory aliases
 hash -d nn=~/NN/04/
@@ -219,6 +220,7 @@ alias start-jboss-5="sh ~/jboss-5.1.0/jboss-5.1.0.GA/bin/run.sh"
 alias s4="start-jboss-4"
 alias s5="start-jboss-5"
 alias clear-jboss-5="rm -rf ~/jboss-5.1.0/jboss-5.1.0.GA/**/(tmp|work)(/) ~/jboss-5.1.0/jboss-5.1.0.GA/**/*.ear(.)"
+alias smain="screen -S main"
 
 # grails
 alias war="grails run-war"
@@ -227,6 +229,10 @@ alias app="grails run-app"
 # servers
 alias stage="ssh smann@geo-demo4.geocent.com"
 alias demo="ssh smann@demo.geocent.com"
+alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
+
+# tomcat
+alias killtom="sudo service tomcat6 stop"
 
 
 ##################################################
