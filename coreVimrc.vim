@@ -171,11 +171,11 @@ vmap \s2 !awk '{s+=$2}END{print s}'<CR>
 vmap \s3 !awk '{s+=$3}END{print s}'<CR>
 vmap \s4 !awk '{s+=$4}END{print s}'<CR>
 vmap \s5 !awk '{s+=$5}END{print s}'<CR>
-nmap \s1 yip}o<Esc>kpvip\s1{{j
-nmap \s2 yip}o<Esc>kpvip\s2{{j
-nmap \s3 yip}o<Esc>kpvip\s3{{j
-nmap \s4 yip}o<Esc>kpvip\s4{{j
-nmap \s5 yip}o<Esc>kpvip\s5{{j
+nmap \s1 vip\s1
+nmap \s2 vip\s2
+nmap \s3 vip\s3
+nmap \s4 vip\s4
+nmap \s5 vip\s5
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
