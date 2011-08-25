@@ -49,12 +49,12 @@ function cdd { cd **/$1*(/) }
 # Like `cdf`, but opens the matching file in vim.
 function vif { vim **/$1*(.) }
 
-# ls after every cd
+# ll after every cd
 #
 # source: http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-ever-cd
 function chpwd() {
   emulate -LR zsh
-  ls
+  ls --color=auto -lthr
 }
 
 
@@ -100,15 +100,15 @@ alias apt-get-all="sudo apt-get -y check; sudo apt-get -y update; sudo apt-get -
 alias today="p **/*(m0)"
 
 # command aliases (add constant options)
-alias -g grep="grep -i"
+alias -g grep="grep -i --color=auto"
 alias -g less="less -R"
-alias -g ls="ls"
-alias -g ll="ls -lthr"
+alias -g ls="ls --color=auto"
+alias -g ll="ls --color=auto -lthr"
 
 # pipe aliases
 alias -g B="; beep"
 alias -g C=" | colordiff"
-alias -g G=" | grep -i"
+alias -g G=" | grep -i --color=auto"
 alias -g L=" | less -R"
 alias -g S=" | sort"
 alias -g V=" | grep -iv"
@@ -143,6 +143,30 @@ alias gpull="git pull"
 alias gs="git status"
 alias gtoday="git log --since=\"1am\" --author=\"Stephen Mann\" --no-merges --oneline"
 
+## -----------------------------------------------
+## git prompt
+
+# source: http://stackoverflow.com/questions/1128496/to-get-a-prompt-which-indicates-git-branch-in-zsh
+setopt prompt_subst
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' actionformats \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats       \
+    '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
+
+zstyle ':vcs_info:*' enable git cvs svn
+
+# or use pre_cmd, see man zshcontrib
+vcs_info_wrapper() {
+  vcs_info
+  if [ -n "$vcs_info_msg_0_" ]; then
+    echo "%{$fg[grey]%}${vcs_info_msg_0_}%{$reset_color%}$del"
+  fi
+}
+RPROMPT=$'$(vcs_info_wrapper)'
+
+
 ##################################################
 ## mac specific
 
@@ -165,6 +189,8 @@ export GEOSERVER_HOME="/home/thanthese/geoserver-2.0.1/"
 export GRAILS_HOME="/home/thanthese/grails-1.3.5"
 export JAVA_HOME="/usr/lib/jvm/java-6-sun/"
 export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"  ## NN
+export PATH=$PATH:/home/thanthese/leiningen
+export PATH=$PATH:/home/thanthese/android-sdk-linux_x86/tools
 PATH=/home/thanthese/.cabal/bin/:$PATH
 PATH=/home/thanthese/grails-1.3.5/bin:$PATH
 PATH=/home/thanthese/sparkup/:$PATH
@@ -178,12 +204,12 @@ PATH=/home/thanthese/sparkup/:$PATH
 #source /usr/local/bin/ferret_paths
 
 # host completion
-zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo4.geocent.com
+zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo.geocent.com smann@geo-demo4.geocent.com
 
 # directory aliases
 hash -d nn=~/NN/04/
 hash -d e=~/NetBeansProjects/EOC/
-hash -d n=~/nutrition
+hash -d n=~/Nutrition/
 
 # quick open aliases
 alias o="gnome-open"
@@ -196,10 +222,19 @@ alias start-jboss-5="sh ~/jboss-5.1.0/jboss-5.1.0.GA/bin/run.sh"
 alias s4="start-jboss-4"
 alias s5="start-jboss-5"
 alias clear-jboss-5="rm -rf ~/jboss-5.1.0/jboss-5.1.0.GA/**/(tmp|work)(/) ~/jboss-5.1.0/jboss-5.1.0.GA/**/*.ear(.)"
+alias smain="screen -S main"
+
+# grails
+alias war="grails run-war"
+alias app="grails run-app"
 
 # servers
 alias stage="ssh smann@geo-demo4.geocent.com"
 alias demo="ssh smann@demo.geocent.com"
+alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
+
+# tomcat
+alias killtom="sudo service tomcat6 stop"
 
 
 ##################################################
