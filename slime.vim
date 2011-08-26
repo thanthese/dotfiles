@@ -44,32 +44,3 @@ nmap <C-c><CR> :call Send_to_Screen("\n")<CR>
 nmap <C-c><Space> ggVG<C-c><C-c><C-o><C-o>
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" clojure-specific
-""
-
-nmap KD :call Clojure_lookup_doc()<CR>
-nmap KS :call Clojure_lookup_source()<CR>
-nmap KF :call Clojure_finddoc()<CR>
-nmap KT :call Clojure_run_all_tests()<CR>
-
-nmap Ks v%s)a
-
-function! Clojure_lookup_doc()
-  let doc = input("clojure lookup doc: ")
-  call Send_to_Screen("(doc " . doc . ")\n")
-endfunction
-
-function! Clojure_lookup_source()
-  let source = input("clojure lookup source: ")
-  call Send_to_Screen("(source " . source . ")\n")
-endfunction
-
-function! Clojure_finddoc()
-  let find_doc = input("clojure find doc: ")
-  call Send_to_Screen("(find-doc \"" . find_doc . "\")\n")
-endfunction
-
-function! Clojure_run_all_tests()
-  call Send_to_Screen("(run-tests)\n")
-endfunction
