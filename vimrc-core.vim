@@ -221,19 +221,19 @@ nmap Kd ds)
 
 function! Clojure_lookup_doc()
   let doc = input("clojure lookup doc: ")
-  call Send_to_Screen("(doc " . doc . ")\n")
+  call Send_to_Tmux("(doc " . doc . ")\n")
 endfunction
 
 function! Clojure_lookup_source()
   let source = input("clojure lookup source: ")
-  call Send_to_Screen("(source " . source . ")\n")
+  call Send_to_Tmux("(source " . source . ")\n")
 endfunction
 
 function! Clojure_finddoc()
   let find_doc = input("clojure find doc: ")
-  call Send_to_Screen("(find-doc \"" . find_doc . "\")\n")
+  call Send_to_Tmux("(find-doc \"" . find_doc . "\")\n")
 endfunction
 
 function! Clojure_run_all_tests()
-  call Send_to_Screen("(run-tests)\n")
+  call Send_to_Tmux("(run-tests)\n")
 endfunction
