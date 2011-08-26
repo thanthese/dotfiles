@@ -182,6 +182,9 @@ com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes 
 
 " # Plugin-specific settings
 
+" bufexplorer
+nmap \\ \be
+
 " command-t
 set wildignore+=.git,test/**,*.class,*.war
 
@@ -206,3 +209,31 @@ au FileType clojure omap <buffer> ) /[([{]<CR>
 au FileType clojure nmap <buffer> ( ?[([{]<CR>
 au FileType clojure vmap <buffer> ( ?[([{]<CR>
 au FileType clojure omap <buffer> ( ?[([{]<CR>
+
+nmap KD :call Clojure_lookup_doc()<CR>
+nmap KS :call Clojure_lookup_source()<CR>
+nmap KF :call Clojure_finddoc()<CR>
+nmap KT :call Clojure_run_all_tests()<CR>
+
+" add or remove surround ()
+nmap Ka v%s)a
+nmap Kd ds)
+
+function! Clojure_lookup_doc()
+  let doc = input("clojure lookup doc: ")
+  call Send_to_Screen("(doc " . doc . ")\n")
+endfunction
+
+function! Clojure_lookup_source()
+  let source = input("clojure lookup source: ")
+  call Send_to_Screen("(source " . source . ")\n")
+endfunction
+
+function! Clojure_finddoc()
+  let find_doc = input("clojure find doc: ")
+  call Send_to_Screen("(find-doc \"" . find_doc . "\")\n")
+endfunction
+
+function! Clojure_run_all_tests()
+  call Send_to_Screen("(run-tests)\n")
+endfunction
