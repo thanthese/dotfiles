@@ -15,7 +15,7 @@
 " - lustyExplorer
 " - matchit
 " - NERD_tree
-" - slime.vim
+" - tslime.vim
 " - surround (with repeat.vim)
 
 " ## shortcut conventions
@@ -101,7 +101,7 @@ vnoremap j gj
 " yank matches change convention
 nmap Y y$
 
-" better jumping
+" more accurate jumping
 nnoremap ' `
 
 " ## extras (system commands, ctrl/alt based)
@@ -159,8 +159,8 @@ nmap \rw :set wrap! linebreak!<CR>
 " toggle spell
 nmap \rsp :set spell!<CR>
 
-" add println
-nmap \rr ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
+" toggle wrap and spell
+nmap \rws \rw\rsp
 
 " insert timestamp
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
@@ -206,5 +206,3 @@ au FileType clojure omap <buffer> ) /[([{]<CR>
 au FileType clojure nmap <buffer> ( ?[([{]<CR>
 au FileType clojure vmap <buffer> ( ?[([{]<CR>
 au FileType clojure omap <buffer> ( ?[([{]<CR>
-
-"let g:clj_paren_rainbow=1  " Rainbow parentheses'!
