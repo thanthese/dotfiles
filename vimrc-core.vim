@@ -15,7 +15,7 @@
 " - lustyExplorer
 " - matchit
 " - NERD_tree
-" - slime.vim
+" - tslime.vim
 " - surround (with repeat.vim)
 
 " ## shortcut conventions
@@ -101,7 +101,7 @@ vnoremap j gj
 " yank matches change convention
 nmap Y y$
 
-" better jumping
+" more accurate jumping
 nnoremap ' `
 
 " ## extras (system commands, ctrl/alt based)
@@ -159,8 +159,8 @@ nmap \rw :set wrap! linebreak!<CR>
 " toggle spell
 nmap \rsp :set spell!<CR>
 
-" add println
-nmap \rr ^Yiprintln "<Esc>A is ${<Esc>pA}"<Esc>^
+" toggle wrap and spell
+nmap \rws \rw\rsp
 
 " insert timestamp
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
@@ -181,6 +181,9 @@ nmap \s5 vip\s5
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
 
 " # Plugin-specific settings
+
+" bufexplorer
+nmap \\ \be
 
 " command-t
 set wildignore+=.git,test/**,*.class,*.war
@@ -207,4 +210,30 @@ au FileType clojure nmap <buffer> ( ?[([{]<CR>
 au FileType clojure vmap <buffer> ( ?[([{]<CR>
 au FileType clojure omap <buffer> ( ?[([{]<CR>
 
-"let g:clj_paren_rainbow=1  " Rainbow parentheses'!
+nmap KD :call Clojure_lookup_doc()<CR>
+nmap KS :call Clojure_lookup_source()<CR>
+nmap KF :call Clojure_finddoc()<CR>
+nmap KT :call Clojure_run_all_tests()<CR>
+
+" add or remove surround ()
+nmap Ka v%s)a
+nmap Kd ds)
+
+function! Clojure_lookup_doc()
+  let doc = input("clojure lookup doc: ")
+  call Send_to_Tmux("(doc " . doc . ")\n")
+endfunction
+
+function! Clojure_lookup_source()
+  let source = input("clojure lookup source: ")
+  call Send_to_Tmux("(source " . source . ")\n")
+endfunction
+
+function! Clojure_finddoc()
+  let find_doc = input("clojure find doc: ")
+  call Send_to_Tmux("(find-doc \"" . find_doc . "\")\n")
+endfunction
+
+function! Clojure_run_all_tests()
+  call Send_to_Tmux("(run-tests)\n")
+endfunction

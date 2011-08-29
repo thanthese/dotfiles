@@ -21,13 +21,6 @@ nmap \vs :so ~/.vimrc<CR>
 set wildignore+=.svn,*.ear,**/target/**,target/**,**/target,/target/,*/target/*,target,WebUI/target/**,**/WebUI/target/**
 
 
-" project specific
-" ================
-
-" NITES next specific
-au BufNewFile,BufRead *.ftl setfiletype html
-
-
 " dictionary
 " ==========
 
