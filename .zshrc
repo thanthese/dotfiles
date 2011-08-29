@@ -30,9 +30,6 @@ export EDITOR=vim
 ## -----------------------------------------------
 ## functions
 
-# set terminal title to args
-function title { print -Pn "\e]0;$*\a" }
-
 # "Change Directory to File"
 #
 # Change to directory containing the given filename. Only enough of the
@@ -75,7 +72,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # short aliases
 alias a=ack-grep
-alias b=bash
 alias c=clear
 alias f=find
 alias g=grep
@@ -229,7 +225,8 @@ alias app="grails run-app"
 # servers
 alias stage="ssh smann@geo-demo4.geocent.com"
 alias demo="ssh smann@demo.geocent.com"
-alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
+alias george="ssh -c arcfour,blowfish-cbc smann@geo-demo.geocent.com -XC -L 8333:localhost:8333"
+alias george-root="ssh -c arcfour,blowfish-cbc root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
 
 # tomcat
 alias killtom="sudo service tomcat6 stop"
