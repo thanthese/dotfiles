@@ -103,6 +103,7 @@ nmap Y y$
 
 " more accurate jumping
 nnoremap ' `
+onoremap ' `
 
 " ## extras (system commands, ctrl/alt based)
 
