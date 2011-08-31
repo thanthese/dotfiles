@@ -188,6 +188,7 @@ nmap \\ \be
 
 " command-t
 set wildignore+=.git,test/**,*.class,*.war
+nmap <C-t> :CommandT<CR>
 
 " ack
 let g:ackprg="ack-grep"
