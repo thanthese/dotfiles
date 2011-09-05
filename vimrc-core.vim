@@ -161,7 +161,7 @@ nmap \rw :set wrap! linebreak!<CR>
 nmap \rsp :set spell!<CR>
 
 " toggle wrap and spell
-nmap \rws \rw\rsp
+nmap \rws :set wrap! linebreak! spell!<CR>
 
 " insert timestamp
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
