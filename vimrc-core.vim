@@ -52,6 +52,8 @@ set showmatch
 set showmode
 set wildmenu
 set wildmode=list:longest
+set shortmess+=I
+set colorcolumn=80
 
 " expected behaviors settings
 set hidden      " allows changing of buffers without saving
