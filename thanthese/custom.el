@@ -12,7 +12,11 @@
 (setq whitespace-style '(trailing lines space-before-tab
                                   indentation space-after-tab)
       whitespace-Line-column 80)
-(whitespace-mode 1)
+(global-whitespace-mode 1)
+
+;; number lines
+(global-linum-mode 1)
+(setq linum-format "%d ")
 
 ;; find-file-in-project
 (setq ffip-patterns '("*.rb"
