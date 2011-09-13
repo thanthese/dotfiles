@@ -9,6 +9,11 @@
 (require 'surround)
 (global-surround-mode 1)
 
+;; autocomplete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d//ac-dict")
+(ac-config-default)
+
 ;;; don't require additional plugins
 
 ;; highlight lines longer than 80 chars
