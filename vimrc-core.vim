@@ -205,15 +205,6 @@ nmap \gc :Gcommit<CR>
 " # Filetype-specific settings
 " Note: only the most simple settings can live in the .vimrc
 
-" clojure, navigating (), [], and {}
-au FileType clojure nmap <buffer> ) /[([{]<CR>
-au FileType clojure vmap <buffer> ) /[([{]<CR>
-au FileType clojure omap <buffer> ) /[([{]<CR>
-
-au FileType clojure nmap <buffer> ( ?[([{]<CR>
-au FileType clojure vmap <buffer> ( ?[([{]<CR>
-au FileType clojure omap <buffer> ( ?[([{]<CR>
-
 nmap KD :call Clojure_lookup_doc()<CR>
 nmap KS :call Clojure_lookup_source()<CR>
 nmap KF :call Clojure_finddoc()<CR>
