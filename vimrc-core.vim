@@ -9,12 +9,9 @@
 " ## preferred plugins
 " - bufexplorer
 " - command-t
-" - CSApprox, makes colorschemes work in terminals
 " - fugitive (git plugin)
-" - ir_black, preferred colorscheme
-" - lustyExplorer
+" - ir_black
 " - matchit
-" - NERD_tree
 " - tslime.vim
 " - surround (with repeat.vim)
 
@@ -54,6 +51,8 @@ set wildmenu
 set wildmode=list:longest
 set shortmess+=I
 set colorcolumn=80
+set conceallevel=2
+set concealcursor=nv
 
 " expected behaviors settings
 set hidden      " allows changing of buffers without saving
