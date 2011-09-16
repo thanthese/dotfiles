@@ -91,6 +91,11 @@ autocmd! BufWritePost *.vim source %
 
 " # Helpful mappings
 
+" convienence mappings
+nnoremap z= 1z=
+nnoremap ZX :wa<CR>
+nnoremap ZC :w<CR>
+
 " ## make keys work as expected
 
 " move cursor by screen lines, not by logical lines
