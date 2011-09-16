@@ -89,9 +89,12 @@ autocmd! BufWrite * mark ' | silent! %s/\s\+$// | ''
 " on save a .vim file: source file
 autocmd! BufWritePost *.vim source %
 
+" highlight matches of word under cursor
+autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+
 " # Helpful mappings
 
-" convienence mappings
+" vanity mappings
 nnoremap z= 1z=
 nnoremap ZX :wa<CR>
 nnoremap ZC :w<CR>
