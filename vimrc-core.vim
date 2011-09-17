@@ -97,8 +97,8 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 
 " vanity mappings
 nnoremap z= 1z=
-nnoremap ZX :wa<CR>
-nnoremap ZC :w<CR>
+nnoremap zx :wa<CR>
+nnoremap zc :w<CR>
 
 " ## make keys work as expected
 
