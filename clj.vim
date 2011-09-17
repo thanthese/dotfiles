@@ -7,6 +7,10 @@ imap <C-c>d <C-o><C-c>f
 nmap <C-c>R :%s/\<<C-r><C-w>\>//g<Left><Left>
 nmap <C-c>r yiwvip:s/\<<C-r>"\>//g<Left><Left>
 
+" load current file
+nmap <C-c>l :w<CR>:call Send_to_Tmux("(load-file \"<C-r>%\")\n")<CR>
+nmap <C-c><C-l> <C-c>l
+
 " add surrounding ()
 nmap <C-c>a %v%s)a
 
