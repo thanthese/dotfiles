@@ -1,16 +1,29 @@
-nmap <C-c>d :call Clojure_finddoc()<CR>
-nmap <C-c>D :call Clojure_finddoc(<C-r><C-w>)<CR>
-nmap <C-c>t :call Clojure_run_all_tests()<CR>
+" find documentation
+nmap <C-c>F :call Finddoc_input()<CR>
+nmap <C-c>f :call Finddoc("<C-r><C-w>")<CR>
+imap <C-c>f <C-o><C-c>f
 
-" add or remove surrounding ()
-nmap <C-c>a v%s)a
-nmap <C-c>d ds)
+" search-replace
+nmap <C-c>R :%s/<C-r><C-w>//g<Left><Left>
+nmap <C-c>r yiwvip:s/<C-r>"//g<Left><Left>
 
-function! Clojure_finddoc()
+" add surrounding ()
+nmap <C-c>a %v%s)a
+
+" run tests
+nmap <C-c>t :call Run_all_tests()<CR>
+
+" # functions
+
+function! Finddoc_input()
   let find_doc = input("clojure find doc: ")
-  call Send_to_Tmux("(find-doc \"" . find_doc . "\")\n")
+  call Finddoc(find_doc)
 endfunction
 
-function! Clojure_run_all_tests()
+function! Finddoc(term)
+  call Send_to_Tmux("(find-doc \"" . a:term . "\")\n")
+endfunction
+
+function! Run_all_tests()
   call Send_to_Tmux("(run-tests)\n")
 endfunction
