@@ -51,6 +51,7 @@ set wildmenu
 set wildmode=list:longest
 set shortmess+=I
 set colorcolumn=80
+highlight ColorColumn guibg=#111111 ctermbg=LightGrey
 set conceallevel=2
 set concealcursor=nv
 
@@ -90,7 +91,7 @@ autocmd! BufWrite * mark ' | silent! %s/\s\+$// | ''
 autocmd! BufWritePost *.vim source %
 
 " highlight matches of word under cursor
-autocmd CursorMoved * silent! exe printf('match IncSearch /\<%s\>/', expand('<cword>'))
+autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<cword>'))
 
 " # Helpful mappings
 
@@ -176,11 +177,13 @@ nmap \rws :set wrap! linebreak! spell!<CR>
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
 
 " sum column
+vmap \ss \s1
 vmap \s1 !awk '{s+=$1}END{print s}'<CR>
 vmap \s2 !awk '{s+=$2}END{print s}'<CR>
 vmap \s3 !awk '{s+=$3}END{print s}'<CR>
 vmap \s4 !awk '{s+=$4}END{print s}'<CR>
 vmap \s5 !awk '{s+=$5}END{print s}'<CR>
+nmap \ss \s1
 nmap \s1 vip\s1
 nmap \s2 vip\s2
 nmap \s3 vip\s3
@@ -209,33 +212,3 @@ nmap \gd :Gdiff<CR>
 nmap \gw :Gwrite<CR>
 nmap \gc :Gcommit<CR>
 
-" # Filetype-specific settings
-" Note: only the most simple settings can live in the .vimrc
-
-nmap KD :call Clojure_lookup_doc()<CR>
-nmap KS :call Clojure_lookup_source()<CR>
-nmap KF :call Clojure_finddoc()<CR>
-nmap KT :call Clojure_run_all_tests()<CR>
-
-" add or remove surround ()
-nmap Ka v%s)a
-nmap Kd ds)
-
-function! Clojure_lookup_doc()
-  let doc = input("clojure lookup doc: ")
-  call Send_to_Tmux("(doc " . doc . ")\n")
-endfunction
-
-function! Clojure_lookup_source()
-  let source = input("clojure lookup source: ")
-  call Send_to_Tmux("(source " . source . ")\n")
-endfunction
-
-function! Clojure_finddoc()
-  let find_doc = input("clojure find doc: ")
-  call Send_to_Tmux("(find-doc \"" . find_doc . "\")\n")
-endfunction
-
-function! Clojure_run_all_tests()
-  call Send_to_Tmux("(run-tests)\n")
-endfunction
