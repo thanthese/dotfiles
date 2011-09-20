@@ -57,8 +57,10 @@ zstyle ':completion:*' users-hosts smann@demo.geocent.com smann@geo-demo.geocent
 
 # servers
 alias stage="ssh smann@geo-demo4.geocent.com"
+alias neplo="ssh smann@geo-demo4.geocent.com"
 alias demo="ssh smann@demo.geocent.com"
 alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
+alias devin="ssh smann@geo-dev.geocent.com -XC -L 8333:localhost:8333"
 
 # directory aliases
 hash -d nn=~/NN/04/
