@@ -1,0 +1,11 @@
+  Host geo-dev.geocent.com geo-demo4.geocent.com demo.geocent.com
+     User smann
+     UserKnownHostsFile /dev/null
+     StrictHostKeyChecking no
+  Host *
+     Compression yes
+     CompressionLevel 7
+     Cipher blowfish
+     ServerAliveInterval 600
+     ControlMaster auto
+     ControlPath /tmp/ssh-%r@%h:%p
