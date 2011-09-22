@@ -122,3 +122,6 @@ alias -s md=vim
 alias -s txt=vim
 alias -s xml=vim
 alias -s java=vim
+
+# games
+alias freecell="java -Dfile.encoding=utf-8 -jar ~/freecell/freecell-0.1-dev-standalone.jar"
