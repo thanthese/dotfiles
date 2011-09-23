@@ -11,7 +11,8 @@ alias clj="java -server -jar /Applications/clojure-1.2.0/clojure.jar"
 # colors make macs sad :(
 alias -g ll="ls -lthr"
 
-# grails
-export GRAILS_HOME=/Users/thanthese/grails-1.3.5/
-export PATH=$PATH:/Users/thanthese/grails-1.3.5/bin/
-
+# sjm grails
+export JAVA_HOME=/Library/Java/Home
+export GRAILS_HOME=/Users/thanthese/grails-1.3.5
+PATH="$GRAILS_HOME/bin:${PATH}"
+export PATH
