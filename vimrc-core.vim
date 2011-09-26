@@ -99,6 +99,7 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 nnoremap z= 1z=
 nnoremap zx :wa<CR>
 nnoremap zc :w<CR>
+nnoremap zT Gzozozozozozo?^#<CR>0zt
 
 " ## make keys work as expected
 
