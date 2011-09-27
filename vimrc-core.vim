@@ -204,8 +204,9 @@ set wildignore+=.git,test/**,*.class,*.war
 nmap <C-t> :CommandT<CR>
 
 " ack
-let g:ackprg="ack-grep"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nmap \a :Ack<Space>
+nmap \aa :Ack<Space>
 
 " fugitive
 nmap \gs :Gstatus<CR>
@@ -213,3 +214,11 @@ nmap \gd :Gdiff<CR>
 nmap \gw :Gwrite<CR>
 nmap \gc :Gcommit<CR>
 
+" # Filetype-specific settings
+
+" javascript
+abbr fn function
+
+" general typing
+abbr teh the
+abbr Teh The
