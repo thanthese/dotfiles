@@ -96,10 +96,10 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 " # Helpful mappings
 
 " vanity mappings
-nnoremap z= 1z=
+nnoremap z== 1z=
 nnoremap zx :wa<CR>
 nnoremap zc :w<CR>
-nnoremap zT Gzozozozozozo?^#<CR>0zt
+nnoremap zT \oGzozozozozozo?^#<CR>0zt
 
 " ## make keys work as expected
 
@@ -211,7 +211,6 @@ nmap \aa :Ack<Space>
 " fugitive
 nmap \gs :Gstatus<CR>
 nmap \gd :Gdiff<CR>
-nmap \gw :Gwrite<CR>
 nmap \gc :Gcommit<CR>
 
 " # Filetype-specific settings
