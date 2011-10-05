@@ -156,7 +156,7 @@ inoremap '' ''<Left>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
-" delete empty, matching symbols (when in the middle)
+" delete on either side of cursor
 inoremap <C-j> <Right><Backspace><Backspace>
 
 
@@ -182,9 +182,13 @@ vmap \rd !dc<CR>
 nmap \rsu !!~/sparkup/sparkup<CR>
 vmap \rsu !~/sparkup/sparkup<CR>
 
-" tidy
+" tidy xml
 nmap \rt :Tidy<CR>
 vmap \rt :Tidy<CR>
+
+" tidy json
+nmap \rj :%!python -mjson.tool<CR>
+vmap \rj :!python -mjson.tool<CR>
 
 " toggle wrap
 nmap \rw :set wrap! linebreak!<CR>
