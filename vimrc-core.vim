@@ -145,16 +145,16 @@ nmap <C-Right> <C-W>>
 inoremap ( ()<Left>
 inoremap { {}<Left>
 inoremap [ []<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
-inoremap \" \"\"<Left><Left>
-
-" advance cursor over closing symbol
 inoremap ) <Right>
 inoremap } <Right>
 inoremap ] <Right>
-inoremap <C-l> <Right>
+
+" the trouble doubles
+inoremap \" \"\"<Left><Left>
+inoremap "" ""<Left>
+inoremap '' ''<Left>
 inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 " delete empty, matching symbols (when in the middle)
 inoremap <C-j> <Right><Backspace><Backspace>
