@@ -157,7 +157,7 @@ inoremap <C-l> <Right>
 inoremap <C-h> <Left>
 
 " delete empty, matching symbols (when in the middle)
-inoremap <C-d> <Right><Backspace><Backspace>
+inoremap <C-j> <Right><Backspace><Backspace>
 
 
 " ## refactoring and code manipulation mappings (\r)
