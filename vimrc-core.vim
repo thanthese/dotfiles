@@ -99,7 +99,7 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 nnoremap z== 1z=
 nnoremap zx :wa<CR>
 nnoremap zc :w<CR>
-nnoremap zT \oGzozozozozozo?^#<CR>0zt
+nnoremap zT Gzozozozozozo?^#<CR>0zt
 
 " ## make keys work as expected
 
@@ -138,6 +138,27 @@ nmap <C-Up>    <C-W>-
 nmap <C-Down>  <C-W>+
 nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
+
+" ## matching/closing paren
+
+" insert doubles
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap \" \"\"<Left><Left>
+
+" advance cursor over closing symbol
+inoremap ) <Right>
+inoremap } <Right>
+inoremap ] <Right>
+inoremap <C-l> <Right>
+inoremap <C-h> <Left>
+
+" delete empty, matching symbols (when in the middle)
+inoremap <C-d> <Right><Backspace><Backspace>
+
 
 " ## refactoring and code manipulation mappings (\r)
 
