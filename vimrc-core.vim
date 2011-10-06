@@ -122,12 +122,12 @@ onoremap ' `
 " ## extras (system commands, ctrl/alt based)
 
 " yank/put to system clipboard
-nmap <F7> gg"+yG<C-o><C-o>:echo "-- File Yanked to Clipboard --"<CR>
-vmap <F7> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
+nmap <F8> gg"+yG<C-o><C-o>:echo "-- File Yanked to Clipboard --"<CR>
+vmap <F8> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 
-nmap <F8> "+P
-vmap <F8> "+P
-imap <F8> <C-r>+
+nmap <F9> "+P
+vmap <F9> "+P
+imap <F9> <C-r>+
 
 " switch window
 nmap <C-h> <C-w>h
