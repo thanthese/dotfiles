@@ -139,27 +139,6 @@ nmap <C-Down>  <C-W>+
 nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
 
-" ## matching/closing paren
-
-" insert doubles
-inoremap ( ()<Left>
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap ) <Right>
-inoremap } <Right>
-inoremap ] <Right>
-
-" the trouble doubles
-inoremap \" \"\"<Left><Left>
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-
-" delete on either side of cursor
-inoremap <C-j> <Right><Backspace><Backspace>
-
-
 " ## refactoring and code manipulation mappings (\r)
 
 " par
