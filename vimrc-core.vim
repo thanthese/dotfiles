@@ -85,7 +85,7 @@ set backupdir^=$HOME/.vim_swap
 " # On events
 
 " on save any: trim trailing whitespace
-autocmd! BufWrite * mark ' | silent! %s/\s\+$// | ''
+autocmd! BufWrite * mark ` | silent! %s/\s\+$// | ``
 
 " on save a .vim file: source file
 autocmd! BufWritePost *.vim source %

@@ -23,13 +23,15 @@ inoremap <expr> } Right(1) == "}" ? "\<Right>" : "}"
 
 " insert trouble pairs
 inoremap '' ''<Left>
+inoremap `` ``<Left>
 inoremap "" ""<Left>
 
 " smart close trouble pairs
 inoremap <expr> ' Right(1) == "'" ? "\<Right>" : "'"
+inoremap <expr> ` Right(1) == "`" ? "\<Right>" : "`"
 inoremap <expr> " Right(1) == "\"" ? "\<Right>" : "\""
 
-" insert or smart close hardest pair
+" insert or smart close hardest pair (\"\")
 inoremap <expr> \" Right(2) == "\\\"" ? "\<Right>\<Right>" : "\\\"\\\"\<left><left>"
 
 " smart backspace
@@ -48,7 +50,7 @@ function! SmartBackspace()
   return "\<Backspace>"
 endfunction
 function! IsPair(pair)
-  return a:pair == "()" || a:pair == "[]" || a:pair == "{}" || a:pair == "''" || a:pair == "\"\""
+  return a:pair == "()" || a:pair == "``" || a:pair == "[]" || a:pair == "{}" || a:pair == "''" || a:pair == "\"\""
 endfunction
 
 " get count chars right of the cursor
