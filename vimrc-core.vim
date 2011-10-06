@@ -37,6 +37,8 @@ set guioptions-=m  " no menu bar
 set guioptions-=r  " no right scroll bar
 set guioptions-=L  " no left  scroll bar
 set guioptions+=c  " use console dialogs
+set guioptions+=aA " use system clipboard
+set guioptions+=v  " vertical layout for dialogs
 
 " appearance
 colorscheme ir_black
@@ -60,6 +62,7 @@ set hidden      " allows changing of buffers without saving
 set lazyredraw  " don't redraw screen during macros
 set splitright  " vertical splits appear on right
 set mouse=a     " enable the mouse in the terminal
+set clipboard=unnamed " make "* the anonymous register
 
 " tabs
 set expandtab
@@ -119,13 +122,12 @@ onoremap ' `
 " ## extras (system commands, ctrl/alt based)
 
 " yank/put to system clipboard
-nmap <M-Y> gg"+yG<C-o><C-o>:echo "-- File Yanked to Clipboard --"<CR>
-nmap <M-y> "+yy:echo "-- Line Yanked to Clipboard --"<CR>
-vmap <M-y> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
+nmap <F7> gg"+yG<C-o><C-o>:echo "-- File Yanked to Clipboard --"<CR>
+vmap <F7> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 
-nmap <M-p> "+P
-vmap <M-p> "+P
-imap <M-p> <C-r>+
+nmap <F8> "+P
+vmap <F8> "+P
+imap <F8> <C-r>+
 
 " switch window
 nmap <C-h> <C-w>h
