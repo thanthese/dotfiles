@@ -104,6 +104,10 @@ nnoremap zx :wa<CR>
 nnoremap zc :w<CR>
 nnoremap zT Gzozozozozozo?^#<CR>0zt
 
+" insert mode!
+imap <C-h> <Left>
+imap <C-l> <Right>
+
 " ## make keys work as expected
 
 " move cursor by screen lines, not by logical lines
@@ -223,6 +227,8 @@ nmap \gc :Gcommit<CR>
 
 " javascript
 abbr fn function
+imap <C-k><C-k> console.log();<Left><Left>
+vmap <C-k><C-k> cconsole.log();<Esc>hP
 
 " general typing
 abbr teh the
