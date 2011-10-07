@@ -4,11 +4,11 @@
 " Usage:
 "   Inserting (), [], {}, and \"\" should work just as you expect.
 "
-"   Double '' or "" to add pair: "|"
+"   Double '', ``, "" to add pair: "|"
 "
 "   Delete empty pair two ways: "|" or ""|
 "
-" src: http://vim.wikia.com/wiki/Automatically_append_closing_characters
+" inspiration: http://vim.wikia.com/wiki/Automatically_append_closing_characters
 "
 
 " insert easy pairs
@@ -50,7 +50,7 @@ function! SmartBackspace()
   return "\<Backspace>"
 endfunction
 function! IsPair(pair)
-  return a:pair == "()" || a:pair == "``" || a:pair == "[]" || a:pair == "{}" || a:pair == "''" || a:pair == "\"\""
+  return a:pair == "()" || a:pair == "[]" || a:pair == "{}" || a:pair == "''" || a:pair == "``" || a:pair == "\"\""
 endfunction
 
 " get count chars right of the cursor
