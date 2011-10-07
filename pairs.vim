@@ -15,6 +15,7 @@
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
+inoremap {<CR> {<CR>}<C-o>O
 
 " smart close easy pairs
 inoremap <expr> ) Right(1) == ")" ? "\<Right>" : ")"
