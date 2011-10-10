@@ -143,9 +143,7 @@ imap <F9> <C-r>+
 
 " switch window
 nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
 nmap <C-l> <C-w>l
-nmap <C-k> <C-w>k
 
 " resize window
 nmap <C-Up>    <C-W>-
@@ -234,5 +232,6 @@ imap <C-k>jc console.log();<Left><Left>
 vmap <C-k>jc cconsole.log();<Esc>hP
 
 " # General abbreviations
+
 abbr teh the
 abbr Teh The
