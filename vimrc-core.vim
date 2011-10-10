@@ -7,20 +7,20 @@
 " # Documentation
 
 " ## preferred plugins
+" - surround (with repeat)
+" - tslime
 " - bufexplorer
 " - command-t
-" - fugitive (git plugin)
+" - vimclojure
 " - ir_black
 " - matchit
-" - tslime.vim
-" - surround (with repeat.vim)
+" - fugitive (git plugin)
 
-" ## shortcut conventions
-" - prefer custom Ex commands
-" - \    : navigation, aka shortcuts-to-files
-" - \r   : run a command that will have an effect on the code
-" - ctrl : window management
-" - alt  : - not used -
+" ## shortcut prefix conventions
+" - \     : navigation, aka shortcuts-to-files
+" - <C-k> : run a command that will have an effect on the code
+" - <C-c> : filetype/tslime-specific
+" - ctrl  : window management
 
 " # Look and feel, passive settings
 
@@ -104,9 +104,16 @@ nnoremap zx :wa<CR>
 nnoremap zc :w<CR>
 nnoremap zT Gzozozozozozo?^#<CR>0zt
 
-" insert mode!
-imap <C-h> <Left>
-imap <C-l> <Right>
+" juju paren matching
+inoremap <C-j>( ()<Left>
+inoremap <C-j>[ []<Left>
+inoremap <C-j>{ {}<Left>
+inoremap <C-j>" ""<Left>
+inoremap <C-j>' ''<Left>
+inoremap <C-j>` ``<Left>
+inoremap <C-j>} {<CR>}<C-o>O
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 " ## make keys work as expected
 
@@ -125,10 +132,11 @@ onoremap ' `
 
 " ## extras (system commands, ctrl/alt based)
 
-" yank/put to system clipboard
+" yank to system clipboard
 nmap <F8> gg"+yG<C-o><C-o>:echo "-- File Yanked to Clipboard --"<CR>
 vmap <F8> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 
+" put from system clipboard
 nmap <F9> "+P
 vmap <F9> "+P
 imap <F9> <C-r>+
@@ -145,61 +153,56 @@ nmap <C-Down>  <C-W>+
 nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
 
-" ## refactoring and code manipulation mappings (\r)
+" ## refactoring and code manipulation mappings (<C-k>)
 
 " par
-nmap \rp !!par<CR>
-vmap \rp !par<CR>
+nmap <C-k>p !!par<CR>
+vmap <C-k>p !par<CR>
 
 " sort
-nmap \rs :%!sort<CR>
-vmap \rs !sort<CR>
+nmap <C-k>s :%!sort<CR>
+vmap <C-k>s !sort<CR>
 
 " unique
-nmap \ru :%!uniq<CR>
-vmap \ru !uniq<CR>
+nmap <C-k>u :%!uniq<CR>
+vmap <C-k>u !uniq<CR>
 
 " dc
-nmap \rd yip}O<Esc>pvip!dc<CR>
-vmap \rd !dc<CR>
+nmap <C-k>d yip}O<Esc>pvip!dc<CR>
+vmap <C-k>d !dc<CR>
 
 " sparkup
-nmap \rsu !!~/sparkup/sparkup<CR>
-vmap \rsu !~/sparkup/sparkup<CR>
+nmap <C-k>k !!~/sparkup/sparkup<CR>
+vmap <C-k>k !~/sparkup/sparkup<CR>
 
 " tidy xml
-nmap \rt :Tidy<CR>
-vmap \rt :Tidy<CR>
+nmap <C-k>t :Tidy<CR>
+vmap <C-k>t :Tidy<CR>
 
 " tidy json
-nmap \rj :%!python -mjson.tool<CR>
-vmap \rj :!python -mjson.tool<CR>
+nmap <C-k>j :%!python -mjson.tool<CR>
+vmap <C-k>j :!python -mjson.tool<CR>
 
 " toggle wrap
-nmap \rw :set wrap! linebreak!<CR>
+nmap <C-k>w :set wrap! linebreak!<CR>
 
 " toggle spell
-nmap \rsp :set spell!<CR>
-
-" toggle wrap and spell
-nmap \rws :set wrap! linebreak! spell!<CR>
+nmap <C-k>l :set spell!<CR>
 
 " insert timestamp
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
 
 " sum column
-vmap \ss \s1
-vmap \s1 !awk '{s+=$1}END{print s}'<CR>
-vmap \s2 !awk '{s+=$2}END{print s}'<CR>
-vmap \s3 !awk '{s+=$3}END{print s}'<CR>
-vmap \s4 !awk '{s+=$4}END{print s}'<CR>
-vmap \s5 !awk '{s+=$5}END{print s}'<CR>
-nmap \ss \s1
-nmap \s1 vip\s1
-nmap \s2 vip\s2
-nmap \s3 vip\s3
-nmap \s4 vip\s4
-nmap \s5 vip\s5
+vmap <C-k>1 !awk '{s+=$1}END{print s}'<CR>
+vmap <C-k>2 !awk '{s+=$2}END{print s}'<CR>
+vmap <C-k>3 !awk '{s+=$3}END{print s}'<CR>
+vmap <C-k>4 !awk '{s+=$4}END{print s}'<CR>
+vmap <C-k>5 !awk '{s+=$5}END{print s}'<CR>
+nmap <C-k>1 vip<C-k>1
+nmap <C-k>2 vip<C-k>2
+nmap <C-k>3 vip<C-k>3
+nmap <C-k>4 vip<C-k>4
+nmap <C-k>5 vip<C-k>5
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
@@ -226,10 +229,10 @@ nmap \gc :Gcommit<CR>
 " # Filetype-specific settings
 
 " javascript
-abbr fn function
-imap <C-k><C-k> console.log();<Left><Left>
-vmap <C-k><C-k> cconsole.log();<Esc>hP
+imap <C-k>jf function
+imap <C-k>jc console.log();<Left><Left>
+vmap <C-k>jc cconsole.log();<Esc>hP
 
-" general typing
+" # General abbreviations
 abbr teh the
 abbr Teh The
