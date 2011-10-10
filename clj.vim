@@ -34,6 +34,10 @@ nmap <C-c><C-a> <C-c>a
 nmap <C-c>p %v%s)aclojure.pprint/pprint <Esc>F(
 nmap <C-c><C-p> <C-c>p
 
+" format code
+nmap <silent> <C-c>f =ip<CR>
+nmap <silent> <C-c><C-f> <C-c>f
+
 " run tests
 nmap <C-c>t :call Send_to_Tmux("(run-tests)\n")<CR>
 nmap <C-c><C-t> <C-c>t
