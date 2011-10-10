@@ -35,7 +35,7 @@ nmap <C-c>p %v%s)aclojure.pprint/pprint <Esc>F(
 nmap <C-c><C-p> <C-c>p
 
 " format code
-nmap <silent> <C-c>f =ip<CR>
+nmap <silent> <C-c>f :mark '<CR>=ip<CR>''
 nmap <silent> <C-c><C-f> <C-c>f
 
 " run tests
@@ -48,7 +48,7 @@ function! Doc_input()
 endfunction
 
 function! Doc(fn)
-  call Send_to_Tmux("(doc " . a:fn . ")\n")
+  call Send_to_Tmux("(clojure.repl/doc " . a:fn . ")\n")
 endfunction
 
 function! Source_input()
