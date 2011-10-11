@@ -231,11 +231,11 @@ nmap \gc :Gcommit<CR>
 " # Filetype-specific settings
 
 " javascript
-imap <C-k>jf function
+imap <C-k>ju function
 imap <C-k>jc console.log();<Left><Left>
 vmap <C-k>jc cconsole.log();<Esc>hP
-nmap <C-k>jo vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
-vmap <C-k>jo !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
+nmap <C-k>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
+vmap <C-k>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
 " # General abbreviations
 
