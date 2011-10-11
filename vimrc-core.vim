@@ -215,8 +215,8 @@ com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes 
 nmap \\ \be
 
 " command-t
-set wildignore+=.git,test/**,*.class,*.war
 nmap <C-t> :CommandT<CR>
+set wildignore+=.git,test/**,*.class,*.war,lib/**,**/GeoExt/*,**/OpenLayers-2.11/*,**/ext-3.4.0/*,**/ext-4.0.2a/*
 
 " ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
@@ -234,6 +234,8 @@ nmap \gc :Gcommit<CR>
 imap <C-k>jf function
 imap <C-k>jc console.log();<Left><Left>
 vmap <C-k>jc cconsole.log();<Esc>hP
+nmap <C-k>jo vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
+vmap <C-k>jo !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
 " # General abbreviations
 
