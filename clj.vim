@@ -18,6 +18,7 @@ nmap <C-c>r yiwvip:s/\<<C-r>"\>//g<Left><Left>
 nmap <C-c><C-r> <C-c>r
 vmap <C-c>r yvip:s/\<C-r>"\>//g<Left><Left>
 vmap <C-c><C-r> <C-c>r
+vmap <C-c>R y:%s/\<<C-r>"\>//g<Left><Left>
 
 " load current file
 nmap <C-c>l :w<CR>:call Send_to_Tmux("(load-file \"<C-r>%\")\n")<CR><CR>
