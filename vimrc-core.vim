@@ -216,7 +216,7 @@ nmap \\ \be
 
 " command-t
 nmap <C-t> :CommandT<CR>
-set wildignore+=.git,test/**,*.class,*.war,lib/**,**/GeoExt/*,**/OpenLayers-2.11/*,**/ext-3.4.0/*,**/ext-4.0.2a/*,**/classes*
+set wildignore+=.git,test/**,*.class,*.war,lib/**,**/GeoExt/*,**/OpenLayers-2.11/*,**/ext-3.2.1/*,**/ext-3.4.0/*,**/ext-4.0.2a/*,**/classes*
 
 " ack
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
