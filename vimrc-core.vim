@@ -111,7 +111,8 @@ inoremap <C-j>{ {}<Left>
 inoremap <C-j>" ""<Left>
 inoremap <C-j>' ''<Left>
 inoremap <C-j>` ``<Left>
-inoremap <C-j><C-9> ()<Left>
+inoremap <C-j>9 ()<Left>
+inoremap <C-j><C-[> []<Left>
 inoremap <C-j><C-]> {}<Left>
 inoremap <C-j>} {<CR>}<C-o>O
 inoremap <C-j>\ \"\"<Left><Left>
