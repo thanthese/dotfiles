@@ -111,8 +111,7 @@ inoremap <C-j>{ {}<Left>
 inoremap <C-j>' ""<Left>
 inoremap <C-j>` ``<Left>
 inoremap <C-j>9 ()<Left>
-inoremap <C-j><C-[> []<Left>
-inoremap <C-j><C-]> {}<Left>
+inoremap <C-j>] {}<Left>
 inoremap <C-j>} {<CR>}<C-o>O
 inoremap <C-j>\ \"\"<Left><Left>
 
@@ -177,6 +176,10 @@ vmap <C-k>d !dc<CR>
 " sparkup
 nmap <C-k>k !!~/sparkup/sparkup<CR>
 vmap <C-k>k !~/sparkup/sparkup<CR>
+
+" format code in paragraph
+nmap <silent> <C-k>f :mark '<CR>=ip<CR>''
+nmap <silent> <C-k><C-f> <C-k>f
 
 " tidy xml
 nmap <C-k>t :Tidy<CR>
