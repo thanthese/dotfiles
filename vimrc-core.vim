@@ -108,8 +108,7 @@ nnoremap zT Gzozozozozozo?^#<CR>0zt
 inoremap <C-j>( ()<Left>
 inoremap <C-j>[ []<Left>
 inoremap <C-j>{ {}<Left>
-inoremap <C-j>" ""<Left>
-inoremap <C-j>' ''<Left>
+inoremap <C-j>' ""<Left>
 inoremap <C-j>` ``<Left>
 inoremap <C-j>9 ()<Left>
 inoremap <C-j><C-[> []<Left>
@@ -192,6 +191,7 @@ nmap <C-k>w :set wrap! linebreak!<CR>
 
 " toggle spell
 nmap <C-k>l :set spell!<CR>
+nmap <C-k><C-l> <C-k>l
 
 " insert timestamp
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
