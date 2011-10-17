@@ -98,6 +98,7 @@ alias start-simple-web-server="python -m SimpleHTTPServer"
 alias pwgen-standard="pwgen -sy 20 1"
 alias apt-get-all="sudo apt-get -y check; sudo apt-get -y update; sudo apt-get -y upgrade; sudo apt-get -y autoremove; sudo apt-get -y clean; sudo apt-get -y autoclean; sudo apt-get -y dist-upgrade;"
 alias today="p **/*(m0)"
+alias logs="tail -f /var/lib/tomcat6/logs/catalina.out"
 
 # command aliases (add constant options)
 alias -g less="less -R"
