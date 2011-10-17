@@ -162,6 +162,10 @@ vmap <C-k>u !uniq<CR>
 nmap <C-k>d yip}O<Esc>pvip!dc<CR>
 vmap <C-k>d !dc<CR>
 
+" bc
+nmap <C-k>b !!bc<CR>
+vmap <C-k>b !bc<CR>
+
 " sparkup
 nmap <C-k>k !!~/sparkup/sparkup<CR>
 vmap <C-k>k !~/sparkup/sparkup<CR>
