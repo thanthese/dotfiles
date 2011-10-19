@@ -67,6 +67,7 @@ alias dev="ssh smann@geo-dev.geocent.com -XC -L 8333:localhost:8333"
 hash -d nn=~/NN/04/
 hash -d e=~/NetBeansProjects/EOC/
 hash -d n=~/Nutrition/
+hash -d t=/var/lib/tomcat6/webapps/
 
 # quick open aliases
 alias o="gnome-open"

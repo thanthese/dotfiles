@@ -20,7 +20,7 @@ inoremap <expr> ] Right(1) == "]" ? "\<Right>" : "]"
 inoremap <expr> } Right(1) == "}" ? "\<Right>" : "}"
 
 " smart backspace
-imap <expr> <Backspace> SmartBackspace()
+inoremap <expr> <Backspace> SmartBackspace()
 function! SmartBackspace()
   " example: delete "|"
   if IsPair(Left(1,2))
