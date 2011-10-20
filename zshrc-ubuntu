@@ -86,6 +86,7 @@ alias smain="screen -S main"
 alias tstart="sudo service tomcat6 start"
 alias tstop="sudo service tomcat6 stop"
 alias trestart="sudo service tomcat6 stop"
+alias tlog="tail -f /var/lib/tomcat6/logs/catalina.out"
 
 # grails
 alias war="grails run-war"
