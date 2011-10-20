@@ -100,8 +100,6 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 
 " vanity mappings
 nnoremap z== 1z=
-nnoremap zx :wa<CR>
-nnoremap zc :w<CR>
 nnoremap zT Gzv?^#<CR>0zt
 nnoremap <C-[> :wa<CR>
 
