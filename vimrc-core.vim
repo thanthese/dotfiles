@@ -103,6 +103,7 @@ nnoremap z== 1z=
 nnoremap zx :wa<CR>
 nnoremap zc :w<CR>
 nnoremap zT Gzv?^#<CR>0zt
+nnoremap <C-[> :wa<CR>
 
 " insert mode cursor movement
 inoremap <C-h> <Left>
