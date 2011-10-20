@@ -82,6 +82,11 @@ alias s5="start-jboss-5"
 alias clear-jboss-5="rm -rf ~/jboss-5.1.0/jboss-5.1.0.GA/**/(tmp|work)(/) ~/jboss-5.1.0/jboss-5.1.0.GA/**/*.ear(.)"
 alias smain="screen -S main"
 
+# tomcat mess
+alias tstart="sudo service tomcat6 start"
+alias tstop="sudo service tomcat6 stop"
+alias trestart="sudo service tomcat6 stop"
+
 # grails
 alias war="grails run-war"
 alias app="grails run-app"
