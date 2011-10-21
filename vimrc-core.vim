@@ -9,6 +9,7 @@
 " ## preferred plugins
 " - surround (with repeat)
 " - tslime
+" - fuzzyfinder
 " - bufexplorer
 " - command-t
 " - vimclojure
@@ -101,6 +102,7 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 " vanity mappings
 nnoremap z== 1z=
 nnoremap <C-[> :wa<CR>:echo "-- File Saved --"<CR>
+nnoremap <Space> :
 
 " insert mode cursor movement
 inoremap <C-h> <Left>
@@ -121,7 +123,7 @@ nmap Y y$
 nnoremap ' `
 onoremap ' `
 
-" ## extras (system commands, ctrl/alt based)
+" ## clipboard
 
 " yank to system clipboard
 nmap <F8> gg"+yG<C-o><C-o>:echo "-- File Yanked to Clipboard --"<CR>
@@ -131,6 +133,8 @@ vmap <F8> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 nmap <F9> "+P
 vmap <F9> "+P
 imap <F9> <C-r>+
+
+" ## windows
 
 " switch window
 nmap <C-h> <C-w>h
@@ -187,7 +191,7 @@ nmap <C-k>w :set wrap! linebreak!<CR>
 nmap <C-k>l :set spell!<CR>
 nmap <C-k><C-l> <C-k>l
 
-" insert timestamp
+" insert datestamp
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
 
 " sum column
@@ -234,7 +238,7 @@ nmap \gc :Gcommit<CR>
 " # Filetype-specific settings
 
 " javascript
-imap <C-k>ju function
+imap <C-k>jf function
 imap <C-k>jc console.log();<Left><Left>
 vmap <C-k>jc cconsole.log();<Esc>hP
 nmap <C-k>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
