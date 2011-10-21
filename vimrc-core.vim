@@ -101,7 +101,7 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 
 " vanity mappings
 nnoremap z== 1z=
-nnoremap <C-[> :wa<CR>:echo "-- File Saved --"<CR>
+nnoremap <C-[> :wa<CR>:echo "-- Saved All --"<CR>
 nnoremap <Space> :
 
 " insert mode cursor movement
