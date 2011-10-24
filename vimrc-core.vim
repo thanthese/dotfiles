@@ -64,6 +64,7 @@ set lazyredraw  " don't redraw screen during macros
 set splitright  " vertical splits appear on right
 set mouse=a     " enable the mouse in the terminal
 set clipboard=unnamed " make "* the anonymous register
+set autoread    " re-read file if file has changed
 
 " tabs
 set expandtab
@@ -102,12 +103,17 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 " vanity mappings
 nnoremap z== 1z=
 nnoremap <Space> :wa<CR>:echo "-- Saved All --"<CR>
+nnoremap <CR> o<Esc>
 
 " insert mode cursor movement
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
 " ## make keys work as expected
+
+" search on visual mode
+vnoremap <silent> * :call VisualSearch('f')<CR>
+vnoremap <silent> # :call VisualSearch('b')<CR>
 
 " move cursor by screen lines, not by logical lines
 nnoremap k gk
