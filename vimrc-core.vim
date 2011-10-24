@@ -211,11 +211,11 @@ com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes 
 " # Plugin-specific settings
 
 " fuzzy finder
-nmap Kf :FufCoverageFile<CR>
-nmap Kb :FufBuffer<CR>
-nmap K/ :FufLine<CR>
-nmap Kh :FufHelp<CR>
-nmap Kc :FufChangeList<CR>
+nmap <C-k><C-f> :FufCoverageFile<CR>
+nmap <C-k><C-b> :FufBuffer<CR>
+nmap <C-k><C-/> :FufLine<CR>
+nmap <C-k><C-h> :FufHelp<CR>
+nmap <C-k><C-c> :FufChangeList<CR>
 
 " bufexplorer
 nmap \\ \be
