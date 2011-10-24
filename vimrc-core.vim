@@ -179,7 +179,6 @@ vmap <C-k>k !~/sparkup/sparkup<CR>
 
 " format code in paragraph
 nmap <silent> <C-k>f :mark '<CR>=ip<CR>''
-nmap <silent> <C-k><C-f> <C-k>f
 
 " tidy xml
 nmap <C-k>t :Tidy<CR>
@@ -194,7 +193,6 @@ nmap <C-k>w :set wrap! linebreak!<CR>
 
 " toggle spell
 nmap <C-k>l :set spell!<CR>
-nmap <C-k><C-l> <C-k>l
 
 " insert datestamp
 imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
