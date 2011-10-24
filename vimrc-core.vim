@@ -195,7 +195,7 @@ nmap <C-k>w :set wrap! linebreak!<CR>
 nmap <C-k>l :set spell!<CR>
 
 " insert datestamp
-imap <C-d> <C-r>="[" . strftime("%d %b %Y") . "]"<CR>
+imap <C-k>d <C-r>="[" . strftime("%a %d %b %Y") . "]"<CR>
 
 " sum column
 vmap <C-k>1 !awk '{s+=$1}END{print s}'<CR>
