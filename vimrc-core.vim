@@ -102,7 +102,7 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 
 " vanity mappings
 nnoremap z== 1z=
-nnoremap <Space> :wa<CR>:echo "-- Saved All --"<CR>
+nnoremap <Space> :wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
 nnoremap <CR> o<Esc>
 
 " insert mode cursor movement
@@ -195,7 +195,7 @@ nmap <C-k>w :set wrap! linebreak!<CR>
 nmap <C-k>l :set spell!<CR>
 
 " insert datestamp
-imap <C-k>d <C-r>="[" . strftime("%a %d %b %Y") . "]"<CR>
+imap <C-d> <C-r>="[" . strftime("%a %d %b %Y") . "]"<CR>
 
 " sum column
 vmap <C-k>1 !awk '{s+=$1}END{print s}'<CR>
