@@ -8,6 +8,7 @@ nmap \h :e ~/
 nmap \o :e ~/Dropbox/all-notes.md<CR>
 nmap \O :e ~/Dropbox/all-notes.md<CR>Gzv?^#<CR>0zt
 nmap \r :e ~/scratch.txt<CR>
+nmap \s :e /sandbox/scratch.md<CR>
 nmap \v1 :e ~/dotfiles/vimrc-core.vim<CR>
 nmap \v2 :e ~/dotfiles/vimrc-mac.vim<CR>
 nmap \v :e ~/.vimrc<CR>

@@ -9,6 +9,7 @@ nmap \nn :cd ~/NN/04/<CR>
 nmap \n :NERDTree<CR>
 nmap \o :e ~/Dropbox/all-notes.md<CR>
 nmap \O :e ~/Dropbox/all-notes.md<CR>Gzv?^#<CR>0zt
+nmap \s :e /sandbox/scratch.md<CR>
 nmap \v1 :e ~/dotfiles/vimrc-core.vim<CR>
 nmap \v2 :e ~/dotfiles/vimrc-ubuntu.vim<CR>
 nmap \v :e ~/.vimrc<CR>
