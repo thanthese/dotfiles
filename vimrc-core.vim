@@ -109,6 +109,10 @@ nnoremap <CR> o<Esc>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" whitespace visual surrounds
+vmap <Space> <Esc>'>a<Space><Esc>'<i<Space><Esc>
+vmap <CR> <Esc>o<Esc>kO<Esc>j
+
 " ## make keys work as expected
 
 " search on visual mode
