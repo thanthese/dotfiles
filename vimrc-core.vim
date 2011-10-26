@@ -102,7 +102,7 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 
 " vanity mappings
 nnoremap z== 1z=
-nnoremap <Space> :wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
+nnoremap <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
 nnoremap <CR> o<Esc>
 
 " insert mode cursor movement
@@ -112,8 +112,8 @@ inoremap <C-l> <Right>
 " ## make keys work as expected
 
 " search on visual mode
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
+vnoremap <silent> * y:/<C-r>"<CR>
+vnoremap <silent> # y:?<C-r>"<CR>
 
 " move cursor by screen lines, not by logical lines
 nnoremap k gk
