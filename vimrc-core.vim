@@ -111,7 +111,7 @@ inoremap <C-l> <Right>
 
 " whitespace visual surrounds
 vmap s<Space> <Esc>'>a<Space><Esc>'<i<Space><Esc>
-vmap s<CR> <Esc>o<Esc>kO<Esc>j
+vmap s<CR> <Esc>'>o<Esc>'<O<Esc>j
 
 " ## make keys work as expected
 
