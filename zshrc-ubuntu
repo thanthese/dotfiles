@@ -89,7 +89,7 @@ alias tlog="tail -f /var/lib/tomcat6/logs/catalina.out"
 
 # tomcat process mess
 alias tomcat-to-src="cp /var/lib/tomcat6/webapps/EOC/js/Eoc/map2.js ~/OpenCOP/web-app/js/Eoc/map2.js"
-alias src-to-tomcat="cp ~/OpenCOP/web-app/js/Eoc/map2.js /var/lib/tomcat6/webapps/EOC/js/Eoc/map2.js"
+alias src-to-tomcat="sudo cp ~/OpenCOP/web-app/js/Eoc/map2.js /var/lib/tomcat6/webapps/EOC/js/Eoc/map2.js"
 
 # grails
 alias war="grails run-war"
