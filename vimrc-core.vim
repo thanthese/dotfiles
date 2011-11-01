@@ -247,8 +247,8 @@ nmap \gc :Gcommit<CR>
 " javascript
 imap <C-k>jf function
 imap <C-k>jc console.log()<Left>
-vmap <C-k>jc cconsole.log()<Esc>P
-nmap <C-k>jc ^Cconsole.log()<Esc>P
+vmap <C-k>jc cconsole.log()<Esc>P^
+nmap <C-k>jc ^Cconsole.log()<Esc>P^
 nmap <C-k>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 vmap <C-k>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
