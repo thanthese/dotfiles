@@ -102,18 +102,22 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 
 " vanity mappings
 nnoremap z== 1z=
-nnoremap <Space> :wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
+nnoremap <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
 nnoremap <CR> o<Esc>
 
 " insert mode cursor movement
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" whitespace visual surrounds
+vmap s<Space> <Esc>'>a<Space><Esc>'<i<Space><Esc>
+vmap s<CR> <Esc>'>o<Esc>'<O<Esc>j
+
 " ## make keys work as expected
 
 " search on visual mode
-vnoremap <silent> * :call VisualSearch('f')<CR>
-vnoremap <silent> # :call VisualSearch('b')<CR>
+vnoremap <silent> * y:/<C-r>"<CR>
+vnoremap <silent> # y:?<C-r>"<CR>
 
 " move cursor by screen lines, not by logical lines
 nnoremap k gk
@@ -242,8 +246,9 @@ nmap \gc :Gcommit<CR>
 
 " javascript
 imap <C-k>jf function
-imap <C-k>jc console.log();<Left><Left>
-vmap <C-k>jc cconsole.log();<Esc>hP
+imap <C-k>jc console.log()<Left>
+vmap <C-k>jc cconsole.log()<Esc>P^
+nmap <C-k>jc ^Cconsole.log()<Esc>P^
 nmap <C-k>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 vmap <C-k>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
