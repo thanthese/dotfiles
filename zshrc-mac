@@ -16,3 +16,6 @@ export JAVA_HOME=/Library/Java/Home
 export GRAILS_HOME=/Users/thanthese/grails-1.3.5
 PATH="$GRAILS_HOME/bin:${PATH}"
 export PATH
+
+# games!
+alias zelda="cd ~/mupen64plus-1.99.4-osx/x86_32/; ./run_rice.sh zelda.z64; cd -"
