@@ -199,7 +199,8 @@ nmap <C-k>w :set wrap! linebreak!<CR>
 nmap <C-k>l :set spell!<CR>
 
 " insert datestamp
-imap <C-d> <C-r>="[" . strftime("%a %d %b %Y") . "]"<CR>
+imap <C-d> <C-r>=ShortDate()<CR>
+imap <C-y> <C-r>=LongDate()<CR>
 
 " sum column
 vmap <C-k>1 !awk '{s+=$1}END{print s}'<CR>
@@ -215,6 +216,27 @@ nmap <C-k>5 vip<C-k>5
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
+
+" # Functions
+
+function! ShortDay(longDay)
+  if a:longDay == "Mon" | return "m" | endif
+  if a:longDay == "Tue" | return "t" | endif
+  if a:longDay == "Wed" | return "w" | endif
+  if a:longDay == "Thu" | return "r" | endif
+  if a:longDay == "Fri" | return "f" | endif
+  if a:longDay == "Sat" | return "s" | endif
+  if a:longDay == "Sun" | return "u" | endif
+  return "-- Invalid Day Format '" . longDay . "'. --"
+endfunction
+
+function! ShortDate()
+  return "[" . ShortDay(strftime("%a")) . strftime("%d%b") . "]"
+endfunction
+
+function! LongDate()
+  return "[" . ShortDay(strftime("%a")) . strftime("%d%b'%y") . "]"
+endfunction
 
 " # Plugin-specific settings
 
