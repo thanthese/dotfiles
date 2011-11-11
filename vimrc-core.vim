@@ -231,11 +231,11 @@ function! ShortDay(longDay)
 endfunction
 
 function! ShortDate()
-  return "[" . ShortDay(strftime("%a")) . strftime("%d%b") . "]"
+  return "[" . ShortDay(strftime("%a")) . tolower(strftime("%d%b")) . "]"
 endfunction
 
 function! LongDate()
-  return "[" . ShortDay(strftime("%a")) . strftime("%d%b'%y") . "]"
+  return "[" . ShortDay(strftime("%a")) . tolower(strftime("%d%b'%y")) . "]"
 endfunction
 
 " # Plugin-specific settings
