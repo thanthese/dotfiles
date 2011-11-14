@@ -2,16 +2,17 @@
 " ===========================
 
 " shortcuts to various places
+nmap \O :e ~/Dropbox/all-notes.md<CR>Gzv?^#<CR>0zt
 nmap \b :e ~/.bashrc<CR>
 nmap \d :e ~/Desktop/<C-d>
+nmap \f :e ~/Dropbox/french/french.flash<CR>
 nmap \h :e ~/
 nmap \o :e ~/Dropbox/all-notes.md<CR>
-nmap \O :e ~/Dropbox/all-notes.md<CR>Gzv?^#<CR>0zt
 nmap \r :e ~/scratch.txt<CR>
 nmap \s :e /sandbox/scratch.md<CR>
+nmap \v :e ~/.vimrc<CR>
 nmap \v1 :e ~/dotfiles/vimrc-core.vim<CR>
 nmap \v2 :e ~/dotfiles/vimrc-mac.vim<CR>
-nmap \v :e ~/.vimrc<CR>
 nmap \vs :so ~/.vimrc<CR>
 
 " notes file
