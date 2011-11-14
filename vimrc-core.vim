@@ -38,7 +38,6 @@ set guioptions-=m  " no menu bar
 set guioptions-=r  " no right scroll bar
 set guioptions-=L  " no left  scroll bar
 set guioptions+=c  " use console dialogs
-set guioptions+=aA " use system clipboard
 set guioptions+=v  " vertical layout for dialogs
 
 " appearance
@@ -63,7 +62,6 @@ set hidden      " allows changing of buffers without saving
 set lazyredraw  " don't redraw screen during macros
 set splitright  " vertical splits appear on right
 set mouse=a     " enable the mouse in the terminal
-set clipboard=unnamed " make "* the anonymous register
 set autoread    " re-read file if file has changed
 
 " tabs

@@ -1,3 +1,10 @@
+" clipboard magic
+" ===============
+
+set guioptions+=aA " use system clipboard
+set clipboard=unnamed " make "* the anonymous register
+
+
 " navigation to files
 " ===================
 
