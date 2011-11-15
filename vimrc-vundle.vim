@@ -13,11 +13,15 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'rails.vim'
+Bundle 'surround.vim'
+Bundle 'repeat.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'matchit.zip'
+Bundle 'VimClojure'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...

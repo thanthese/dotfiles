@@ -4,20 +4,7 @@
 " Contains system-independent vim settings.
 "
 
-" # Documentation
-
-" ## preferred plugins
-" - surround (with repeat)
-" - tslime
-" - fuzzyfinder
-" - bufexplorer
-" - command-t
-" - vimclojure
-" - ir_black
-" - matchit
-" - fugitive (git plugin)
-
-" ## shortcut prefix conventions
+" # shortcut prefix conventions
 " - \     : navigation, aka shortcuts-to-files
 " - <C-k> : run a command that will have an effect on the code
 " - <C-c> : filetype/tslime-specific
