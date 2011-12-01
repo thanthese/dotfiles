@@ -167,7 +167,7 @@ nmap <C-k>k !!~/sparkup/sparkup<CR>
 vmap <C-k>k !~/sparkup/sparkup<CR>
 
 " format code in paragraph
-nmap <silent> <C-k>f :mark '<CR>=ip<CR>''
+nmap <silent> <C-k>f :mark '<CR>=ip''
 
 " tidy xml
 nmap <C-k>t :Tidy<CR>
