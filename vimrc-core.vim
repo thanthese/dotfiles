@@ -89,6 +89,7 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 nnoremap z== 1z=
 nnoremap <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
 nnoremap <CR> o<Esc>
+nnoremap <Backspace> dd
 
 " insert mode cursor movement
 inoremap <C-h> <Left>
