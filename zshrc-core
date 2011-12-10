@@ -71,9 +71,6 @@ alias vz="vi ~/.zshrc"
 alias sz=". ~/.zshrc"
 alias x=exit
 
-# set options
-alias mc="mc -b"
-
 # git aliases
 alias ga="git add"
 alias gb="git branch"
