@@ -19,3 +19,6 @@ export PATH
 
 # games!
 alias zelda="cd ~/mupen64plus-1.99.4-osx/x86_32/; ./run_rice.sh zelda.z64; cd -"
+
+# vim
+alias vi="/Applications/MacVim-ppc-i386-10_5-7_3-53/mvim -v"
