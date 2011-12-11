@@ -40,7 +40,7 @@ set wildmenu
 set wildmode=list:longest
 set shortmess+=I
 set colorcolumn=80
-highlight ColorColumn guibg=#111111 ctermbg=LightGrey
+highlight ColorColumn guibg=#111111 ctermbg=DarkGrey
 set conceallevel=2
 set concealcursor=nv
 
@@ -259,6 +259,10 @@ vmap <C-k>jc cconsole.log()<Esc>P^
 nmap <C-k>jc ^Cconsole.log()<Esc>P^
 nmap <C-k>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 vmap <C-k>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
+
+syntax keyword javaScriptFunction function conceal cchar=λ
+syntax keyword javaScriptFunction return   conceal cchar=↵
+hi! link Conceal javaScriptFunction
 
 " markdown
 au BufRead,BufNewFile *.md hi shyDate guifg=#555555 ctermfg=DarkGray
