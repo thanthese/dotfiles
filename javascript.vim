@@ -5,5 +5,5 @@ if !has('conceal')
 endif
 
 syntax keyword javaScriptFunction function conceal cchar=λ
-syntax keyword javaScriptFunction return   conceal cchar=↵
+syntax keyword javaScriptFunction return   conceal cchar=←
 hi! link Conceal javaScriptFunction
