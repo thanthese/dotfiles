@@ -261,10 +261,6 @@ nmap <C-k>jC ^Cconsole.log("<C-r>"")<Esc>^
 nmap <C-k>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 vmap <C-k>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
-syntax keyword javaScriptFunction function conceal cchar=λ
-syntax keyword javaScriptFunction return   conceal cchar=↵
-hi! link Conceal javaScriptFunction
-
 " markdown
 au BufRead,BufNewFile *.md hi shyDate guifg=#555555 ctermfg=DarkGray
 au BufRead,BufNewFile *.md syn match shyDate /\[.*\]/
