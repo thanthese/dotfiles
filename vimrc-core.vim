@@ -40,7 +40,7 @@ set wildmenu
 set wildmode=list:longest
 set shortmess+=I
 set colorcolumn=80
-highlight ColorColumn guibg=#111111 ctermbg=DarkGrey
+highlight ColorColumn guibg=#111111 ctermbg=233
 set conceallevel=2
 set concealcursor=nv
 
