@@ -12,14 +12,6 @@ nmap <C-c><C-s> <C-c>s
 imap <C-c>s <C-o><C-c>s
 imap <C-c><C-s> <C-c>s
 
-" search-replace, whole word
-nmap <C-c>R :%s/\<<C-r><C-w>\>//g<Left><Left>
-nmap <C-c>r yiwvip:s/\<<C-r>"\>//g<Left><Left>
-nmap <C-c><C-r> <C-c>r
-vmap <C-c>r yvip:s/\<C-r>"\>//g<Left><Left>
-vmap <C-c><C-r> <C-c>r
-vmap <C-c>R y:%s/\<<C-r>"\>//g<Left><Left>
-
 " load current file
 nmap <C-c>l :w<CR>:call Send_to_Tmux("(load-file \"<C-r>%\")\n")<CR><CR>
 nmap <C-c><C-l> <C-c>l

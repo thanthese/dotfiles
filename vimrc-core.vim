@@ -88,15 +88,15 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 " vanity mappings
 nnoremap <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
 nnoremap <CR> :
-inoremap <C-j> <Esc>
-vnoremap <C-j> <Esc>
-nnoremap <C-p> O<Esc>
-nnoremap <C-n> o<Esc>
+inoremap <c-j> <Esc>
+vnoremap <c-j> <Esc>
+nnoremap <c-p> O<Esc>
+nnoremap <c-n> o<Esc>
 nnoremap =z 1z=
 
 " insert mode cursor movement
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+inoremap <c-h> <Left>
+inoremap <c-l> <Right>
 
 " whitespace visual surrounds
 vmap s<Space> <Esc>'>a<Space><Esc>'<i<Space><Esc>
@@ -105,8 +105,8 @@ vmap s<CR> <Esc>'>o<Esc>'<O<Esc>j
 " ## make keys work as expected
 
 " search on visual mode
-vnoremap <silent> * y:/<C-r>"<CR>
-vnoremap <silent> # y:?<C-r>"<CR>
+vnoremap <silent> * y:/<c-r>"<CR>
+vnoremap <silent> # y:?<c-r>"<CR>
 
 " move cursor by screen lines, not by logical lines
 nnoremap k gk
@@ -124,27 +124,27 @@ onoremap ' `
 " ## clipboard
 
 " yank to system clipboard
-nmap <F8> gg"+yG<C-o><C-o>:echo "-- File Yanked to Clipboard --"<CR>
+nmap <F8> gg"+yG<c-o><c-o>:echo "-- File Yanked to Clipboard --"<CR>
 vmap <F8> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 
 " put from system clipboard
 nmap <F9> "+P
 vmap <F9> "+P
-imap <F9> <C-r>+
+imap <F9> <c-r>+
 
 " ## windows
 
 " switch window
-nmap <C-h> <C-w>h
-nmap <C-l> <C-w>l
-nmap <C-k> <C-w>k
-nmap <C-j> <C-w>j
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+nmap <c-k> <c-w>k
+nmap <c-j> <c-w>j
 
 " resize window
-nmap <C-Up>    <C-W>-
-nmap <C-Down>  <C-W>+
-nmap <C-Left>  <C-W><
-nmap <C-Right> <C-W>>
+nmap <c-Up>    <c-W>-
+nmap <c-Down>  <c-W>+
+nmap <c-Left>  <c-W><
+nmap <c-Right> <c-W>>
 
 " ## refactoring and code manipulation mappings (<c-d>)
 
@@ -190,8 +190,8 @@ nmap <c-d>w :set wrap! linebreak!<CR>
 nmap <c-d>l :set spell!<CR>
 
 " insert datestamp
-imap <C-d> <C-r>=ShortDate()<CR>
-imap <C-y> <C-r>=LongDate()<CR>
+imap <c-d> <c-r>=ShortDate()<CR>
+imap <c-y> <c-r>=LongDate()<CR>
 
 " sum column
 vmap <c-d>1 !awk '{s+=$1}END{print s}'<CR>
@@ -204,6 +204,11 @@ nmap <c-d>2 vip<c-d>2
 nmap <c-d>3 vip<c-d>3
 nmap <c-d>4 vip<c-d>4
 nmap <c-d>5 vip<c-d>5
+
+" search-replace, whole word
+nmap <c-d>R :%s/\<<c-r><c-w>\>//g<Left><Left>
+nmap <c-d>r yiwvip:s/\<<c-r>"\>//g<Left><Left>
+vmap <c-d>r yvip:s/<c-r>"//g<Left><Left>
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
@@ -232,17 +237,17 @@ endfunction
 " # Plugin-specific settings
 
 " fuzzy finder
-nmap <c-d><C-f> :FufCoverageFile<CR>
-nmap <c-d><C-b> :FufBuffer<CR>
-nmap <c-d><C-h> :FufHelp<CR>
-nmap <c-d><C-c> :FufChangeList<CR>
+nmap <c-d><c-f> :FufCoverageFile<CR>
+nmap <c-d><c-b> :FufBuffer<CR>
+nmap <c-d><c-h> :FufHelp<CR>
+nmap <c-d><c-c> :FufChangeList<CR>
 nmap <c-d>/ :FufLine<CR>
 
 " bufexplorer
 nmap \\ \be
 
 " command-t
-nmap <C-t> :CommandT<CR>
+nmap <c-t> :CommandT<CR>
 set wildignore+=.git,*.class,*.war,**/OpenLayers-2.11/*,**/classes*
 
 " ack
@@ -260,7 +265,7 @@ nmap \gc :Gcommit<CR>
 " javascript
 vmap <c-d>jc cconsole.log()<Esc>P^
 nmap <c-d>jc ^Cconsole.log()<Esc>P^
-nmap <c-d>jC ^Cconsole.log("<C-r>"")<Esc>^
+nmap <c-d>jC ^Cconsole.log("<c-r>"")<Esc>^
 nmap <c-d>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 vmap <c-d>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
