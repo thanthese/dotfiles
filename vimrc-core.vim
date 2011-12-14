@@ -6,7 +6,7 @@
 
 " # shortcut prefix conventions
 " - \     : navigation, aka shortcuts-to-files
-" - <C-k> : run a command that will have an effect on the code
+" - <c-d> : run a command that will have an effect on the code
 " - <C-c> : filetype/tslime-specific
 " - ctrl  : window management
 
@@ -86,11 +86,13 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 " # Helpful mappings
 
 " vanity mappings
-nnoremap z== 1z=
 nnoremap <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
+nnoremap <CR> :
+inoremap <C-j> <Esc>
+vnoremap <C-j> <Esc>
 nnoremap <C-p> O<Esc>
 nnoremap <C-n> o<Esc>
-nnoremap <C-u> :
+nnoremap =z 1z=
 
 " insert mode cursor movement
 inoremap <C-h> <Left>
@@ -135,6 +137,8 @@ imap <F9> <C-r>+
 " switch window
 nmap <C-h> <C-w>h
 nmap <C-l> <C-w>l
+nmap <C-k> <C-w>k
+nmap <C-j> <C-w>j
 
 " resize window
 nmap <C-Up>    <C-W>-
@@ -142,64 +146,64 @@ nmap <C-Down>  <C-W>+
 nmap <C-Left>  <C-W><
 nmap <C-Right> <C-W>>
 
-" ## refactoring and code manipulation mappings (<C-k>)
+" ## refactoring and code manipulation mappings (<c-d>)
 
 " par
-nmap <C-k>p !!par<CR>
-vmap <C-k>p !par<CR>
+nmap <c-d>p !!par<CR>
+vmap <c-d>p !par<CR>
 
 " sort
-nmap <C-k>s :%!sort<CR>
-vmap <C-k>s !sort<CR>
+nmap <c-d>s :%!sort<CR>
+vmap <c-d>s !sort<CR>
 
 " unique
-nmap <C-k>u :%!uniq<CR>
-vmap <C-k>u !uniq<CR>
+nmap <c-d>u :%!uniq<CR>
+vmap <c-d>u !uniq<CR>
 
 " dc
-nmap <C-k>d yip}O<Esc>pvip!dc<CR>
-vmap <C-k>d !dc<CR>
+nmap <c-d>d yip}O<Esc>pvip!dc<CR>
+vmap <c-d>d !dc<CR>
 
 " bc
-nmap <C-k>b !!bc<CR>
-vmap <C-k>b !bc<CR>
+nmap <c-d>b !!bc<CR>
+vmap <c-d>b !bc<CR>
 
 " sparkup
-nmap <C-k>k !!~/sparkup/sparkup<CR>
-vmap <C-k>k !~/sparkup/sparkup<CR>
+nmap <c-d>k !!~/sparkup/sparkup<CR>
+vmap <c-d>k !~/sparkup/sparkup<CR>
 
 " format code in paragraph
-nmap <silent> <C-k>f :mark '<CR>=ip''
-
-" tidy xml
-nmap <C-k>t :Tidy<CR>
-vmap <C-k>t :Tidy<CR>
+nmap <silent> <c-d>f :mark '<CR>=ip''
 
 " tidy json
-nmap <C-k>j :%!python -mjson.tool<CR>
-vmap <C-k>j :!python -mjson.tool<CR>
+nmap <c-d>a :%!python -mjson.tool<CR>
+vmap <c-d>a :!python -mjson.tool<CR>
+
+" tidy xml
+nmap <c-d>x :Tidy<CR>
+vmap <c-d>x :Tidy<CR>
 
 " toggle wrap
-nmap <C-k>w :set wrap! linebreak!<CR>
+nmap <c-d>w :set wrap! linebreak!<CR>
 
 " toggle spell
-nmap <C-k>l :set spell!<CR>
+nmap <c-d>l :set spell!<CR>
 
 " insert datestamp
 imap <C-d> <C-r>=ShortDate()<CR>
 imap <C-y> <C-r>=LongDate()<CR>
 
 " sum column
-vmap <C-k>1 !awk '{s+=$1}END{print s}'<CR>
-vmap <C-k>2 !awk '{s+=$2}END{print s}'<CR>
-vmap <C-k>3 !awk '{s+=$3}END{print s}'<CR>
-vmap <C-k>4 !awk '{s+=$4}END{print s}'<CR>
-vmap <C-k>5 !awk '{s+=$5}END{print s}'<CR>
-nmap <C-k>1 vip<C-k>1
-nmap <C-k>2 vip<C-k>2
-nmap <C-k>3 vip<C-k>3
-nmap <C-k>4 vip<C-k>4
-nmap <C-k>5 vip<C-k>5
+vmap <c-d>1 !awk '{s+=$1}END{print s}'<CR>
+vmap <c-d>2 !awk '{s+=$2}END{print s}'<CR>
+vmap <c-d>3 !awk '{s+=$3}END{print s}'<CR>
+vmap <c-d>4 !awk '{s+=$4}END{print s}'<CR>
+vmap <c-d>5 !awk '{s+=$5}END{print s}'<CR>
+nmap <c-d>1 vip<c-d>1
+nmap <c-d>2 vip<c-d>2
+nmap <c-d>3 vip<c-d>3
+nmap <c-d>4 vip<c-d>4
+nmap <c-d>5 vip<c-d>5
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
@@ -228,11 +232,11 @@ endfunction
 " # Plugin-specific settings
 
 " fuzzy finder
-nmap <C-k><C-f> :FufCoverageFile<CR>
-nmap <C-k><C-b> :FufBuffer<CR>
-nmap <C-k><C-h> :FufHelp<CR>
-nmap <C-k><C-c> :FufChangeList<CR>
-nmap <C-k>/ :FufLine<CR>
+nmap <c-d><C-f> :FufCoverageFile<CR>
+nmap <c-d><C-b> :FufBuffer<CR>
+nmap <c-d><C-h> :FufHelp<CR>
+nmap <c-d><C-c> :FufChangeList<CR>
+nmap <c-d>/ :FufLine<CR>
 
 " bufexplorer
 nmap \\ \be
@@ -254,13 +258,11 @@ nmap \gc :Gcommit<CR>
 " # Filetype-specific settings
 
 " javascript
-imap <C-k>jf function
-imap <C-k>jc console.log()<Left>
-vmap <C-k>jc cconsole.log()<Esc>P^
-nmap <C-k>jc ^Cconsole.log()<Esc>P^
-nmap <C-k>jC ^Cconsole.log("<C-r>"")<Esc>^
-nmap <C-k>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
-vmap <C-k>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
+vmap <c-d>jc cconsole.log()<Esc>P^
+nmap <c-d>jc ^Cconsole.log()<Esc>P^
+nmap <c-d>jC ^Cconsole.log("<C-r>"")<Esc>^
+nmap <c-d>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
+vmap <c-d>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
 " markdown
 au BufRead,BufNewFile *.md hi shyDate guifg=#555555 ctermfg=DarkGray
