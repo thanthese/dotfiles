@@ -86,13 +86,18 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 " # Helpful mappings
 
 " vanity mappings
-nnoremap <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
-nnoremap <CR> :
-inoremap <c-j> <Esc>
-vnoremap <c-j> <Esc>
-nnoremap <c-p> O<Esc>
-nnoremap <c-n> o<Esc>
-nnoremap =z 1z=
+map <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
+map <CR> :
+map <c-j> <Esc>
+map =z 1z=
+
+" line navigation
+map H 0
+map L $
+
+" open new lines
+map <c-p> O<Esc>
+map <c-n> o<Esc>
 
 " insert mode cursor movement
 inoremap <c-h> <Left>
