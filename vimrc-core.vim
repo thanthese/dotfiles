@@ -96,8 +96,8 @@ map H 0
 map L $
 
 " open new lines
-map <c-p> O<Esc>
-map <c-n> o<Esc>
+map <c-p> O<Esc>j
+map <c-n> o<Esc>k
 
 " insert mode cursor movement
 inoremap <c-h> <Left>
