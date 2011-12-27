@@ -153,6 +153,11 @@ nmap <c-Right> <c-W>>
 
 " ## refactoring and code manipulation mappings (<c-d>)
 
+" rot47 (encrypt/decrypt)
+nmap <c-d>e !!tr '\!-~' 'P-~\!-O'<CR>
+nmap <c-d>E ggVG!tr '\!-~' 'P-~\!-O'<CR><c-o><c-o>
+vmap <c-d>e !tr '\!-~' 'P-~\!-O'<CR>
+
 " par
 nmap <c-d>p !!par<CR>
 vmap <c-d>p !par<CR>
