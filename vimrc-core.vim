@@ -90,6 +90,7 @@ map <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a")
 map <CR> :
 map <c-j> <Esc>
 map =z 1z=
+imap <c-r><cr> <c-r>"
 
 " line navigation
 map H 0
