@@ -36,8 +36,9 @@ push() { pushd ${1} ; ls -lth ; }
 alias cc="push"
 
 # git
-alias ga="git add ."
-alias gc="git commit -a"
+alias ga="git add"
+alias gk="git checkout"
+alias gc="git commit"
 alias gd="git diff"
 alias gl="git log"
 alias gs="git status"
