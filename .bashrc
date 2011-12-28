@@ -44,6 +44,7 @@ alias gl="git log"
 alias gs="git status"
 alias gb="git branch"
 alias gpush="git push"
+alias gpull="git pull"
 
 # read nytimes
 alias nytimes="lynx -tna --accept-all-cookies mobile.nytimes.com"
