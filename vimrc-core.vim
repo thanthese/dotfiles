@@ -91,6 +91,7 @@ map <CR> :
 map <c-j> <Esc>
 map =z 1z=
 imap <c-r><cr> <c-r>"
+map gp `[v`]
 
 " line navigation
 map H 0
