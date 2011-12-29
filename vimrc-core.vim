@@ -93,10 +93,6 @@ map =z 1z=
 imap <c-r><cr> <c-r>"
 map gp `[v`]
 
-" line navigation
-map H 0
-map L $
-
 " open new lines
 map <c-p> O<Esc>j
 map <c-n> o<Esc>k
