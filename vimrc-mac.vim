@@ -2,12 +2,12 @@
 " ===========================
 
 " shortcuts to various places
-nmap \O :e ~/Dropbox/all-notes.md<CR>Gzv?^#<CR>0zt
+nmap \O :e ~/Dropbox/all-notes.txt<CR>Gzv?^#<CR>0zt
 nmap \b :e ~/.bashrc<CR>
 nmap \d :e ~/Desktop/<C-d>
 nmap \f :e ~/Dropbox/french/french.flash<CR>
 nmap \h :e ~/
-nmap \o :e ~/Dropbox/all-notes.md<CR>
+nmap \o :e ~/Dropbox/all-notes.txt<CR>
 nmap \r :e ~/scratch.txt<CR>
 nmap \s :e /sandbox/scratch.md<CR>
 nmap \v :e ~/.vimrc<CR>
@@ -18,4 +18,4 @@ nmap \vs :so ~/.vimrc<CR>
 " notes file
 " ==========
 
-autocmd! BufWritePost all-notes.md silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.md -o ~/Dropbox/view-notes.html
+autocmd! BufWritePost all-notes.txt silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.txt -o ~/Dropbox/view-notes.html
