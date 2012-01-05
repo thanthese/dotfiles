@@ -83,7 +83,7 @@ autocmd! BufWritePost *.vim source %
 " highlight matches of word under cursor
 autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<cword>'))
 
-" # Helpful mappings
+" # Mappings
 
 " vanity mappings
 map <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
@@ -149,6 +149,9 @@ nmap <c-Left>  <c-W><
 nmap <c-Right> <c-W>>
 
 " ## refactoring and code manipulation mappings (<c-d>)
+
+" copy current date recurring todos to top of file
+map <c-d>o \ozR:g/^:<c-r>=tolower(strftime("%a"))<cr>/norm yyggpI<c-r>=ShortDate()<cr><space><esc><cr>zMggzoj
 
 " rot47 (encrypt/decrypt)
 nmap <c-d>e !!tr '\!-~' 'P-~\!-O'<CR>
