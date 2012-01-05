@@ -88,6 +88,7 @@ autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<c
 " vanity mappings
 map <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
 map =z 1z=
+map Q zt
 imap <c-r><c-r> <c-r>"
 map gp `[v`]
 
