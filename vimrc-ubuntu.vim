@@ -14,9 +14,6 @@ nmap \e :cd ~/NetBeansProjects/EOC/<CR>
 nmap \h :e ~/
 nmap \nn :cd ~/NN/04/<CR>
 nmap \n :NERDTree<CR>
-nmap \o :e ~/Dropbox/all-notes.txt<CR>
-nmap \O :e ~/Dropbox/all-notes.txt<CR>Gzv?^#<CR>0zt
-nmap \w :e ~/Dropbox/all-notes.txt<CR>/what i've done<cr>0zvzt
 nmap \s :e /sandbox/scratch.md<CR>
 nmap \v1 :e ~/dotfiles/vimrc-core.vim<CR>
 nmap \v2 :e ~/dotfiles/vimrc-ubuntu.vim<CR>
@@ -35,9 +32,3 @@ set wildignore+=.svn,*.ear,**/target/**,target/**,**/target,/target/,*/target/*,
 " ==========
 
 set dictionary+=/usr/share/dict/words
-
-
-" notes file
-" ==========
-
-autocmd! BufWritePost all-notes.txt silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.txt -o ~/Dropbox/view-notes.html
