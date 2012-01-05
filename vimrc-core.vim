@@ -4,10 +4,10 @@
 " Contains system-independent vim settings.
 "
 
-" # shortcut prefix conventions
+" # Shortcut prefix conventions
 " - \     : navigation, aka shortcuts-to-files
 " - <c-d> : run a command that will have an effect on the code
-" - <C-c> : filetype/tslime-specific
+" - <c-c> : filetype/tslime-specific
 " - ctrl  : window management
 
 " # Look and feel, passive settings
@@ -72,7 +72,7 @@ set directory^=$HOME/.vim_swap
 " put all tilde files together in one place
 set backupdir^=$HOME/.vim_swap
 
-" # On events
+" # Auto commands
 
 " on save any: trim trailing whitespace
 autocmd! BufWrite * mark ` | silent! %s/\s\+$// | norm ``
@@ -83,14 +83,13 @@ autocmd! BufWritePost *.vim source %
 " highlight matches of word under cursor
 autocmd CursorMoved * silent! exe printf('match StatusLine /\<%s\>/', expand('<cword>'))
 
-" # Helpful mappings
+" # Mappings
 
 " vanity mappings
 map <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
-map <CR> :
-map <c-j> <Esc>
 map =z 1z=
-imap <c-r><cr> <c-r>"
+map Q zt
+imap <c-r><c-r> <c-r>"
 map gp `[v`]
 
 " open new lines
@@ -151,10 +150,16 @@ nmap <c-Right> <c-W>>
 
 " ## refactoring and code manipulation mappings (<c-d>)
 
+" copy current date recurring todos to top of file
+map <c-d>o \ozR:g/^:<c-r>=tolower(strftime("%a"))<cr>/norm yyggpI<c-r>=ShortDate()<cr><space><esc><cr>zMggzoj
+
 " rot47 (encrypt/decrypt)
 nmap <c-d>e !!tr '\!-~' 'P-~\!-O'<CR>
-nmap <c-d>E ggVG!tr '\!-~' 'P-~\!-O'<CR><c-o><c-o>
+nmap <c-d>E :mark '<cr>ggVG!tr '\!-~' 'P-~\!-O'<CR>''
 vmap <c-d>e !tr '\!-~' 'P-~\!-O'<CR>
+
+" calendar
+map <c-d>c !!cal<CR>
 
 " par
 nmap <c-d>p !!par<CR>
@@ -270,16 +275,18 @@ nmap \gc :Gcommit<CR>
 
 " # Filetype-specific settings
 
+" all notes
+nmap \o :e ~/Dropbox/all-notes.txt<CR>
+nmap \O :e ~/Dropbox/all-notes.txt<CR>Gzv?^#<CR>0zt
+nmap \w :e ~/Dropbox/all-notes.txt<CR>/what i've done<cr>0zvzt
+autocmd! BufWritePost all-notes.txt silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.txt -o ~/Dropbox/view-notes.html
+
 " javascript
 vmap <c-d>jc cconsole.log()<Esc>P^
 nmap <c-d>jc ^Cconsole.log()<Esc>P^
 nmap <c-d>jC ^Cconsole.log("<c-r>"")<Esc>^
 nmap <c-d>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 vmap <c-d>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
-
-" markdown
-au BufRead,BufNewFile *.md,all-notes.txt hi shyDate guifg=#555555 ctermfg=DarkGray
-au BufRead,BufNewFile *.md,all-notes.txt syn match shyDate /\[.*\]/
 
 " # General abbreviations
 
