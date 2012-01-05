@@ -281,6 +281,10 @@ nmap \O :e ~/Dropbox/all-notes.txt<CR>Gzv?^#<CR>0zt
 nmap \w :e ~/Dropbox/all-notes.txt<CR>/what i've done<cr>0zvzt
 autocmd! BufWritePost all-notes.txt silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.txt -o ~/Dropbox/view-notes.html
 
+" kung-fu
+nmap \k :e ~/Dropbox/kung-fu.clj<cr>
+nmap \K \kggjjo{:category "programming"<cr> :question ""<cr> :answer ""}<esc>kl
+
 " javascript
 vmap <c-d>jc cconsole.log()<Esc>P^
 nmap <c-d>jc ^Cconsole.log()<Esc>P^
