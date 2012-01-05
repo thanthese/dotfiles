@@ -153,8 +153,11 @@ nmap <c-Right> <c-W>>
 
 " rot47 (encrypt/decrypt)
 nmap <c-d>e !!tr '\!-~' 'P-~\!-O'<CR>
-nmap <c-d>E ggVG!tr '\!-~' 'P-~\!-O'<CR><c-o><c-o>
+nmap <c-d>E :mark '<cr>ggVG!tr '\!-~' 'P-~\!-O'<CR>''
 vmap <c-d>e !tr '\!-~' 'P-~\!-O'<CR>
+
+" calendar
+map <c-d>c !!cal<CR>
 
 " par
 nmap <c-d>p !!par<CR>
