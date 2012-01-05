@@ -4,7 +4,7 @@
 " Contains system-independent vim settings.
 "
 
-" # shortcut prefix conventions
+" # Shortcut prefix conventions
 " - \     : navigation, aka shortcuts-to-files
 " - <c-d> : run a command that will have an effect on the code
 " - <c-c> : filetype/tslime-specific
@@ -72,7 +72,7 @@ set directory^=$HOME/.vim_swap
 " put all tilde files together in one place
 set backupdir^=$HOME/.vim_swap
 
-" # On events
+" # Auto commands
 
 " on save any: trim trailing whitespace
 autocmd! BufWrite * mark ` | silent! %s/\s\+$// | norm ``
