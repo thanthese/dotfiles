@@ -220,6 +220,7 @@ nmap <c-d>5 vip<c-d>5
 
 " search-replace, whole word
 nmap <c-d>R :%s/\<<c-r><c-w>\>//g<Left><Left>
+vmap <c-d>R y:%s/<c-r>"//g<left><left>
 nmap <c-d>r yiwvip:s/\<<c-r>"\>//g<Left><Left>
 vmap <c-d>r yvip:s/<c-r>"//g<Left><Left>
 
