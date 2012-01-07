@@ -153,13 +153,13 @@ nmap <c-Right> <c-W>>
 " copy current date recurring todos to top of file
 map <c-d>o \ozR:g/^:<c-r>=tolower(strftime("%a"))<cr>/norm yyggpI<c-r>=ShortDate()<cr><space><esc><cr>zMggzoj
 
+" calendar
+map <c-d>c !!cal<CR>
+
 " rot47 (encrypt/decrypt)
 nmap <c-d>e !!tr '\!-~' 'P-~\!-O'<CR>
 nmap <c-d>E :mark '<cr>ggVG!tr '\!-~' 'P-~\!-O'<CR>''
 vmap <c-d>e !tr '\!-~' 'P-~\!-O'<CR>
-
-" calendar
-map <c-d>c !!cal<CR>
 
 " par
 nmap <c-d>p !!par<CR>
