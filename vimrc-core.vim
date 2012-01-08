@@ -151,7 +151,8 @@ nmap <c-Right> <c-W>>
 " ## refactoring and code manipulation mappings (<c-d>)
 
 " copy line(s) to top of file
-map <c-d>o :mark '<cr>gv:copy 1<cr>:echo "-- Line(s) copied to top of file --"<cr>''
+nmap <c-d>o :mark '<cr>:copy 1<cr>:echo "-- Line copied to top of file --"<cr>''
+vmap <c-d>o :mark '<cr>gv:copy 1<cr>:echo "-- Line(s) copied to top of file --"<cr>''
 
 " calendar
 map <c-d>c !!cal<CR>
