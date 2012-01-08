@@ -150,8 +150,8 @@ nmap <c-Right> <c-W>>
 
 " ## refactoring and code manipulation mappings (<c-d>)
 
-" copy current date recurring todos to top of file
-map <c-d>o \ozR:g/^:<c-r>=tolower(strftime("%a"))<cr>/norm yyggpI<c-r>=ShortDate()<cr><space><esc><cr>zMggzoj
+" copy line(s) to top of file
+map <c-d>o :mark '<cr>gv:copy 1<cr>:echo "-- Line(s) copied to top of file --"<cr>''
 
 " calendar
 map <c-d>c !!cal<CR>
