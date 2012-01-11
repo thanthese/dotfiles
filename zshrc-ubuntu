@@ -10,6 +10,8 @@ function chpwd() {
 alias -g ls="ls --color=auto"
 alias -g ll="ls --color=auto -lthr"
 
+export GREP_OPTIONS='--color=auto'
+
 ## -----------------------------------------------
 ## git prompt
 # source: http://stackoverflow.com/questions/1128496/to-get-a-prompt-which-indicates-git-branch-in-zsh
