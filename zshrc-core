@@ -71,21 +71,6 @@ alias vz="vi ~/.zshrc"
 alias sz=". ~/.zshrc"
 alias x=exit
 
-# git aliases
-alias ga="git add"
-alias gb="git branch"
-alias gc="git commit"
-alias gd="git diff --ignore-all-space"
-alias gds="git diff --ignore-all-space --staged"
-alias gi="git add -i"
-alias gk="git checkout"
-alias gl="git log"
-alias gm="git merge"
-alias gpull="git pull"
-alias gpush="git push"
-alias gs="git status"
-alias gtoday="git log --since=\"1am\" --author=\"Stephen Mann\" --no-merges --oneline"
-
 # svn aliases
 alias sc="svn commit"
 alias sd="svn diff -x --ignore-all-space"
