@@ -1,3 +1,4 @@
+# git
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
@@ -11,3 +12,7 @@ alias gpull="git pull"
 alias gpush="git push"
 alias gs="git status"
 alias gtoday="git log --since=\"1am\" --author=\"Stephen Mann\" --no-merges --oneline"
+
+# system
+alias x="exit"
+
