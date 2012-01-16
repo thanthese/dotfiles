@@ -9,6 +9,6 @@ nmap \h :e ~/
 nmap \r :e ~/scratch.txt<CR>
 nmap \s :e /sandbox/scratch.md<CR>
 nmap \v :e ~/.vimrc<CR>
-nmap \v1 :e ~/dotfiles/vimrc-core.vim<CR>
-nmap \v2 :e ~/dotfiles/vimrc-mac.vim<CR>
+nmap \v1 :e ~/dotfiles/vim-core.vim<CR>
+nmap \v2 :e ~/dotfiles/vim-mac.vim<CR>
 nmap \vs :so ~/.vimrc<CR>
