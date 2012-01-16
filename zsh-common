@@ -17,7 +17,5 @@ alias gtoday="git log --since=\"1am\" --author=\"Stephen Mann\" --no-merges --on
 alias x="exit"
 
 # keybindings
-#bindkey \C-R history-incremental-search-backward
-#or
-#bindkey -M viins \C-R history-incremental-search-backward
-#bindkey -M vicmd \C-R history-incremental-search-backward
+bindkey \\C-R history-incremental-search-backward
+bindkey \\C-S history-incremental-search-forward
