@@ -15,6 +15,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'wgibbs/vim-irblack'
 " vim-scripts repos
 Bundle 'L9'
+Bundle 'tComment'
 Bundle 'FuzzyFinder'
 Bundle 'rails.vim'
 Bundle 'surround.vim'
