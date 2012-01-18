@@ -5,9 +5,3 @@ function chpwd() {
   emulate -LR zsh
   ls --color=auto -lthr
 }
-
-# colors make ubuntu happy!
-alias -g ls="ls --color=auto"
-alias -g ll="ls --color=auto -lthr"
-
-export GREP_OPTIONS='--color=auto'
