@@ -1,3 +1,5 @@
+" Goes in .vim/colors/ir_black.vim
+"
 " ir_black color scheme
 " More at: http://blog.infinitered.com/entries/show/8
 
