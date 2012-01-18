@@ -26,3 +26,8 @@ bindkey \\C-S history-incremental-search-forward
 # save colors?
 autoload colors zsh/terminfo && colors
 export TERM='xterm-256color'
+
+# directory aliases
+hash -d d=~/dotfiles
+hash -d p=~/Dropbox
+hash -d w=~/Downloads
