@@ -86,7 +86,9 @@ hi MatchedWord guifg=#000000 guibg=#cae682 ctermfg=black ctermbg=gray
 
 " # Mappings
 
-" vanity mappings
+" ## vanity mappings
+
+" misc
 map <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
 map =z 1z=
 map Q zt
@@ -225,6 +227,19 @@ nmap <c-d>R :%s/\<<c-r><c-w>\>//g<Left><Left>
 vmap <c-d>R y:%s/<c-r>"//g<left><left>
 nmap <c-d>r yiwvip:s/\<<c-r>"\>//g<Left><Left>
 vmap <c-d>r yvip:s/<c-r>"//g<Left><Left>
+
+" ## other code manipulation
+
+" move ()-like chunks around
+nmap <up> %d%hhv%pllP%hh%
+nmap <down> %d%lv%p%hPll
+
+" move WORDS around
+nmap <left> diWBPa<space><esc>ElxBB
+nmap <right> diWWWPa<space><esc>BBXW
+
+" 3 2 4 1 5
+" ((b) (c) (a))
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
