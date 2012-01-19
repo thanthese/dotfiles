@@ -82,7 +82,7 @@ autocmd! BufWritePost *.vim source %
 
 " highlight matches of word under cursor
 autocmd CursorMoved * silent! exe printf('match MatchedWord /\<%s\>/', expand('<cword>'))
-hi MatchedWord guifg=#000000 guibg=#cae682 ctermfg=black ctermbg=lightgreen
+hi MatchedWord guifg=#000000 guibg=#cae682 cterm=bold ctermfg=cyan
 
 " # Mappings
 
