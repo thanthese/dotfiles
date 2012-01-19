@@ -6,10 +6,6 @@ au! BufRead,BufNewFile all-notes.txt Arpeggio inoremap dy <c-r>=LongDate()<CR>
 au! BufRead,BufNewFile all-notes.txt Arpeggio nnoremap df I<c-r>=ShortDate()<cr><space><esc>
 au! BufRead,BufNewFile all-notes.txt Arpeggio nnoremap dy I<c-r>=LongDate()<cr><space><esc>
 
-" increment
-au! BufRead,BufNewFile all-notes.txt Arpeggio nnoremap ak <c-a>
-au! BufRead,BufNewFile all-notes.txt Arpeggio nnoremap aj <c-x>
-
 " # javascript
 
 au! filetype javascript Arpeggio inoremap fn function<space>
