@@ -8,7 +8,7 @@ au! BufRead,BufNewFile all-notes.txt Arpeggio nnoremap dy I<c-r>=LongDate()<cr><
 
 " increment
 au! BufRead,BufNewFile all-notes.txt Arpeggio nnoremap ak <c-a>
-au! BufRead,BufNewFile all-notes.txt Arpeggio nnoremap aj <c-a>
+au! BufRead,BufNewFile all-notes.txt Arpeggio nnoremap aj <c-x>
 
 " # javascript
 
