@@ -18,7 +18,7 @@ nmap <C-c><C-t> <C-c>t
 " 2.  Load current file in repl.
 " 3.  Run all tests under main namespace.
 "     For example, if we're in namespace "a.b.c", run all tests in "a.*".
-nmap <C-c>c <c-c>s:call Send_to_Tmux("(run-all-tests (re-pattern (str (re-find #\"^.*\\.\" (str (ns-name *ns*))) \"*\")))\n")<cr><cr>
+nmap <C-c>c <c-c>s:call Send_to_Tmux("(clojure.test/run-all-tests (re-pattern (str (re-find #\"^.*\\.\" (str (ns-name *ns*))) \"*\")))\n")<cr><cr>jk
 
 " find documentation
 nmap <C-c>D :call Doc_input()<CR>
