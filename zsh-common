@@ -33,4 +33,4 @@ hash -d p=~/Dropbox
 hash -d w=~/Downloads
 
 # turn off stupid completions
-alias tree='nocorrect mkdir'
+alias tree='nocorrect tree'
