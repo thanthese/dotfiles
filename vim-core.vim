@@ -51,6 +51,10 @@ set splitright  " vertical splits appear on right
 set mouse=a     " enable the mouse in the terminal
 set autoread    " re-read file if file has changed
 
+" backup files are terrible
+set noswapfile
+set nobackup
+
 " tabs
 set expandtab
 set shiftwidth=2
@@ -65,12 +69,6 @@ set incsearch
 
 " omni-completion
 set omnifunc=syntaxcomplete#Complete
-
-" put all swap files together in one place
-set directory^=$HOME/.vim_swap
-
-" put all tilde files together in one place
-set backupdir^=$HOME/.vim_swap
 
 " # Auto commands
 
