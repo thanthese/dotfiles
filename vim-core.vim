@@ -116,6 +116,10 @@ nnoremap k gk
 nnoremap j gj
 vnoremap k gk
 vnoremap j gj
+nnoremap 0 g0
+vnoremap 0 g0
+nnoremap $ g$
+vnoremap $ g$
 
 " yank matches change convention
 nmap Y y$
