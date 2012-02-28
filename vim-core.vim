@@ -128,6 +128,13 @@ nmap Y y$
 nnoremap ' `
 onoremap ' `
 
+" support magic!  From the help:
+"    Use of "\v" means that in the pattern after it all ASCII characters
+"    except '0'-'9', 'a'-'z', 'A'-'Z' and '_' have a special meaning.  "very
+"    magic"
+nnoremap / /\v
+cnoremap %s/ %s/\v
+
 " ## clipboard
 
 " yank to system clipboard
