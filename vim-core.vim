@@ -116,10 +116,6 @@ nnoremap k gk
 nnoremap j gj
 vnoremap k gk
 vnoremap j gj
-nnoremap 0 g0
-vnoremap 0 g0
-nnoremap $ g$
-vnoremap $ g$
 
 " yank matches change convention
 nmap Y y$
@@ -236,6 +232,9 @@ nmap <c-d>R :%s/\<<c-r><c-w>\>//g<Left><Left>
 vmap <c-d>R y:%s/<c-r>"//g<left><left>
 nmap <c-d>r yiwvip:s/\<<c-r>"\>//g<Left><Left>
 vmap <c-d>r yvip:s/<c-r>"//g<Left><Left>
+
+" add line numbers to selection
+vmap <c-d>n :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
