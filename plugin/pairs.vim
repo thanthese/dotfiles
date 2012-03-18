@@ -35,7 +35,7 @@ function! SmartBackspace()
   return "\<Backspace>"
 endfunction
 function! IsPair(pair)
-  return a:pair == "()" || a:pair == "[]" || a:pair == "{}" || a:pair == "''" || a:pair == "``"
+  return a:pair == "()" || a:pair == "[]" || a:pair == "{}" || a:pair == "''" || a:pair == "``" || a:pair == "\"\""
 endfunction
 
 " get count chars right of the cursor
