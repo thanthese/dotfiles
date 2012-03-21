@@ -221,10 +221,10 @@ nmap <c-d>4 vip<c-d>4
 nmap <c-d>5 vip<c-d>5
 
 " search-replace, whole word
-nmap <c-d>R :%s/\<<c-r><c-w>\>//g<Left><Left>
-vmap <c-d>R y:%s/<c-r>"//g<left><left>
-nmap <c-d>r yiwvip:s/\<<c-r>"\>//g<Left><Left>
-vmap <c-d>r yvip:s/<c-r>"//g<Left><Left>
+nmap <c-d>R :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
+vmap <c-d>R y:%s/<c-r>"//gc<left><left><Left>
+nmap <c-d>r yiwvip:s/\<<c-r>"\>//gc<Left><Left><Left>
+vmap <c-d>r yvip:s/<c-r>"//gc<Left><Left><Left>
 
 " add line numbers to selection
 vmap <c-d>n :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
