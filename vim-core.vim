@@ -279,6 +279,9 @@ nmap \gs :Gstatus<CR>
 nmap \gd :Gdiff<CR>
 nmap \gc :Gcommit<CR>
 
+" tabular
+nmap \: :Tabu /:<CR>
+
 " # Filetype-specific settings
 
 " all notes
