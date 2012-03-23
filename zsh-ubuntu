@@ -3,5 +3,7 @@
 # source: http://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-ever-cd
 function chpwd() {
   emulate -LR zsh
-  ls --color=auto -lthr
+  ls --color=auto -thor
 }
+
+alias ll --color=auto -thor
