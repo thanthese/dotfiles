@@ -6,4 +6,4 @@ function chpwd() {
   ls --color=auto -thor
 }
 
-alias ll --color=auto -thor
+alias ll="ls --color=auto -thor"
