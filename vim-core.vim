@@ -281,6 +281,7 @@ nmap \gc :Gcommit<CR>
 
 " tabular
 nmap \: :Tabu /:<CR>
+nmap \= :Tabu /=<CR>
 
 " # Filetype-specific settings
 
