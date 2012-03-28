@@ -229,6 +229,9 @@ vmap <c-d>r yvip:s/<c-r>"//gc<Left><Left><Left>
 " add line numbers to selection
 vmap <c-d>n :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
 
+" format a urI
+nmap <c-d>i 0:s/[&?]/\r&<space>/g<CR>vipoj>\=k0
+
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
 
