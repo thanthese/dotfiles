@@ -7,3 +7,58 @@ function chpwd() {
 }
 
 alias ll="ls --color=auto -thor"
+
+##
+# git convenience magic
+
+# Selects the file name for the nth file from a git status method.
+#
+# ex: `gn 2` will return the 2nd file name
+function gn() {
+  git status | grep : | grep -v 'commit:' | cut -d: -f2 | sed -n $1p
+}
+
+# Number git files.
+function gnn() {
+  git status | grep : | grep -v 'commit:' | cut -d: -f2 | cat -n
+}
+
+alias gd1='git diff `gn 1`'
+alias gd2='git diff `gn 2`'
+alias gd3='git diff `gn 3`'
+alias gd4='git diff `gn 4`'
+alias gd5='git diff `gn 5`'
+alias gd6='git diff `gn 6`'
+alias gd7='git diff `gn 7`'
+alias gd8='git diff `gn 8`'
+alias gd9='git diff `gn 9`'
+
+alias gk1='git checkout `gn 1`'
+alias gk2='git checkout `gn 2`'
+alias gk3='git checkout `gn 3`'
+alias gk4='git checkout `gn 4`'
+alias gk5='git checkout `gn 5`'
+alias gk6='git checkout `gn 6`'
+alias gk7='git checkout `gn 7`'
+alias gk8='git checkout `gn 8`'
+alias gk9='git checkout `gn 9`'
+
+alias ga1='git add `gn 1`; git status'
+alias ga2='git add `gn 2`; git status'
+alias ga3='git add `gn 3`; git status'
+alias ga4='git add `gn 4`; git status'
+alias ga5='git add `gn 5`; git status'
+alias ga6='git add `gn 6`; git status'
+alias ga7='git add `gn 7`; git status'
+alias ga8='git add `gn 8`; git status'
+alias ga9='git add `gn 9`; git status'
+
+alias gp1='git add -p `gn 1`; git status'
+alias gp2='git add -p `gn 2`; git status'
+alias gp3='git add -p `gn 3`; git status'
+alias gp4='git add -p `gn 4`; git status'
+alias gp5='git add -p `gn 5`; git status'
+alias gp6='git add -p `gn 6`; git status'
+alias gp7='git add -p `gn 7`; git status'
+alias gp8='git add -p `gn 8`; git status'
+alias gp9='git add -p `gn 9`; git status'
