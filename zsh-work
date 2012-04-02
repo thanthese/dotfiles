@@ -19,12 +19,11 @@ PATH=/home/thanthese/sparkup/:$PATH
 #source /usr/local/bin/ferret_paths
 
 # servers
-alias stage="ssh smann@geo-demo4.geocent.com"
+alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
 alias neplo="ssh smann@geo-demo4.geocent.com"
 alias demo="ssh smann@demo.geocent.com"
-alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
-alias devin="ssh smann@geo-dev.geocent.com -XC -L 8333:localhost:8333"
 alias dev="ssh smann@geo-dev.geocent.com -XC -L 8333:localhost:8333"
+alias unicorn="ssh smann@publicdemo.geocent.com"
 
 # directory aliases
 hash -d e=~/OpenCOP
