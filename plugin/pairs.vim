@@ -19,6 +19,11 @@ inoremap <expr> ) Right(1) == ")" ? "\<Right>" : ")"
 inoremap <expr> ] Right(1) == "]" ? "\<Right>" : "]"
 inoremap <expr> } Right(1) == "}" ? "\<Right>" : "}"
 
+" quotes are harder
+inoremap <expr> " Right(1) == "\"" ? "\<Right>" : "\"\"<Left>"
+inoremap <expr> ` Right(1) == "`"  ? "\<Right>" : "``<Left>"
+" can't do "'"s because they don't always come in pairs (ex: "don't")
+
 " smart backspace
 inoremap <expr> <Backspace> SmartBackspace()
 function! SmartBackspace()
