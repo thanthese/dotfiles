@@ -2,13 +2,14 @@
 " ===========================
 
 " shortcuts to various places
-nmap \b :e ~/.bashrc<CR>
-nmap \d :e ~/Desktop/<C-d>
-nmap \f :e ~/Dropbox/french/french.flash<CR>
+nmap \b :e ~/.bashrc<cr>
+nmap \d :e ~/Dropbox/<cr>
+nmap \u :e ~/Dropbox/usernames.md<cr>
+nmap \f :e ~/Dropbox/french/french.flash<cr>
 nmap \h :e ~/
-nmap \r :e ~/scratch.txt<CR>
-nmap \s :e /sandbox/scratch.md<CR>
-nmap \v :e ~/.vimrc<CR>
-nmap \v1 :e ~/dotfiles/vim-core.vim<CR>
-nmap \v2 :e ~/dotfiles/vim-mac.vim<CR>
-nmap \vs :so ~/.vimrc<CR>
+nmap \r :e ~/scratch.txt<cr>
+nmap \s :e /sandbox/scratch.md<cr>
+nmap \v :e ~/.vimrc<cr>
+nmap \v1 :e ~/dotfiles/vim-core.vim<cr>
+nmap \v2 :e ~/dotfiles/vim-mac.vim<cr>
+nmap \vs :so ~/.vimrc<cr>

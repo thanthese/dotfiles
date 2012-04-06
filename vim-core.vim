@@ -291,7 +291,7 @@ nmap \= :Tabu /=<CR>
 " all notes
 nmap \o :e ~/Dropbox/all-notes.txt<CR>
 nmap \O :e ~/Dropbox/all-notes.txt<CR>Gzv?^#<CR>0zt
-nmap \w :e ~/Dropbox/all-notes.txt<CR>/what i've done<cr>0zvzt
+nmap \w :e ~/Dropbox/work-log.md<CR>
 autocmd! BufWritePost all-notes.txt silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.txt -o ~/Dropbox/view-notes.html
 
 " kung-fu
