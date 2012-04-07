@@ -158,11 +158,6 @@ vmap <c-d>o :mark '<cr>gv:copy 1<cr>:echo "-- Line(s) copied to top of file --"<
 " calendar
 map <c-d>c !!cal<CR>
 
-" rot47 (encrypt/decrypt)
-nmap <c-d>e !!tr '\!-~' 'P-~\!-O'<CR>
-nmap <c-d>E :mark '<cr>ggVG!tr '\!-~' 'P-~\!-O'<CR>''
-vmap <c-d>e !tr '\!-~' 'P-~\!-O'<CR>
-
 " par
 nmap <c-d>p !!par<CR>
 vmap <c-d>p !par<CR>
