@@ -15,12 +15,12 @@ alias ll="ls --color=auto -thor"
 #
 # ex: `gn 2` will return the 2nd file name
 function gn() {
-  git status | grep : | grep -v 'commit:' | cut -d: -f2 | sed -n $1p
+  git status | grep : | grep -v ':' | cut -d: -f2 | sed -n $1p
 }
 
 # Number git files.
 function gnn() {
-  git status | grep : | grep -v 'commit:' | cut -d: -f2 | cat -n
+  git status | grep : | grep -v ':$' | cut -d: -f2 | cat -n
 }
 
 alias gd1='git diff `gn 1`'
