@@ -94,8 +94,8 @@ imap <c-r><c-r> <c-r>"
 map gp `[v`]
 
 " open new lines
-map <c-p> O<Esc>j
-map <c-n> o<Esc>k
+map <c-p> O<Esc>
+map <c-n> o<Esc>
 
 " insert mode cursor movement
 inoremap <c-h> <Left>
