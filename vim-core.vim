@@ -163,7 +163,7 @@ nmap <c-d>p !!par<CR>
 vmap <c-d>p !par<CR>
 
 " sort
-nmap <c-d>s :%!sort<CR>
+nmap <c-d>s vip!sort<CR>
 vmap <c-d>s !sort<CR>
 
 " unique
