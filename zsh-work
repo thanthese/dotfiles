@@ -27,7 +27,6 @@ alias unicorn="echo 'Reminder: Must be on VPN.'; ssh smann@paas-ubuntu.geocent.c
 
 # directory aliases
 hash -d e=~/OpenCOP
-hash -d n=~/Nutrition/
 hash -d t=/var/lib/tomcat6/webapps/
 
 # quick open aliases
