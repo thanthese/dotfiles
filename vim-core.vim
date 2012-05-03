@@ -281,6 +281,11 @@ nmap \gc :Gcommit<CR>
 nmap \: :Tabu /:<CR>
 nmap \= :Tabu /=<CR>
 
+" netrw
+let g:netrw_preview   = 1   " preview vertically
+let g:netrw_liststyle = 3   " default to a tree layout
+let g:netrw_winsize   = 30  " default preview width: 30 cols
+
 " # Filetype-specific settings
 
 " all notes
