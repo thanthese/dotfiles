@@ -34,3 +34,4 @@ hash -d w=~/Downloads
 
 # turn off stupid completions
 alias tree='nocorrect tree'
+unsetopt correct_all
