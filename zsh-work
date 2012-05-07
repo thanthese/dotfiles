@@ -46,7 +46,7 @@ alias smain="screen -S main"
 alias tstart="sudo service tomcat6 start"
 alias tstop="sudo service tomcat6 stop"
 alias trestart="sudo service tomcat6 stop"
-alias tlog="tail -f /var/lib/tomcat6/logs/catalina.out"
+alias tlog="sudo tail -f /var/lib/tomcat6/logs/catalina.out"
 
 # tomcat process mess
 alias tomcat-to-src="cp /var/lib/tomcat6/webapps/EOC/js/Eoc/map2.js ~/OpenCOP/web-app/js/Eoc/map2.js"
