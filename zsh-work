@@ -17,6 +17,7 @@ PATH=/home/thanthese/sparkup/:$PATH
 #PATH=/opt/google/chrome:$PATH
 #PATH=/usr/lib/jvm/java-6-sun-1.6.0.13/bin:$PATH
 #source /usr/local/bin/ferret_paths
+export GEOSERVER_DATA_DIR=/var/lib/geoserver_data
 
 # servers
 alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
@@ -45,7 +46,7 @@ alias smain="screen -S main"
 # tomcat mess
 alias tstart="sudo service tomcat6 start"
 alias tstop="sudo service tomcat6 stop"
-alias trestart="sudo service tomcat6 stop"
+alias trestart="sudo service tomcat6 restart"
 alias tlog="sudo tail -f /var/lib/tomcat6/logs/catalina.out"
 
 # tomcat process mess
