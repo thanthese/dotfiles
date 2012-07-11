@@ -79,8 +79,8 @@ autocmd! BufWrite * mark ` | silent! %s/\s\+$// | norm ``
 autocmd! BufWritePost *.vim source %
 
 " highlight matches of word under cursor
-autocmd CursorMoved * silent! exe printf('match MatchedWord /\<%s\>/', expand('<cword>'))
-hi MatchedWord guifg=#000000 guibg=#cae682 cterm=bold ctermfg=cyan
+"    autocmd CursorMoved * silent! exe printf('match MatchedWord /\<%s\>/', expand('<cword>'))
+"    hi MatchedWord guifg=#000000 guibg=#cae682 cterm=bold ctermfg=cyan
 
 " # Mappings
 
@@ -226,6 +226,20 @@ vmap <c-d>n :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
 
 " format a urI
 nmap <c-d>i 0:s/[&?]/\r&<space>/g<CR>vipoj>\=k0
+
+" ## visual mode tricks
+
+" search only within (last) selection
+vmap <C-s>/ <Esc>/\%V
+nmap <C-s>/ /\%V
+
+" replace word only within last selection
+vmap <C-s>r <Esc><C-s>r
+nmap <C-s>r :%s/\%V<c-r><c-w>/
+
+" substitute only within last selection
+vmap <C-s>s <Esc><C-s>s
+nmap <C-s>s :%s/\%V
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
