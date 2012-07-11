@@ -215,23 +215,25 @@ nmap <c-d>3 vip<c-d>3
 nmap <c-d>4 vip<c-d>4
 nmap <c-d>5 vip<c-d>5
 
-" search-replace, whole word
-nmap <c-d>R :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
-vmap <c-d>R y:%s/<c-r>"//gc<left><left><Left>
-nmap <c-d>r yiwvip:s/\<<c-r>"\>//gc<Left><Left><Left>
-vmap <c-d>r yvip:s/<c-r>"//gc<Left><Left><Left>
-
 " add line numbers to selection
 vmap <c-d>n :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
 
 " format a urI
 nmap <c-d>i 0:s/[&?]/\r&<space>/g<CR>vipoj>\=k0
 
-" ## visual mode tricks
+" ## search and replace
 
-" search only within (last) selection
-vmap <C-s>/ <Esc>/\%V
-nmap <C-s>/ /\%V
+" search-replace word in file
+nmap <c-d>R :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
+
+" search-replace selection in file
+vmap <c-d>R y:%s/<c-r>"//gc<left><left><Left>
+
+" search-replace word in paragraph
+nmap <c-d>r yiwvip:s/\<<c-r>"\>//gc<Left><Left><Left>
+
+" search-replace selection in paragraph
+vmap <c-d>r yvip:s/<c-r>"//gc<Left><Left><Left>
 
 " replace word only within last selection
 vmap <C-s>r <Esc><C-s>r
@@ -240,6 +242,10 @@ nmap <C-s>r :%s/\%V<c-r><c-w>/
 " substitute only within last selection
 vmap <C-s>s <Esc><C-s>s
 nmap <C-s>s :%s/\%V
+
+" search only within (last) selection
+vmap <C-s>/ <Esc>/\%V
+nmap <C-s>/ /\%V
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
