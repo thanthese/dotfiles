@@ -247,6 +247,10 @@ nmap <C-s>s :%s/\%V
 vmap <C-s>/ <Esc>/\%V
 nmap <C-s>/ /\%V
 
+" navigate through logical sections of code
+nmap ( ?`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
+nmap ) /`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
+
 " ## pairs
 imap <C-space>' ''<Left>
 imap <C-space>` ``<Left>
