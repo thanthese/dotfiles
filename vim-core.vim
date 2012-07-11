@@ -93,9 +93,9 @@ map Q zt
 imap <c-r><c-r> <c-r>"
 map gp `[v`]
 
-" open new lines
-map <c-p> O<Esc>
-map <c-n> o<Esc>
+" open new empty lines
+map <c-p> O<Esc>cc<Esc>
+map <c-n> o<Esc>cc<Esc>
 
 " insert mode cursor movement
 inoremap <c-h> <Left>
@@ -246,6 +246,29 @@ nmap <C-s>s :%s/\%V
 " search only within (last) selection
 vmap <C-s>/ <Esc>/\%V
 nmap <C-s>/ /\%V
+
+" ## pairs
+imap <C-space>' ''<Left>
+imap <C-space>` ``<Left>
+imap <C-space>" ""<Left>
+
+imap <C-space>9 ()<Left>
+imap <C-space>( ()<Left>
+imap <C-space>[ []<Left>
+
+imap <C-space>{ {}<Left>
+imap <C-space>] {}<Left>
+
+imap <C-space>} {<CR>}<Esc>O<space><space>
+
+" ## split string
+vmap <C-space>" c"<space>+<space><c-r>"<space>+<space>"<Esc>
+vmap <C-space>' c'<space>+<space><c-r>'<space>+<space>'<Esc>
+vmap <C-space>` c`<space>+<space><c-r>`<space>+<space>`<Esc>
+
+nmap <C-space>" viw<C-space>"
+nmap <C-space>' viw<C-space>'
+nmap <C-space>` viw<C-space>`
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
