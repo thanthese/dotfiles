@@ -300,6 +300,25 @@ endfunction
 
 " # Plugin-specific settings
 
+" bufexplorer
+nmap \\ \be
+
+" netrw
+let g:netrw_preview   = 1   " preview vertically
+let g:netrw_liststyle = 3   " default to a tree layout
+let g:netrw_winsize   = 30  " default preview width: 30 cols
+
+" tabular
+nmap \: :Tabu /:<CR>
+nmap \= :Tabu /=<CR>
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+inoremap <expr><TAB> pumvisible() ? "\<CR>" : "\<TAB>"
+
 " fuzzy finder
 nmap <c-d><c-f> :FufCoverageFile<CR>
 nmap <c-d><c-b> :FufBuffer<CR>
@@ -307,31 +326,9 @@ nmap <c-d><c-h> :FufHelp<CR>
 nmap <c-d><c-c> :FufChangeList<CR>
 nmap <c-d>/ :FufLine<CR>
 
-" bufexplorer
-nmap \\ \be
-
 " command-t
 nmap <c-t> :CommandT<CR>
 set wildignore+=.git,*.class,*.war,**/OpenLayers-2.11/*,**/classes*
-
-" ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
-nmap \a :Ack<Space>
-nmap \aa :Ack<Space>
-
-" fugitive
-nmap \gs :Gstatus<CR>
-nmap \gd :Gdiff<CR>
-nmap \gc :Gcommit<CR>
-
-" tabular
-nmap \: :Tabu /:<CR>
-nmap \= :Tabu /=<CR>
-
-" netrw
-let g:netrw_preview   = 1   " preview vertically
-let g:netrw_liststyle = 3   " default to a tree layout
-let g:netrw_winsize   = 30  " default preview width: 30 cols
 
 " # Filetype-specific settings
 
@@ -341,10 +338,6 @@ nmap \O :e ~/Dropbox/all-notes.txt<CR>Gzv?^#<CR>0zt
 nmap \w :e ~/Dropbox/work-log.md<CR>
 autocmd! BufWritePost all-notes.txt silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.txt -o ~/Dropbox/view-notes.html
 
-" kung-fu
-nmap \k :e ~/Dropbox/kung-fu.clj<cr>
-nmap \K \kggjjo{:category "programming"<cr> :question ""<cr> :answer ""}<esc>kl
-
 " javascript
 vmap <c-d>jc cconsole.log()<Esc>P^
 nmap <c-d>jc ^Cconsole.log()<Esc>P^
@@ -352,7 +345,7 @@ nmap <c-d>jC ^Cconsole.log("<c-r>"")<Esc>^
 nmap <c-d>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 vmap <c-d>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
-" # General abbreviations
+" # Abbreviations
 
 abbr teh the
 abbr Teh The

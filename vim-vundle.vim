@@ -10,22 +10,25 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 "
-" original repos on github
-Bundle 'tpope/vim-fugitive'
+" # original repos on github
 Bundle 'tpope/vim-markdown'
 Bundle 'godlygeek/tabular'
+Bundle 'Shougo/neocomplcache'
+"Bundle 'tpope/vim-fugitive'
 "Bundle 'wgibbs/vim-irblack'
-" vim-scripts repos
+"
+" # vim-scripts repos
+Bundle 'bufexplorer.zip'
+Bundle 'surround.vim'
+Bundle 'repeat.vim'
+Bundle 'matchit.zip'
 Bundle 'L9'
 Bundle 'tComment'
 Bundle 'FuzzyFinder'
-Bundle 'rails.vim'
-Bundle 'surround.vim'
-Bundle 'repeat.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'matchit.zip'
 Bundle 'VimClojure'
-" non github repos
+"Bundle 'rails.vim'
+"
+" # non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
