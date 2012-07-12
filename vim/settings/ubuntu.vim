@@ -17,8 +17,8 @@ nmap \h :e ~/
 nmap \nn :cd ~/NN/04/<CR>
 nmap \n :NERDTree<CR>
 nmap \s :e /sandbox/scratch.md<CR>
-nmap \v1 :e ~/dotfiles/vim-core.vim<CR>
-nmap \v2 :e ~/dotfiles/vim-ubuntu.vim<CR>
+nmap \v1 :e ~/dotfiles/vim/settings/core.vim<CR>
+nmap \v2 :e ~/dotfiles/vim/settings/ubuntu.vim<CR>
 nmap \v :e ~/.vimrc<CR>
 nmap \vs :so ~/.vimrc<CR>
 
