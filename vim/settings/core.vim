@@ -156,7 +156,7 @@ nmap <c-d>o :mark '<cr>:copy 1<cr>:echo "-- Line copied to top of file --"<cr>''
 vmap <c-d>o :mark '<cr>gv:copy 1<cr>:echo "-- Line(s) copied to top of file --"<cr>''
 
 " calendar
-map <c-d>c !!cal<CR>
+nmap <c-d>c !!cal<CR>
 
 " par
 nmap <c-d>p !!par<CR>
