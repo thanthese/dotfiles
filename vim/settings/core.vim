@@ -156,7 +156,7 @@ nmap <c-d>o :mark '<cr>:copy 1<cr>:echo "-- Line copied to top of file --"<cr>''
 vmap <c-d>o :mark '<cr>gv:copy 1<cr>:echo "-- Line(s) copied to top of file --"<cr>''
 
 " calendar
-map <c-d>c !!cal<CR>
+nmap <c-d>c !!cal<CR>
 
 " par
 nmap <c-d>p !!par<CR>
@@ -221,6 +221,10 @@ vmap <c-d>n :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
 " format a urI
 nmap <c-d>i 0:s/[&?]/\r&<space>/g<CR>vipoj>\=k0
 
+" navigate through logical sections of code
+nmap ( ?`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
+nmap ) /`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
+
 " ## search and replace
 
 " search-replace word in file
@@ -235,44 +239,31 @@ nmap <c-d>r yiwvip:s/\<<c-r>"\>//gc<Left><Left><Left>
 " search-replace selection in paragraph
 vmap <c-d>r yvip:s/<c-r>"//gc<Left><Left><Left>
 
-" replace word only within last selection
-vmap <C-s>r <Esc><C-s>r
-nmap <C-s>r :%s/\%V<c-r><c-w>/
-
 " substitute only within last selection
-vmap <C-s>s <Esc><C-s>s
-nmap <C-s>s :%s/\%V
+vmap <C-d>S <Esc><C-d>S
+nmap <C-d>S :%s/\%V
 
 " search only within (last) selection
-vmap <C-s>/ <Esc>/\%V
-nmap <C-s>/ /\%V
-
-" navigate through logical sections of code
-nmap ( ?`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
-nmap ) /`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
+vmap <C-d>/ <Esc>/\%V
+nmap <C-d>/ /\%V
 
 " ## pairs
-imap <C-d>' ''<Left>
-imap <C-d>` ``<Left>
-imap <C-d>" ""<Left>
-
+imap <C-d>6 ``<Left>
+imap <C-d>7 ''<Left>
+imap <C-d>8 ""<Left>
 imap <C-d>9 ()<Left>
-imap <C-d>( ()<Left>
-imap <C-d>[ []<Left>
-
-imap <C-d>{ {}<Left>
-imap <C-d>] {}<Left>
-
-imap <C-d>} {<CR>}<Esc>O<space><space>
+imap <C-d>0 []<Left>
+imap <C-d>- {}<Left>
+imap <C-d>= {<CR>}<Esc>O<space><space>
 
 " ## split string
-vmap <C-space>" c"<space>+<space><c-r>"<space>+<space>"<Esc>
-vmap <C-space>' c'<space>+<space><c-r>'<space>+<space>'<Esc>
-vmap <C-space>` c`<space>+<space><c-r>`<space>+<space>`<Esc>
+vmap <C-d>" c"<space>+<space><c-r>"<space>+<space>"<Esc>
+vmap <C-d>' c'<space>+<space><c-r>'<space>+<space>'<Esc>
+vmap <C-d>` c`<space>+<space><c-r>`<space>+<space>`<Esc>
 
-nmap <C-space>" viw<C-space>"
-nmap <C-space>' viw<C-space>'
-nmap <C-space>` viw<C-space>`
+nmap <C-d>" viw<C-d>"
+nmap <C-d>' viw<C-d>'
+nmap <C-d>` viw<C-d>`
 
 " # Commands
 com! -range=% Tidy <line1>,<line2>!tidy -xml -quiet -indent --indent-attributes yes --sort-attributes alpha -wrap --show-warnings no
@@ -342,7 +333,7 @@ nmap <c-d><c-f> :FufCoverageFile<CR>
 nmap <c-d><c-b> :FufBuffer<CR>
 nmap <c-d><c-h> :FufHelp<CR>
 nmap <c-d><c-c> :FufChangeList<CR>
-nmap <c-d>/ :FufLine<CR>
+nmap <c-d><c-l> :FufLine<CR>
 
 " command-t
 nmap <c-t> :CommandT<CR>
