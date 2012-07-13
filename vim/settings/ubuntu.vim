@@ -9,7 +9,7 @@ set clipboard=unnamed " make "* the anonymous register
 " ===================
 
 nmap \b :e ~/.bashrc<CR>
-nmap \d :e ~/Dropbox/<cr>
+nmap \d :e ~/Dropbox/dream-journal.md<cr>
 nmap \u :e ~/Dropbox/usernames.md<cr>
 nmap \w :e ~/Dropbox/work-log.md<cr>
 nmap \e :cd ~/NetBeansProjects/EOC/<CR>

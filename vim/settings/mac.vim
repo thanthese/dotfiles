@@ -3,7 +3,7 @@
 
 " shortcuts to various places
 nmap \b :e ~/.bashrc<cr>
-nmap \d :e ~/Dropbox/<cr>
+nmap \d :e ~/Dropbox/dream-journal.md<cr>
 nmap \u :e ~/Dropbox/usernames.md<cr>
 nmap \f :e ~/Dropbox/french/french.flash<cr>
 nmap \h :e ~/
