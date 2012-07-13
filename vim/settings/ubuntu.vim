@@ -33,4 +33,5 @@ set wildignore+=.svn,*.ear,**/target/**,target/**,**/target,/target/,*/target/*,
 " dictionary
 " ==========
 
-set dictionary+=/usr/share/dict/words
+" this takes too long to run when running automatic word completion
+"set dictionary+=/usr/share/dict/words

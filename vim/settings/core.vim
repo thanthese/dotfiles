@@ -252,18 +252,18 @@ nmap ( ?`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
 nmap ) /`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
 
 " ## pairs
-imap <C-space>' ''<Left>
-imap <C-space>` ``<Left>
-imap <C-space>" ""<Left>
+imap <C-d>' ''<Left>
+imap <C-d>` ``<Left>
+imap <C-d>" ""<Left>
 
-imap <C-space>9 ()<Left>
-imap <C-space>( ()<Left>
-imap <C-space>[ []<Left>
+imap <C-d>9 ()<Left>
+imap <C-d>( ()<Left>
+imap <C-d>[ []<Left>
 
-imap <C-space>{ {}<Left>
-imap <C-space>] {}<Left>
+imap <C-d>{ {}<Left>
+imap <C-d>] {}<Left>
 
-imap <C-space>} {<CR>}<Esc>O<space><space>
+imap <C-d>} {<CR>}<Esc>O<space><space>
 
 " ## split string
 vmap <C-space>" c"<space>+<space><c-r>"<space>+<space>"<Esc>
