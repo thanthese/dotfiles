@@ -319,6 +319,24 @@ let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 inoremap <expr><TAB> pumvisible() ? "\<CR>" : "\<TAB>"
 
+" vimux
+" prompt
+nmap <c-c>p :VimuxPromptCommand<CR>
+" run command
+vmap <c-c><c-c> "zy :call VimuxRunCommand(@z . "\n", 0)<CR>
+nmap <c-c><c-c> vip<c-c><c-c>
+" repeat last
+nmap <c-c>r :call VimuxRunLastCommand()<CR>
+" inspect
+nmap <c-c>i :call VimuxInspectRunner()<CR>
+" close
+nmap <c-c>c :call VimuxCloseRunner()<CR>
+" break (interrupt running process)
+nmap <c-c>b :call VimuxInterruptRunner()<CR>
+" window settings
+"let g:VimuxOrientation = "h"
+"let g:VimuxHeight = "40"
+
 " fuzzy finder
 nmap <c-d><c-f> :FufCoverageFile<CR>
 nmap <c-d><c-b> :FufBuffer<CR>
