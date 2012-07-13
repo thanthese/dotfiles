@@ -314,7 +314,7 @@ inoremap <expr><TAB> pumvisible() ? "\<CR>" : "\<TAB>"
 " prompt
 nmap <c-c>p :VimuxPromptCommand<CR>
 " run command
-vmap <c-c><c-c> "zy :call VimuxRunCommand(@z . "\n", 0)<CR>
+vmap <c-c><c-c> "zy :call VimuxRunCommand(@z)<CR>
 nmap <c-c><c-c> vip<c-c><c-c>
 " repeat last
 nmap <c-c>r :call VimuxRunLastCommand()<CR>
