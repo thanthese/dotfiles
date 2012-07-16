@@ -300,7 +300,9 @@ let g:netrw_winsize   = 30  " default preview width: 30 cols
 
 " tabular
 nmap \: :Tabu /:<CR>
+vmap \: :Tabu /:<CR>
 nmap \= :Tabu /=<CR>
+vmap \= :Tabu /=<CR>
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
