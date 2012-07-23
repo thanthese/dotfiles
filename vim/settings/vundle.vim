@@ -15,6 +15,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'godlygeek/tabular'
 Bundle 'Shougo/neocomplcache'
 Bundle 'benmills/vimux'
+Bundle 'coderifous/textobj-word-column.vim'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'wgibbs/vim-irblack'
 "
