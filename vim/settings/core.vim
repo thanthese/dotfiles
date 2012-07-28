@@ -303,10 +303,23 @@ nmap \: :Tabu /:<CR>
 vmap \: :Tabu /:<CR>
 nmap \= :Tabu /=<CR>
 vmap \= :Tabu /=<CR>
+nmap \| :Tabu /\|<CR>
+vmap \| :Tabu /\|<CR>
+
+" surround
+nmap ds0 ds)
+nmap da0 da)
+nmap di0 di)
+nmap ca0 ca)
+nmap ci0 ci)
+nmap va0 va)
+nmap vi0 vi)
+vmap s0 s)
+nmap vv v%s)
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_auto_select = 1
+"let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 inoremap <expr><TAB> pumvisible() ? "\<CR>" : "\<TAB>"
