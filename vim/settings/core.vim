@@ -79,7 +79,8 @@ autocmd! BufWrite * mark ` | silent! %s/\s\+$// | norm ``
 autocmd! BufWritePost *.vim source %
 
 " highlight matches of word under cursor
-autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" set eventignore=CursorMoved
 
 " # Mappings
 
