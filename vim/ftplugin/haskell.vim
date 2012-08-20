@@ -5,4 +5,4 @@ nmap <f5> :w<cr><c-c>p:load <c-r>%<cr>
 nmap <f6> :w<cr>:!~/.cabal/bin/hlint %<cr>
 
 " print type under cursor
-nmap <f7> yiw:w<cr>k:r!ghc -e ":i <c-r>"" %<cr>ddk
+nmap <f7> yiw:w<cr>k:r!ghc -e ":i <c-r>"" %<cr>
