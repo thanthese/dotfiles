@@ -13,6 +13,10 @@ alias gpush="git push"
 alias gs="git status"
 alias gtoday="git log --since=\"1am\" --author=\"Stephen Mann\" --no-merges --oneline"
 
+function gjava () {
+  git grep -in "$1" -- "*.java"
+}
+
 # zsh commands
 alias p="print -l"
 
