@@ -17,6 +17,8 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'benmills/vimux'
 Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'thanthese/Tortoise-Typing'
+Bundle 'thanthese/Tortoise-Typing'
+Bundle 'Lokaltog/vim-powerline'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'wgibbs/vim-irblack'
 "
