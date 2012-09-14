@@ -19,6 +19,7 @@ Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'thanthese/Tortoise-Typing'
 Bundle 'thanthese/Tortoise-Typing'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/syntastic'
 "Bundle 'tpope/vim-fugitive'
 "Bundle 'wgibbs/vim-irblack'
 "
