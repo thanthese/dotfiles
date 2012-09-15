@@ -14,3 +14,6 @@ nmap \v :e ~/.vimrc<cr>
 nmap \v1 :e ~/dotfiles/vim/settings/core.vim<cr>
 nmap \v2 :e ~/dotfiles/vim/settings/mac.vim<cr>
 nmap \vs :so ~/.vimrc<cr>
+
+" poor, poor, stupid mac
+let g:Powerline_symbols = 'compatible'
