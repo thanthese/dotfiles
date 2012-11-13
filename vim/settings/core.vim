@@ -126,7 +126,10 @@ onoremap ' `
 
 " ## clipboard
 
-" yank to system clipboard
+" yank current WORD to clipboard
+nmap <F7> "+yiW:echo "-- WORD Yanked to Clipboard --"<CR>"
+
+" yank file or selection to system clipboard
 nmap <F8> gg"+yG<c-o><c-o>:echo "-- File Yanked to Clipboard --"<CR>
 vmap <F8> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 
@@ -218,7 +221,7 @@ nmap <c-d>5 vip<c-d>5
 " add line numbers to selection
 vmap <c-d>n :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
 
-" format a urI
+" format a uri
 nmap <c-d>i 0:s/[&?]/\r&<space>/g<CR>vipoj>\=k0
 
 " navigate through logical sections of code
