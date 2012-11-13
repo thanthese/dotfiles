@@ -9,7 +9,7 @@ nmap \h :e ~/
 nmap \p :e ~/Dropbox<cr>
 nmap \r :e ~/scratch.txt<cr>
 nmap \s :e /sandbox/scratch.md<cr>
-nmap \u :e ~/Dropbox/usernames.md<cr>
+nmap \u :e ~/Dropbox/usernames.txt<cr>
 nmap \v :e ~/.vimrc<cr>
 nmap \v1 :e ~/dotfiles/vim/settings/core.vim<cr>
 nmap \v2 :e ~/dotfiles/vim/settings/mac.vim<cr>
