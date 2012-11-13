@@ -11,31 +11,30 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " # original repos on github
-Bundle 'tpope/vim-markdown'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'godlygeek/tabular'
-Bundle 'Shougo/neocomplcache'
 Bundle 'benmills/vimux'
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'thanthese/Tortoise-Typing'
-Bundle 'thanthese/Tortoise-Typing'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/syntastic'
-"Bundle 'tpope/vim-fugitive'
-"Bundle 'wgibbs/vim-irblack'
+" Bundle 'thanthese/Tortoise-Typing'
+" Bundle 'tpope/vim-markdown'
+" Bundle 'Shougo/neocomplcache'
+" Bundle 'scrooloose/syntastic'
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'wgibbs/vim-irblack'
 "
 " # vim-scripts repos
 Bundle 'bufexplorer.zip'
 Bundle 'surround.vim'
 Bundle 'repeat.vim'
 Bundle 'matchit.zip'
-Bundle 'L9'
 Bundle 'tComment'
+Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'VimClojure'
-"Bundle 'rails.vim'
+" Bundle 'VimClojure'
+" Bundle 'rails.vim'
 "
 " # non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+" Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
 filetype plugin indent on     " required!
