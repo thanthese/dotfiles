@@ -18,7 +18,9 @@ PATH=/home/thanthese/android-sdk-linux_x86/platform-tools:$PATH
 #PATH=/opt/google/chrome:$PATH
 #PATH=/usr/lib/jvm/java-6-sun-1.6.0.13/bin:$PATH
 #source /usr/local/bin/ferret_paths
-export GEOSERVER_DATA_DIR=/var/lib/geoserver_data
+export GEOSERVER_DATA_DIR="/var/lib/geoserver_data"
+export GDAL_DATA="/home/thanthese/gdal_data/"
+export GDAL_DATA="/home/thanthese/gdal_libs/"
 
 # servers
 alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
