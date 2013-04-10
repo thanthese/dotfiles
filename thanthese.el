@@ -1,8 +1,9 @@
-;;; thanthese -- My customizations.
+;;; thanthese -- My emacs customizations.
 ;;
 ;;; Commentary:
 ;;
-;; Yes, everything lives in this one file.
+;; Yes, everything lives in this one file. Everything else comes from
+;; prelude. This file lives at ~/.emacs.d/personal/thanthese.el.
 ;;
 ;;; Code:
 

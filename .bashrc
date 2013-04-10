@@ -7,9 +7,6 @@
 #   . ~/dotfiles/.bashrc
 #
 
-# need vi
-set -o vi
-
 # colors in terminal
 export TERM="xterm-256color"
 
