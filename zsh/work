@@ -2,7 +2,7 @@
 export GEOSERVER_HOME="/home/thanthese/geoserver-2.0.1/"
 export PATH=/home/thanthese/apache-maven-2.2.1/bin:$PATH
 export GRAILS_HOME="/home/thanthese/grails-1.3.5"
-export JAVA_HOME="/usr/lib/jvm/java-6-sun/"
+export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
 export MAVEN_OPTS="-Xms512m -Xmx1024m -XX:PermSize=256m -XX:MaxPermSize=512m"  ## NN
 export PATH=$PATH:/home/thanthese/leiningen
 export PATH=$PATH:/home/thanthese/android-sdk-linux_x86/tools
@@ -18,7 +18,9 @@ PATH=/home/thanthese/android-sdk-linux_x86/platform-tools:$PATH
 #PATH=/opt/google/chrome:$PATH
 #PATH=/usr/lib/jvm/java-6-sun-1.6.0.13/bin:$PATH
 #source /usr/local/bin/ferret_paths
-export GEOSERVER_DATA_DIR=/var/lib/geoserver_data
+export GEOSERVER_DATA_DIR="/var/lib/geoserver_data"
+export GDAL_DATA="/home/thanthese/gdal_data/"
+export GDAL_DATA="/home/thanthese/gdal_libs/"
 
 # servers
 alias george="ssh root@geo-demo.geocent.com -XC -L 8333:localhost:8333"
