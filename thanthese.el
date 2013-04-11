@@ -1,10 +1,10 @@
 ;;; thanthese -- My emacs customizations.
-;;
+
 ;;; Commentary:
 ;;
-;; Yes, everything lives in this one file. Everything else comes from
-;; prelude. This file lives at ~/.emacs.d/personal/thanthese.el.
-;;
+;; Yes, everything lives in this one file.  Everything else comes from
+;; prelude.  This file lives at ~/.emacs.d/personal/thanthese.el.
+
 ;;; Code:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -29,6 +29,7 @@
 ;; functions
 
 (defun sm/pretty-lambdas ()
+  "Turn on displaying 'lambda's as lambda symbols."
   (interactive)
   (font-lock-add-keywords
    nil `(("(?\\(lambda\\>\\)"
@@ -37,11 +38,15 @@
                     nil))))))
 
 (defun sm/add-to-path (path)
+  "Add path to PATH.
+
+By default Emacs doesn't seem to know things."
   (setenv "PATH" (concat path path-separator (getenv "PATH")))
   (push path exec-path)
   (add-to-list 'load-path path))
 
 (defun sm/is-mac-p ()
+  "Determine if we're on a mac."
   (eq system-type 'darwin))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
