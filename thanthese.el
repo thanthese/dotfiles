@@ -13,7 +13,8 @@
 ;; install packages
 (prelude-ensure-module-deps
  '(multiple-cursors
-   smex))
+   smex
+   move-text))
 
 ;; multiple-cursors
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
@@ -24,6 +25,10 @@
 ;; smex
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+;; move text
+(global-set-key (kbd "M-p") 'move-text-up)
+(global-set-key (kbd "M-n") 'move-text-down)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; functions
@@ -58,27 +63,30 @@ By default Emacs doesn't seem to know things."
 ;; indictate empty lines at end of buffer
 (set-default 'indicate-empty-lines t)
 
+;; there's no reason for the scratch buffer to say anything
+(setq initial-scratch-message nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; mac-specific
 
 (when (sm/is-mac-p)
   (progn
 
-   ;; add paths that emacs forgets
-   (mapc 'sm/add-to-path
-         '("/usr/local/bin"
-           "/usr/local/git/bin"
-           "/usr/texbin"))
+    ;; add paths that emacs forgets
+    (mapc 'sm/add-to-path
+          '("/usr/local/bin"
+            "/usr/local/git/bin"
+            "/usr/texbin"))
 
-   ;; super keys!
-   (setq mac-function-modifier 'hyper)
+    ;; super keys!
+    (setq mac-function-modifier 'hyper)
 
-   ;; move to trash instead of delete
-   (setq delete-by-moving-to-trash t
-         trash-directory "~/.Trash/emacs")
+    ;; move to trash instead of delete
+    (setq delete-by-moving-to-trash t
+          trash-directory "~/.Trash/emacs")
 
-   ;; make open browser work
-   (setq browse-url-browser-function 'browse-url-default-macosx-browser)))
+    ;; make open browser work
+    (setq browse-url-browser-function 'browse-url-default-macosx-browser)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; footer
