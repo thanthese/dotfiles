@@ -66,6 +66,9 @@ By default Emacs doesn't seem to know things."
 ;; there's no reason for the scratch buffer to say anything
 (setq initial-scratch-message nil)
 
+;; single space sentences
+(setq sentence-end-double-space nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; mac-specific
 
