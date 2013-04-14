@@ -21,6 +21,7 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
+(global-set-key (kbd "M-=") 'mc/mark-more-like-this-extended)
 
 ;; smex
 (global-set-key (kbd "M-x") 'smex)
@@ -68,6 +69,9 @@ By default Emacs doesn't seem to know things."
 
 ;; single space sentences
 (setq sentence-end-double-space nil)
+
+;; cache the passphrase for encrypted files
+(setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; mac-specific
