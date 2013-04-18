@@ -55,6 +55,11 @@ By default Emacs doesn't seem to know things."
   "Determine if we're on a mac."
   (eq system-type 'darwin))
 
+(defun sm/generate-random-password ()
+  "Drop randomly generated password in current buffer."
+  (interactive)
+  (shell-command "gpg --gen-random --armor 1 20" t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; settings
 
