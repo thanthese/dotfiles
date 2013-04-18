@@ -73,6 +73,11 @@ By default Emacs doesn't seem to know things."
 ;; cache the passphrase for encrypted files
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
+;; make matching parens obvious
+(show-paren-mode)
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hooks
 
