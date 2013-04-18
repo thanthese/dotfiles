@@ -74,6 +74,20 @@ By default Emacs doesn't seem to know things."
 (setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; hooks
+
+(add-hook 'text-mode-hook
+          (lambda ()
+            (whitespace-mode -1)
+            (toggle-word-wrap +1)))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (whitespace-mode -1)
+            (org-indent-mode)
+            (visual-line-mode)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; mac-specific
 
 (when (sm/is-mac-p)
