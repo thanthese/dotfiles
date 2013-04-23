@@ -16,20 +16,9 @@
    smex
    move-text))
 
-;; multiple-cursors
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
-(global-set-key (kbd "M-=") 'mc/mark-more-like-this-extended)
-
 ;; smex
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
-;; move text
-(global-set-key (kbd "M-p") 'move-text-up)
-(global-set-key (kbd "M-n") 'move-text-down)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; functions
@@ -44,9 +33,7 @@
                     nil))))))
 
 (defun sm/add-to-path (path)
-  "Add path to PATH.
-
-By default Emacs doesn't seem to know things."
+  "Add path to PATH, because emacs can't figure it out."
   (setenv "PATH" (concat path path-separator (getenv "PATH")))
   (push path exec-path)
   (add-to-list 'load-path path))
@@ -56,7 +43,7 @@ By default Emacs doesn't seem to know things."
   (eq system-type 'darwin))
 
 (defun sm/generate-random-password ()
-  "Drop randomly generated password in current buffer."
+  "Drop randomly generated password in current buffer at point."
   (interactive)
   (shell-command "gpg --gen-random --armor 1 20" t))
 
@@ -82,6 +69,23 @@ By default Emacs doesn't seem to know things."
 (show-paren-mode)
 (setq show-paren-delay 0)
 (setq show-paren-style 'expression)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; keybindings
+
+;; easier "other window"
+(global-set-key (kbd "H-o") 'other-window)
+
+;; move text
+(global-set-key (kbd "H-p") 'move-text-up)
+(global-set-key (kbd "H-n") 'move-text-down)
+
+;; multiple cursors
+(global-set-key (kbd "H-a") 'mc/edit-lines)
+(global-set-key (kbd "H-.") 'mc/mark-next-like-this)
+(global-set-key (kbd "H-,") 'mc/mark-previous-like-this)
+(global-set-key (kbd "H->") 'mc/mark-all-like-this)
+(global-set-key (kbd "H-=") 'mc/mark-more-like-this-extended)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hooks
