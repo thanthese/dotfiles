@@ -14,7 +14,8 @@
 (prelude-ensure-module-deps
  '(multiple-cursors
    smex
-   move-text))
+   move-text
+   skewer-mode))
 
 ;; smex
 (global-set-key (kbd "M-x") 'smex)
