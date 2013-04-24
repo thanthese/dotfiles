@@ -33,7 +33,7 @@
                     nil))))))
 
 (defun sm/add-to-path (path)
-  "Add path to PATH, because emacs can't figure it out."
+  "Add path to PATH, because Emacs can't figure it out."
   (setenv "PATH" (concat path path-separator (getenv "PATH")))
   (push path exec-path)
   (add-to-list 'load-path path))
@@ -69,6 +69,9 @@
 (show-paren-mode)
 (setq show-paren-delay 0)
 (setq show-paren-style 'expression)
+
+;; the beep is really annoying
+(setq ring-bell-function 'ignore)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; keybindings
