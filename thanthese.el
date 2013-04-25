@@ -74,6 +74,9 @@
 ;; the beep is really annoying
 (setq ring-bell-function 'ignore)
 
+;; whitespace-mode is actually pretty annoying
+(setq prelude-whitespace nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; keybindings
 
