@@ -15,7 +15,8 @@
  '(multiple-cursors
    smex
    move-text
-   skewer-mode))
+   skewer-mode
+   visual-regexp))
 
 ;; smex
 (global-set-key (kbd "M-x") 'smex)
@@ -93,6 +94,9 @@
 (global-set-key (kbd "H-,") 'mc/mark-previous-like-this)
 (global-set-key (kbd "H->") 'mc/mark-all-like-this)
 (global-set-key (kbd "H-=") 'mc/mark-more-like-this-extended)
+
+;; visual regex
+(define-key global-map (kbd "H-r") 'vr/query-replace)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hooks
