@@ -89,7 +89,7 @@
 (global-set-key (kbd "H-n") 'move-text-down)
 
 ;; multiple cursors
-(global-set-key (kbd "H-a") 'mc/edit-lines)
+(global-set-key (kbd "H-e") 'mc/edit-lines)
 (global-set-key (kbd "H-.") 'mc/mark-next-like-this)
 (global-set-key (kbd "H-,") 'mc/mark-previous-like-this)
 (global-set-key (kbd "H->") 'mc/mark-all-like-this)
