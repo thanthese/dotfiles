@@ -88,15 +88,18 @@
 (global-set-key (kbd "H-p") 'move-text-up)
 (global-set-key (kbd "H-n") 'move-text-down)
 
-;; multiple cursors
+;; package: multiple cursors
 (global-set-key (kbd "H-e") 'mc/edit-lines)
 (global-set-key (kbd "H-.") 'mc/mark-next-like-this)
 (global-set-key (kbd "H-,") 'mc/mark-previous-like-this)
 (global-set-key (kbd "H->") 'mc/mark-all-like-this)
 (global-set-key (kbd "H-=") 'mc/mark-more-like-this-extended)
 
-;; visual regex
+;; package: visual regex
 (define-key global-map (kbd "H-r") 'vr/query-replace)
+
+;; package: ace jump mode
+(define-key global-map (kbd "H-SPC") 'ace-jump-char-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hooks
