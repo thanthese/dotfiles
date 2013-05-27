@@ -4,6 +4,13 @@
 ;;
 ;; Yes, everything lives in this one file.  Everything else comes from
 ;; prelude.  This file lives at ~/.emacs.d/personal/thanthese.el.
+;;
+;;
+;; Some ideas if I ever want to structure this file better:
+;;
+;; - orgstruct minor mode: http://orgmode.org/manual/Orgstruct-mode.html
+;; - Or if I ever want to do this right, meaning "after" macro, imenu, etc
+;;   http://milkbox.net/note/single-file-master-emacs-configuration/
 
 ;;; Code:
 
