@@ -25,12 +25,13 @@
    skewer-mode
    visual-regexp))
 
-;; smex
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; functions
+;; functions and macros
+
+(defmacro sm/after (mode &rest body)
+  "`eval-after-load' MODE evaluate BODY."
+  `(eval-after-load ,mode
+     '(progn ,@body)))
 
 (defun sm/pretty-lambdas ()
   "Turn on displaying 'lambda's as lambda symbols."
@@ -87,6 +88,10 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; keybindings
+
+;; smex
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; easier "other window"
 (global-set-key (kbd "H-o") 'other-window)
