@@ -51,7 +51,7 @@
 (setq prelude-whitespace nil)
 
 ;; electric-pair-mode never works right
-(seq electric-pair-mode -1)
+(setq electric-pair-mode -1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; functions and macros
