@@ -5,11 +5,7 @@
 ;; Yes, everything lives in this one file.  Everything else comes from
 ;; prelude.  This file lives at ~/.emacs.d/personal/thanthese.el.
 ;;
-;;
-;; Some ideas if I ever want to structure this file better:
-;;
-;; - orgstruct minor mode: http://orgmode.org/manual/Orgstruct-mode.html
-;; - Or if I ever want to do this right, meaning "after" macro, imenu, etc
+;; Great source of organization ideas (that I'm not using):
 ;;   http://milkbox.net/note/single-file-master-emacs-configuration/
 
 ;;; Code:
@@ -24,6 +20,38 @@
    move-text
    skewer-mode
    visual-regexp))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; settings
+
+;; show keystrokes in progress
+(setq echo-keystrokes 0.1)
+
+;; indictate empty lines at end of buffer
+(set-default 'indicate-empty-lines t)
+
+;; there's no reason for the scratch buffer to say anything
+(setq initial-scratch-message nil)
+
+;; single space sentences
+(setq sentence-end-double-space nil)
+
+;; cache the passphrase for encrypted files
+(setq epa-file-cache-passphrase-for-symmetric-encryption t)
+
+;; make matching parens obvious
+(show-paren-mode)
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
+
+;; the beep is really annoying
+(setq ring-bell-function 'ignore)
+
+;; whitespace-mode is actually pretty annoying
+(setq prelude-whitespace nil)
+
+;; electric-pair-mode never works right
+(seq electric-pair-mode -1)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; functions and macros
@@ -58,35 +86,6 @@
   (shell-command "gpg --gen-random --armor 1 20" t))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; settings
-
-;; show keystrokes in progress
-(setq echo-keystrokes 0.1)
-
-;; indictate empty lines at end of buffer
-(set-default 'indicate-empty-lines t)
-
-;; there's no reason for the scratch buffer to say anything
-(setq initial-scratch-message nil)
-
-;; single space sentences
-(setq sentence-end-double-space nil)
-
-;; cache the passphrase for encrypted files
-(setq epa-file-cache-passphrase-for-symmetric-encryption t)
-
-;; make matching parens obvious
-(show-paren-mode)
-(setq show-paren-delay 0)
-(setq show-paren-style 'expression)
-
-;; the beep is really annoying
-(setq ring-bell-function 'ignore)
-
-;; whitespace-mode is actually pretty annoying
-(setq prelude-whitespace nil)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; keybindings
 
 ;; smex
@@ -118,12 +117,10 @@
 
 (add-hook 'text-mode-hook
           (lambda ()
-            (whitespace-mode -1)
             (toggle-word-wrap +1)))
 
 (add-hook 'org-mode-hook
           (lambda ()
-            (whitespace-mode -1)
             (org-indent-mode)
             (visual-line-mode)))
 
