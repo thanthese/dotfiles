@@ -127,8 +127,8 @@
 
 (add-hook 'org-mode-hook
           (lambda ()
-            (org-indent-mode)
-            (visual-line-mode)))
+            (visual-line-mode)
+            (org-indent-mode)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; mac-specific
