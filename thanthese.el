@@ -19,7 +19,8 @@
    smex
    move-text
    skewer-mode
-   visual-regexp))
+   visual-regexp
+   wrap-region))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; settings
@@ -30,22 +31,27 @@
 ;; indictate empty lines at end of buffer
 (set-default 'indicate-empty-lines t)
 
-;; there's no reason for the scratch buffer to say anything
-(setq initial-scratch-message nil)
-
 ;; single space sentences
 (setq sentence-end-double-space nil)
-
-;; cache the passphrase for encrypted files
-(setq epa-file-cache-passphrase-for-symmetric-encryption t)
 
 ;; make matching parens obvious
 (show-paren-mode)
 (setq show-paren-delay 0)
 (setq show-paren-style 'expression)
 
+;; cache the passphrase for encrypted files
+(setq epa-file-cache-passphrase-for-symmetric-encryption t)
+
+;; wrap-region is cool
+(wrap-region-mode t)
+
+;;;; disable stuff
+
 ;; the beep is really annoying
 (setq ring-bell-function 'ignore)
+
+;; there's no reason for the scratch buffer to say anything
+(setq initial-scratch-message nil)
 
 ;; whitespace-mode is actually pretty annoying
 (setq prelude-whitespace nil)
