@@ -101,6 +101,7 @@
 
 ;; easier "other window"
 (global-set-key (kbd "H-o") 'other-window)
+(key-chord-define-global "io" 'other-window)
 
 ;; move text
 (global-set-key (kbd "H-p") 'move-text-up)
@@ -115,9 +116,6 @@
 
 ;; package: visual regex
 (define-key global-map (kbd "H-r") 'vr/query-replace)
-
-;; package: ace jump mode
-(define-key global-map (kbd "H-SPC") 'ace-jump-char-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hooks
