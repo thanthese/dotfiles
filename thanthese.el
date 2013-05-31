@@ -53,8 +53,9 @@
 ;; there's no reason for the scratch buffer to say anything
 (setq initial-scratch-message nil)
 
-;; whitespace-mode is actually pretty annoying
+;; whitespace-mode in programming environments only, please
 (setq prelude-whitespace nil)
+(add-hook 'prog-mode-hook 'whitespace-mode)
 
 ;; electric-pair-mode never works right
 (setq electric-pair-mode -1)
