@@ -63,6 +63,9 @@
 ;; package: keychord-mode
 (setq key-chord-two-keys-delay 0.01) ; avoid false positives
 
+;; poor man's midnight commander (target defaults to other dired window)
+(setq dired-dwim-target t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; functions and macros
 
