@@ -60,6 +60,9 @@
 ;; electric-pair-mode never works right
 (setq electric-pair-mode -1)
 
+;; package: keychord-mode
+(setq key-chord-two-keys-delay 0.01) ; avoid false positives
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; functions and macros
 
@@ -98,6 +101,9 @@
 ;; smex
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+;; previous buffer
+(key-chord-define-global "ui" 'prelude-switch-to-previous-buffer)
 
 ;; easier "other window"
 (global-set-key (kbd "H-o") 'other-window)
