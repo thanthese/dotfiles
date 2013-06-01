@@ -60,9 +60,6 @@
 ;; electric-pair-mode never works right
 (setq electric-pair-mode -1)
 
-;; package: keychord-mode
-(setq key-chord-two-keys-delay 0.01) ; avoid false positives
-
 ;; poor man's midnight commander (target defaults to other dired window)
 (setq dired-dwim-target t)
 
@@ -106,11 +103,10 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; previous buffer
-(key-chord-define-global "ui" 'prelude-switch-to-previous-buffer)
+(global-set-key (kbd "H-i") 'prelude-switch-to-previous-buffer)
 
-;; easier "other window"
+;; other window
 (global-set-key (kbd "H-o") 'other-window)
-(key-chord-define-global "io" 'other-window)
 
 ;; move text
 (global-set-key (kbd "H-p") 'move-text-up)
