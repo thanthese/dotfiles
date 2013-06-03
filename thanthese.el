@@ -108,6 +108,9 @@
 ;; other window
 (global-set-key (kbd "H-o") 'other-window)
 
+;; winner mode
+(global-set-key (kbd "H-[") 'winner-undo)
+
 ;; move text
 (global-set-key (kbd "H-p") 'move-text-up)
 (global-set-key (kbd "H-n") 'move-text-down)
