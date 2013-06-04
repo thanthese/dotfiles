@@ -125,6 +125,9 @@
 ;; package: visual regex
 (define-key global-map (kbd "H-r") 'vr/query-replace)
 
+;; ace-jump-mode
+(key-chord-define-global "j;" 'ace-jump-word-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hooks
 
