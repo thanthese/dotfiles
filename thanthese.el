@@ -128,6 +128,10 @@
 ;; ace-jump-mode
 (key-chord-define-global "j;" 'ace-jump-word-mode)
 
+;; org-mode
+(setq org-use-speed-commands t) ; type ? on headline to see options
+(setq org-return-follows-link t) ; follow links
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; hooks
 
