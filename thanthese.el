@@ -97,7 +97,12 @@
 (defun sm/generate-random-password ()
   "Drop randomly generated password in current buffer at point."
   (interactive)
-  (shell-command "gpg --gen-random --armor 1 20" t))
+  (let ((length 20))
+    (shell-command (concat "gpg --gen-random --armor 1 "
+                           (number-to-string length)
+                           " | cut -c1-"
+                           (number-to-string length))
+                   t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; keybindings
