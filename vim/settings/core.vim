@@ -1,25 +1,13 @@
-""
-" Stephen Mann
-"
-" Contains system-independent vim settings.
-"
-
-" # Shortcut prefix conventions
-" - \     : navigation, aka shortcuts-to-files
-" - <c-d> : run a command that will have an effect on the code
-" - <c-c> : filetype/tslime-specific
-" - ctrl  : window management
+" <c-d> is the prefix key for most of my mappings. The following letter is a
+" namespace for a collection of functionality. Thus, most shortcuts are 3 keys
+" long.
 
 " # Look and feel, passive settings
 
-" vi compatibility mode
 set nocompatible
-
-" filetype plugins and detection
 filetype plugin indent on
 syntax on
 
-" gui options
 set guioptions-=T  " no tool bar
 set guioptions-=m  " no menu bar
 set guioptions-=r  " no right scroll bar
@@ -28,28 +16,25 @@ set guioptions+=c  " use console dialogs
 set guioptions+=v  " vertical layout for dialogs
 
 " appearance
-colorscheme ir_black
-set cursorline
-set nowrap
-set number
-set ruler
-set showcmd
-set showmatch
-set showmode
+set cursorline       " highlight line with cursor
+set number           " show line numbers
+set ruler            " show cursor position
+set showcmd          " show command in progress
+set showmode         " show what mode we're in
+set shortmess+=I     " hide vim intro message
+set conceallevel=2   " allow javascript lambdas
+set concealcursor=nv " conceal in normal and visual modes only
+set vb t_vb=         " no beep on esc in normal mode
 set wildmenu
 set wildmode=list:longest
-set shortmess+=I
-set colorcolumn=80
-highlight ColorColumn guibg=#111111 ctermbg=233
-set conceallevel=2
-set concealcursor=nv
 
 " expected behaviors settings
-set hidden      " allows changing of buffers without saving
-set lazyredraw  " don't redraw screen during macros
-set splitright  " vertical splits appear on right
-set mouse=a     " enable the mouse in the terminal
-set autoread    " re-read file if file has changed
+set hidden          " allows changing of buffers without saving
+set lazyredraw      " don't redraw screen during macros
+set splitright      " vertical splits appear on right
+set mouse=a         " enable the mouse in the terminal
+set autoread        " re-read file if file has changed
+set timeoutlen=3000 " time to complete command
 
 " backup files are terrible
 set noswapfile
@@ -70,36 +55,41 @@ set incsearch
 " omni-completion
 set omnifunc=syntaxcomplete#Complete
 
+" folds
+set foldmethod=marker
+set foldmarker=⟦,⟧
+set fillchars="fold: "
+set foldtext=GetFoldText()
+function! GetFoldText()
+  return getline(v:foldstart)
+endfunction
+highlight Folded guibg=#EFEFEF
+nmap <tab> za
+
 " # Auto commands
 
 " on save any: trim trailing whitespace
-autocmd! BufWrite * mark ` | silent! %s/\s\+$// | norm ``
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " on save a .vim file: source file
 autocmd! BufWritePost *.vim source %
-
-" highlight matches of word under cursor
-" autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
-" set eventignore=CursorMoved
 
 " # Mappings
 
 " ## vanity mappings
 
 " misc
-map <silent> <Space> :silent wa<CR>:echo "-- Saved All [" . strftime("%H:%M %a") . "] --"<CR>
-map =z 1z=
-map Q zt
+nmap <Space> :wa<CR>
 imap <c-r><c-r> <c-r>"
 map gp `[v`]
 
-" open new empty lines
+" open new empty lines and leave in normal mode
 map <c-p> O<Esc>cc<Esc>
 map <c-n> o<Esc>cc<Esc>
 
-" insert mode cursor movement
-inoremap <c-h> <Left>
-inoremap <c-l> <Right>
+" basic cursor movement in insert mode (emacs style)
+inoremap <c-b> <Left>
+inoremap <c-f> <Right>
 
 " whitespace visual surrounds
 vmap s<Space> <Esc>'>a<Space><Esc>'<i<Space><Esc>
@@ -127,16 +117,18 @@ onoremap ' `
 " ## clipboard
 
 " yank current WORD to clipboard
-nmap <F7> "+yiW:echo "-- WORD Yanked to Clipboard --"<CR>"
+nmap <c-d>yw "+yiW:echo "-- WORD Yanked to Clipboard --"<CR>"
 
-" yank file or selection to system clipboard
-nmap <F8> gg"+yG<c-o><c-o>:echo "-- File Yanked to Clipboard --"<CR>
-vmap <F8> "+y:echo "-- Selection Yanked to Clipboard --"<CR>
+" yank all (file) to system clipboard
+nmap <c-d>ya gg"+yG<c-o><c-o>:echo "-- File Yanked to Clipboard --"<CR>
+
+" yank selection to system clipboard
+vmap <c-d>ys "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 
 " put from system clipboard
-nmap <F9> "+P
-vmap <F9> "+P
-imap <F9> <c-r>+
+nmap <c-d>yp "+P
+vmap <c-d>yp "+P
+imap <c-d>yp <c-r>+
 
 " ## windows
 
@@ -152,59 +144,42 @@ nmap <c-Down>  <c-W>+
 nmap <c-Left>  <c-W><
 nmap <c-Right> <c-W>>
 
-" ## refactoring and code manipulation mappings (<c-d>)
-
-" copy line(s) to top of file
-nmap <c-d>o :mark '<cr>:copy 1<cr>:echo "-- Line copied to top of file --"<cr>''
-vmap <c-d>o :mark '<cr>gv:copy 1<cr>:echo "-- Line(s) copied to top of file --"<cr>''
+" ## system commands
 
 " calendar
-nmap <c-d>c !!cal<CR>
+nmap <c-d>cc !!cal<CR>
 
 " par
-nmap <c-d>p !!par<CR>
-vmap <c-d>p !par<CR>
+nmap <c-d>cp !!par<CR>
+vmap <c-d>cp !par<CR>
 
 " sort
-nmap <c-d>s vip!sort -n<CR>
-vmap <c-d>s !sort -n<CR>
+nmap <c-d>cs vip!sort -n<CR>
+vmap <c-d>cs !sort -n<CR>
 
 " unique
-nmap <c-d>u :%!uniq<CR>
-vmap <c-d>u !uniq<CR>
+nmap <c-d>cu :%!uniq<CR>
+vmap <c-d>cu !uniq<CR>
 
 " dc
-nmap <c-d>d yip}O<Esc>pvip!dc<CR>
-vmap <c-d>d !dc<CR>
+nmap <c-d>cd yip}O<Esc>pvip!dc<CR>
+vmap <c-d>cd !dc<CR>
 
 " bc
-nmap <c-d>b !!bc<CR>
-vmap <c-d>b !bc<CR>
+nmap <c-d>cb !!bc<CR>
+vmap <c-d>cb !bc<CR>
 
 " sparkup
-nmap <c-d>k !!~/sparkup/sparkup<CR>
-vmap <c-d>k !~/sparkup/sparkup<CR>
-
-" format code in paragraph
-nmap <silent> <c-d>f :mark '<CR>=ip''
+nmap <c-d>ck !!~/sparkup/sparkup<CR>
+vmap <c-d>ck !~/sparkup/sparkup<CR>
 
 " tidy json
-nmap <c-d>a :%!python -mjson.tool<CR>
-vmap <c-d>a :!python -mjson.tool<CR>
+nmap <c-d>ca :%!python -mjson.tool<CR>
+vmap <c-d>ca :!python -mjson.tool<CR>
 
 " tidy xml
-nmap <c-d>x :Tidy<CR>
-vmap <c-d>x :Tidy<CR>
-
-" toggle wrap
-nmap <c-d>w :set wrap! linebreak!<CR>
-
-" toggle spell
-nmap <c-d>l :set spell!<CR>
-
-" insert datestamp
-imap <c-d> <c-r>=ShortDate()<CR>
-imap <c-y> <c-r>=LongDate()<CR>
+nmap <c-d>cx :Tidy<CR>
+vmap <c-d>cx :Tidy<CR>
 
 " sum column
 vmap <c-d>1 !awk '{s+=$1}END{print s}'<CR>
@@ -219,24 +194,34 @@ nmap <c-d>4 vip<c-d>4
 nmap <c-d>5 vip<c-d>5
 
 " add line numbers to selection
-vmap <c-d>n :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
+vmap <c-d>cn :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
+
+" ## vim settings
+
+" toggle spell
+nmap <c-d>ts :set spell!<CR>
+
+" toggle wrap
+nmap <c-d>tw :set wrap! linebreak!<CR>
+
+" ## modify text with vim commands
+
+" insert datestamp
+imap <c-d> <c-r>=ShortDate()<CR>
+imap <c-y> <c-r>=LongDate()<CR>
 
 " format a uri
 nmap <c-d>i 0:s/[&?]/\r&<space>/g<CR>vipoj>\=k0
 
-" navigate through logical sections of code
-nmap ( ?`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
-nmap ) /`\\|'\\|"\\|[\\|(\\|{\\|\\<function\\>\\|\\<fn\\>\\|<<CR>
-
 " ## search and replace
 
-" search-replace word in file
+" search-replace word-under-cursor in file
 nmap <c-d>R :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
 
 " search-replace selection in file
 vmap <c-d>R y:%s/<c-r>"//gc<left><left><Left>
 
-" search-replace word in paragraph
+" search-replace word-under-cursor in paragraph
 nmap <c-d>r yiwvip:s/\<<c-r>"\>//gc<Left><Left><Left>
 
 " search-replace selection in paragraph
@@ -292,6 +277,13 @@ function! LongDate()
   return "[" . tolower(strftime("'%y%b%d")) . ShortDay(strftime("%a")) . "]"
 endfunction
 
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
 " # Plugin-specific settings
 
 " bufexplorer
@@ -305,6 +297,7 @@ let g:netrw_winsize   = 30  " default preview width: 30 cols
 " tabular
 nmap \: :Tabu /:<CR>
 vmap \: :Tabu /:<CR>
+vmap \" :Tabu /"<CR>
 nmap \= :Tabu /=<CR>
 vmap \= :Tabu /=<CR>
 nmap \| :Tabu /\|<CR>
@@ -320,13 +313,6 @@ nmap va0 va)
 nmap vi0 vi)
 vmap s0 s)
 nmap vv v%s)
-
-" neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-"let g:neocomplcache_enable_auto_select = 1
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-inoremap <expr><TAB> pumvisible() ? "\<CR>" : "\<TAB>"
 
 " vimux
 " prompt
@@ -356,24 +342,10 @@ nmap <c-d><c-l> :FufLine<CR>
 " powerline
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
-let g:Powerline_symbols='fancy'
-
-" command-t
-nmap <c-t> :CommandT<CR>
-set wildignore+=.git,*.class,*.war,**/OpenLayers-2.11/*,**/classes*
 
 " # Filetype-specific settings
 
-" all notes
-nmap \o :e ~/Dropbox/all-notes.txt<CR>
-nmap \O :e ~/Dropbox/all-notes.txt<CR>Gzv?^#<CR>0zt
-nmap \w :e ~/Dropbox/work-log.md<CR>
-autocmd! BufWritePost all-notes.txt silent !python2.7 ~/markdown-outline/transform.py -i ~/Dropbox/all-notes.txt -o ~/Dropbox/view-notes.html
-
 " javascript
-vmap <c-d>jc cconsole.log()<Esc>P^
-nmap <c-d>jc ^Cconsole.log()<Esc>P^
-nmap <c-d>jC ^Cconsole.log("<c-r>"")<Esc>^
 nmap <c-d>jf vip!~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 vmap <c-d>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
