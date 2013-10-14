@@ -16,25 +16,27 @@ set guioptions+=c  " use console dialogs
 set guioptions+=v  " vertical layout for dialogs
 
 " appearance
-set cursorline       " highlight line with cursor
-set number           " show line numbers
-set ruler            " show cursor position
-set showcmd          " show command in progress
-set showmode         " show what mode we're in
-set shortmess+=I     " hide vim intro message
-set conceallevel=2   " allow javascript lambdas
-set concealcursor=nv " conceal in normal and visual modes only
-set vb t_vb=         " no beep on esc in normal mode
+set cursorline           " highlight line with cursor
+set number               " show line numbers
+set ruler                " show cursor position
+set showcmd              " show command in progress
+set showmode             " show what mode we're in
+set shortmess+=I         " hide vim intro message
+set conceallevel=2       " allow javascript lambdas
+set concealcursor=nv     " conceal in normal and visual modes only
+set vb t_vb=             " no beep on esc in normal mode
+set spell wrap linebreak " default to prose
 set wildmenu
 set wildmode=list:longest
 
 " expected behaviors settings
-set hidden          " allows changing of buffers without saving
-set lazyredraw      " don't redraw screen during macros
-set splitright      " vertical splits appear on right
-set mouse=a         " enable the mouse in the terminal
-set autoread        " re-read file if file has changed
-set timeoutlen=3000 " time to complete command
+set hidden               " allows changing of buffers without saving
+set lazyredraw           " don't redraw screen during macros
+set splitright           " vertical splits appear on right
+set mouse=a              " enable the mouse in the terminal
+set autoread             " re-read file if file has changed
+set timeoutlen=3000      " time to complete command
+set cryptmethod=blowfish " use strong encryption
 
 " backup files are terrible
 set noswapfile
@@ -54,17 +56,6 @@ set incsearch
 
 " omni-completion
 set omnifunc=syntaxcomplete#Complete
-
-" folds
-set foldmethod=marker
-set foldmarker=⟦,⟧
-set fillchars="fold: "
-set foldtext=GetFoldText()
-function! GetFoldText()
-  return getline(v:foldstart)
-endfunction
-highlight Folded guibg=#EFEFEF
-nmap <tab> za
 
 " # Auto commands
 
@@ -353,3 +344,21 @@ vmap <c-d>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
 abbr teh the
 abbr Teh The
+
+" # Folds
+
+" use markers
+set foldmethod=marker
+
+" simplify what displays on folded lines
+set fillchars="fold: "
+set foldtext=GetFoldText()
+function! GetFoldText()
+  return getline(v:foldstart)
+endfunction
+
+" highlight folded lines, but in a subtle way
+highlight Folded guibg=#EFEFEF
+
+" make it easy to toggle folds
+nmap <tab> za
