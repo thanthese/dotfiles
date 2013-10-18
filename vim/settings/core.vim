@@ -25,7 +25,6 @@ set shortmess+=I         " hide vim intro message
 set conceallevel=2       " allow javascript lambdas
 set concealcursor=nv     " conceal in normal and visual modes only
 set vb t_vb=             " no beep on esc in normal mode
-set spell wrap linebreak " default to prose
 set wildmenu
 set wildmode=list:longest
 
@@ -73,6 +72,7 @@ autocmd! BufWritePost *.vim source %
 nmap <Space> :wa<CR>
 imap <c-r><c-r> <c-r>"
 map gp `[v`]
+nmap Q zt
 
 " open new empty lines and leave in normal mode
 map <c-p> O<Esc>cc<Esc>
@@ -172,6 +172,9 @@ vmap <c-d>ca :!python -mjson.tool<CR>
 nmap <c-d>cx :Tidy<CR>
 vmap <c-d>cx :Tidy<CR>
 
+" generate password
+nmap <c-d>cw :r!pwgen -scny 20 1<CR>
+
 " sum column
 vmap <c-d>1 !awk '{s+=$1}END{print s}'<CR>
 vmap <c-d>2 !awk '{s+=$2}END{print s}'<CR>
@@ -194,6 +197,9 @@ nmap <c-d>ts :set spell!<CR>
 
 " toggle wrap
 nmap <c-d>tw :set wrap! linebreak!<CR>
+
+" toggle prose
+nmap <c-d>tp :set spell! wrap! linebreak!<CR>
 
 " ## modify text with vim commands
 
@@ -352,13 +358,23 @@ set foldmethod=marker
 
 " simplify what displays on folded lines
 set fillchars="fold: "
-set foldtext=GetFoldText()
-function! GetFoldText()
-  return getline(v:foldstart)
+set foldtext=FoldText()
+function! FoldText()
+  return substitute(getline(v:foldstart), '{{{', '{…}', '')
 endfunction
 
-" highlight folded lines, but in a subtle way
-highlight Folded guibg=#EFEFEF
+" make adding markers make sense (no C-style comments)
+set commentstring=
 
 " make it easy to toggle folds
 nmap <tab> za
+
+" make fold markers pretty (when unfolded)
+"syntax match Todo /marker text/ conceal cchar=+
+
+" highlight folded lines, but in a subtle way
+highlight Folded guibg=bg
+
+" add fold text objects
+xnoremap iz :<C-U>silent!normal![zV]z<CR>
+onoremap iz :normal viz<CR>
