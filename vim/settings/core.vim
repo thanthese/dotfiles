@@ -341,6 +341,11 @@ nmap <c-d><c-l> :FufLine<CR>
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
+" vim wiki
+highlight VimwikiBold guifg=DarkKhaki
+highlight VimwikiItalic guifg=goldenrod
+let g:vimwiki_folding='expr'
+
 " # Filetype-specific settings
 
 " javascript
