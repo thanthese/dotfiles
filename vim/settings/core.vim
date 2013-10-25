@@ -351,31 +351,3 @@ vmap <c-d>jf !~/js-beautify/python/js-beautify --indent-size=2 -i<CR>
 
 abbr teh the
 abbr Teh The
-
-" # Folds
-
-" use markers
-set foldmethod=marker
-
-" simplify what displays on folded lines
-set fillchars="fold: "
-set foldtext=FoldText()
-function! FoldText()
-  return substitute(getline(v:foldstart), '{{{', '{…}', '')
-endfunction
-
-" make adding markers make sense (no C-style comments)
-set commentstring=
-
-" make it easy to toggle folds
-nmap <tab> za
-
-" make fold markers pretty (when unfolded)
-"syntax match Todo /marker text/ conceal cchar=+
-
-" highlight folded lines, but in a subtle way
-highlight Folded guibg=bg
-
-" add fold text objects
-xnoremap iz :<C-U>silent!normal![zV]z<CR>
-onoremap iz :normal viz<CR>
