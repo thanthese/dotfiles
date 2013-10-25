@@ -16,7 +16,7 @@ set guioptions+=c  " use console dialogs
 set guioptions+=v  " vertical layout for dialogs
 
 " appearance
-set cursorline           " highlight line with cursor
+set nocursorline         " controls highlighting line with cursor
 set number               " show line numbers
 set ruler                " show cursor position
 set showcmd              " show command in progress
@@ -27,6 +27,7 @@ set concealcursor=nv     " conceal in normal and visual modes only
 set vb t_vb=             " no beep on esc in normal mode
 set wildmenu
 set wildmode=list:longest
+colorscheme slate
 
 " expected behaviors settings
 set hidden               " allows changing of buffers without saving

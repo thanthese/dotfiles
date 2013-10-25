@@ -28,10 +28,11 @@ Bundle 'tpope/vim-fugitive'
 " Bundle 'wgibbs/vim-irblack'
 "
 " # vim-scripts repos
-" Bundle 'bufexplorer.zip'
+Bundle 'vimwiki'
 Bundle 'matchit.zip'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+" Bundle 'bufexplorer.zip'
 " Bundle 'VimClojure'
 " Bundle 'rails.vim'
 "
