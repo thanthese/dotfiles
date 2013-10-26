@@ -1,55 +1,66 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+" ========== vundle setup ========== {{{
+set nocompatible  " be iMproved
+filetype off      " required!
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
-" required!
+" Let Vundle manage Vundle. Required!
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" # original repos on github
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'godlygeek/tabular'
+" }}}
+" ========== github ========== {{{
+
+Bundle 'Shougo/vimshell.vim'
 Bundle 'benmills/vimux'
+Bundle 'bling/vim-airline'
 Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
+Bundle 'godlygeek/tabular'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+
+" Bundle 'Lokaltog/vim-powerline'
+" Bundle 'Shougo/neocomplcache'
 " Bundle 'jamessan/vim-gnupg'
+" Bundle 'scrooloose/syntastic'
+" Bundle 'terryma/vim-expand-region'
+" Bundle 'terryma/vim-smooth-scroll'
+" Bundle 'thanthese/Tortoise-Typing'
 " Bundle 'thanthese/markdown-outline'
 " Bundle 'tpope/vim-markdown'
-" Bundle 'thanthese/Tortoise-Typing'
-" Bundle 'Shougo/neocomplcache'
-" Bundle 'scrooloose/syntastic'
 " Bundle 'wgibbs/vim-irblack'
-"
-" # vim-scripts repos
-Bundle 'vimwiki'
-Bundle 'matchit.zip'
-Bundle 'L9'
+
+" }}}
+" ========== vim scripts ========== {{{
+
 Bundle 'FuzzyFinder'
-" Bundle 'bufexplorer.zip'
+Bundle 'L9'
+Bundle 'matchit.zip'
+Bundle 'vimwiki'
+
 " Bundle 'VimClojure'
+" Bundle 'bufexplorer.zip'
 " Bundle 'rails.vim'
-"
-" # non github repos
+
+" }}}
+" ========== other sources ========== {{{
+
 " Bundle 'git://git.wincent.com/command-t.git'
-" ...
+
+" }}}
+" ========== vundle cleanup and help ========== {{{
 
 filetype plugin indent on     " required!
-"
+
 " Brief help
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache
-" first) for foo
-" :BundleClean(!)      - confirm(or auto-approve)
-" removal of unused bundles
+" :BundleSearch(!) foo - search (or refresh cache first) for foo
+" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
 "
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not
-" allowed..
+" See :h vundle for more details or wiki for FAQ
+
+" }}}
