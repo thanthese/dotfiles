@@ -23,7 +23,3 @@ function! StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-
-function! Foo()
-  return %
-endfun
