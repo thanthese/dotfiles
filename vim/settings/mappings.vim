@@ -27,10 +27,9 @@ imap <c-;> <c-g>u<Esc>[s1z=`]a<c-g>u
 nmap <c-;> [s1z=`]
 
 " push current repository to remote git
-
 nmap \gs :!cd %:h
   \&& git pull
-  \&& git add -u
+  \&& git add --all
   \&& git commit -m "$(date)"
   \&& git push
   \&& git status<CR>
