@@ -33,6 +33,7 @@ nmap \gs :wa<CR>:!cd %:h
   \&& git commit -m "$(date)"
   \&& git push
   \&& git status<CR>
+" silly test
 
 " }}}
 " ========== make keys work as expected ========== {{{
