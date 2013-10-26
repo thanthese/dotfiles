@@ -27,7 +27,7 @@ imap <c-;> <c-g>u<Esc>[s1z=`]a<c-g>u
 nmap <c-;> [s1z=`]
 
 " git save: push current repository to remote git
-nmap \gs :!cd %:h
+nmap \gs :wa<CR>:!cd %:h
   \&& git pull
   \&& git add --all
   \&& git commit -m "$(date)"
