@@ -11,6 +11,5 @@ nmap <c-d>gv :e ~/.vimrc<cr>
 nmap <c-d>gd :e ~/Dropbox<cr>
 nmap <c-d>gu :e ~/Dropbox/vim-files/usernames.txt<cr>
 
-nmap <c-d>gc :e ~/dotfiles/vim/settings/core.vim<cr>
+nmap <c-d>gi :e ~/dotfiles/vim/settings/index.vim<cr>
 nmap <c-d>gm :e ~/dotfiles/vim/settings/mac.vim<cr>
-nmap <c-d>gn :e ~/dotfiles/vim/settings/vundle.vim<cr>
