@@ -47,6 +47,9 @@ vnoremap ˚ :m '<-2<CR>gv=gv
 nmap ˙ O<esc>
 nmap ¬ o<esc>
 
+" clear current line (alt-c)
+nmap ç cc<esc>
+
 " }}}
 " ========== make keys work as expected ========== {{{
 
