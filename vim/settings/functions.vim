@@ -23,3 +23,12 @@ function! StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
+
+" setup current buffer for writing prose
+function! Prose()
+  setlocal nowrap
+  setlocal linebreak
+  setlocal textwidth=72
+  setlocal spell
+  echo "Buffer set for writing prose."
+endfun
