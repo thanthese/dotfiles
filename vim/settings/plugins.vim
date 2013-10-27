@@ -53,7 +53,7 @@ let g:vimwiki_folding='expr'
 highlight VimwikiBold guifg=DarkKhaki
 highlight VimwikiItalic guifg=goldenrod
 
-" on save a .vim file: source file
+" work on wikis in prose mode
 autocmd! BufReadPre *.wiki call Prose()
 
 " }}}
