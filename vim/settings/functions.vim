@@ -30,5 +30,4 @@ function! Prose()
   setlocal linebreak
   setlocal textwidth=72
   setlocal spell
-  echo "Buffer set for writing prose."
 endfun
