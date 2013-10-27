@@ -68,4 +68,6 @@ highlight VimwikiItalic guifg=goldenrod
 " required, apparently because of the awkward way I installed macvim
 let g:vimshell_editor_command="macvim"
 
+nmap \v :VimShell<CR>
+
 " }}}
