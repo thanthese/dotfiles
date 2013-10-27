@@ -69,5 +69,6 @@ nmap \v :VimShellBufferDir<CR>
 " ========== fugitive ==========" {{{
 
 nmap \g :Gstatus<cr>
+nmap \p :Git push<cr>
 
 " }}}
