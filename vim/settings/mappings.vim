@@ -29,6 +29,7 @@ nmap <c-;> [s1z=`]
 " git save: push current repository to remote git
 nmap \gs :wa<CR>
   \:!cd %:h;
+  \pwd;
   \git add --all;
   \git commit -m "$(date)";
   \git pull;
