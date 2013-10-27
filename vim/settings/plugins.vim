@@ -63,7 +63,7 @@ highlight VimwikiBold guifg=DarkKhaki
 highlight VimwikiItalic guifg=goldenrod
 
 " }}}
-" ========== vim shell ==========" {{{
+" ========== shell ==========" {{{
 
 " required, apparently because of the awkward way I installed macvim
 let g:vimshell_editor_command="macvim"

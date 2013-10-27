@@ -4,25 +4,26 @@ syntax on
 
 colorscheme slate
 
-set autoread              " re-read file if file has changed
-set cryptmethod=blowfish  " use strong encryption
-set hidden                " allows changing of buffers without saving
-set lazyredraw            " don't redraw screen during macros
-set mouse=a               " enable the mouse in the terminal
-set nocursorline          " controls highlighting line with cursor
-set number                " show line numbers
-set ruler                 " show cursor position
-set scrolloff=5           " number of lines to keep above and below cursor
-set shortmess+=I          " hide vim intro message
-set showcmd               " show command in progress
-set showmode              " show what mode we're in
-set splitright            " vertical splits appear on right
-set timeoutlen=3000       " time to complete command
-set vb t_vb=              " no beep on esc in normal mode
+set autoread             " re-read file if file has changed
+set cryptmethod=blowfish " use strong encryption
+set hidden               " allows changing of buffers without saving
+set lazyredraw           " don't redraw screen during macros
+set mouse=a              " enable the mouse in the terminal
+set nocursorline         " controls highlighting line with cursor
+set number               " show line numbers
+set ruler                " show cursor position
+set scrolloff=5          " number of lines to keep above and below cursor
+set shortmess+=I         " hide vim intro message
+set showcmd              " show command in progress
+set showmode             " show what mode we're in
+set splitright           " vertical splits appear on right
+set timeoutlen=3000      " time to complete command
+set vb t_vb=             " no beep on esc in normal mode
+set noautochdir            " auto change directory to current file's
 
 " conceal
-set concealcursor=nv      " conceal in normal and visual modes only
-set conceallevel=2        " allow concealing magic
+set concealcursor=nv " conceal in normal and visual modes only
+set conceallevel=2   " allow concealing magic
 
 " hide silly gui options
 set guioptions+=c  " use console dialogs

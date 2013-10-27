@@ -28,12 +28,12 @@ nmap <c-;> [s1z=`]
 
 " git save: push current repository to remote git
 nmap \gs :wa<CR>
-  \:!cd %:h
-  \&& git pull
-  \&& git add --all
-  \&& git commit -m "$(date)"
-  \&& git push
-  \&& git status<CR>
+  \:!cd %:h;
+  \git add --all;
+  \git commit -m "$(date)";
+  \git pull;
+  \git push;
+  \git status<CR>
 
 " moving lines around
 nnoremap ∆ :m .+1<CR>==
