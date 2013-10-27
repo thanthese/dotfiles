@@ -66,3 +66,8 @@ let g:vimshell_editor_command="macvim"
 nmap \v :VimShellBufferDir<CR>
 
 " }}}
+" ========== fugitive ==========" {{{
+
+nmap \g :Gstatus<cr>
+
+" }}}
