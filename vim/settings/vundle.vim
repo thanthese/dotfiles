@@ -23,6 +23,7 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-speeddating'
 
 " Bundle 'Lokaltog/vim-powerline'
 " Bundle 'Shougo/neocomplcache'

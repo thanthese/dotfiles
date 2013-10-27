@@ -72,3 +72,9 @@ nmap \fs :Gstatus<cr>
 nmap \fp :Git push<cr>
 
 " }}}
+" ========== ctrlp ==========" {{{
+
+let g:ctrlp_extensions = ['line', 'mixed']
+
+" }}}
+
