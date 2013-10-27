@@ -44,16 +44,7 @@ nmap <c-c>b :call VimuxInterruptRunner()<CR>
 "let g:VimuxHeight = "40"
 
 " }}}
-" ========== fuzzy finder ==========" {{{
-
-" nmap <c-d><c-f> :FufCoverageFile<CR>
-" nmap <c-d><c-b> :FufBuffer<CR>
-" nmap <c-d><c-h> :FufHelp<CR>
-" nmap <c-d><c-c> :FufChangeList<CR>
-" nmap <c-d><c-l> :FufLine<CR>
-
-" }}}
-" ========== vim wiki ==========" {{{
+" ========== wiki ==========" {{{
 
 " fold on headers
 let g:vimwiki_folding='expr'
@@ -70,5 +61,30 @@ let g:vimshell_editor_command="macvim"
 
 " open shell quickly
 nmap \v :VimShellBufferDir<CR>
+
+" }}}
+" ========== fuzzy finder ==========" {{{
+
+" nmap <c-d><c-f> :FufCoverageFile<CR>
+" nmap <c-d><c-b> :FufBuffer<CR>
+" nmap <c-d><c-h> :FufHelp<CR>
+" nmap <c-d><c-c> :FufChangeList<CR>
+" nmap <c-d><c-l> :FufLine<CR>
+
+" }}}
+" ========== unite ==========" {{{
+
+" " select a file from the current project
+" nmap <c-d><c-f> :Unite -start-insert file_rec/async:!<CR>
+" " consider -no-split option
+"
+" " select buffer
+" nmap <c-d><c-b> :Unite -start-insert buffer<CR>
+"
+" " grep in current directory (note, not from .git root)
+" nmap <c-d><c-g> :Unite grep:.<CR>
+"
+" use fuzzy matching
+" call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 " }}}
