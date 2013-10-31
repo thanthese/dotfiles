@@ -78,3 +78,8 @@ let g:ctrlp_extensions = ['line', 'mixed']
 " let g:ctrlp_cmd = 'CtrlPMixed'
 
 " }}}
+" ========== ack ==========" {{{
+
+nmap \a :Ack<space><space>%:p:h<Left><Left><Left><Left><Left><Left>
+
+" }}}
