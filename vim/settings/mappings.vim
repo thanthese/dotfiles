@@ -76,6 +76,9 @@ map <c-w><c-f> <c-w><c-o>:vertical wincmd f<CR>
 " yank current WORD to clipboard
 nmap <c-d>yw "+yiW:echo "-- WORD Yanked to Clipboard --"<CR>"
 
+" yank line to clipboard
+nmap <c-d>yy 0v$h"+y:echo "-- Line Yanked to Clipboard --"<CR>"
+
 " yank all (file) to system clipboard
 nmap <c-d>ya gg"+yG<c-o><c-o>:echo "-- File Yanked to Clipboard --"<CR>
 
