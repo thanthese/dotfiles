@@ -83,6 +83,6 @@ let g:ctrlp_extensions = ['line']
 " }}}
 " ========== ack ==========" {{{
 
-nmap \a :Ack<space><space>%:p:h<Left><Left><Left><Left><Left><Left>
+nmap \a :Ack --all<space><space>%:h<Left><Left><Left><Left>
 
 " }}}
