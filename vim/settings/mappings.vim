@@ -157,6 +157,13 @@ nmap <c-d>5 vip<c-d>5
 " add line numbers to selection
 vmap <c-d>cn :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
 
+" run line directly through the shell as a command
+nmap <c-d>ch yyp!!sh<cr>k
+
+" workflowy-bump
+nmap <c-d>cw !!node ~/workflowy-bump/workflowy-bump.js terminal<cr>jddk0
+imap <c-d>cw <esc><c-d>cwA
+
 " }}}
 " ========== vim settings ========== {{{
 

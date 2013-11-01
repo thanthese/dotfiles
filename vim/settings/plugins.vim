@@ -56,6 +56,9 @@ highlight VimwikiItalic guifg=goldenrod
 " work on wikis in prose mode
 autocmd! BufReadPre *.wiki call Prose()
 
+" easy toggle folds in wiki mode
+nmap ` za
+
 " }}}
 " ========== shell ==========" {{{
 
