@@ -54,7 +54,11 @@ highlight VimwikiBold guifg=DarkKhaki
 highlight VimwikiItalic guifg=goldenrod
 
 " work on wikis in prose mode
-autocmd! BufReadPre *.wiki call Prose()
+autocmd! BufReadPre *.wiki call SetupWiki()
+
+function! SetupWiki()
+  setlocal textwidth=78
+endfun
 
 " easy toggle folds in wiki mode
 nmap ` za
