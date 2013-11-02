@@ -57,6 +57,7 @@ highlight VimwikiItalic guifg=goldenrod
 autocmd! BufReadPre *.wiki call SetupWiki()
 
 function! SetupWiki()
+  setlocal nowrap
   setlocal textwidth=78
 endfun
 

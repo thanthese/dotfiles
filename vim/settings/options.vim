@@ -20,7 +20,6 @@ set splitright           " vertical splits appear on right
 set timeoutlen=3000      " time to complete command
 set vb t_vb=             " no beep on esc in normal mode
 set noautochdir          " auto change directory to current file's
-set laststatus=2         " always show the status line
 
 " conceal
 set concealcursor=nv " conceal in normal and visual modes only
