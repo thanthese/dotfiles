@@ -12,7 +12,7 @@ set mouse=a              " enable the mouse in the terminal
 set nocursorline         " controls highlighting line with cursor
 set number               " show line numbers
 set ruler                " show cursor position
-set scrolloff=5          " number of lines to keep above and below cursor
+set scrolloff=0          " number of lines to keep above and below cursor
 set shortmess+=I         " hide vim intro message
 set showcmd              " show command in progress
 set showmode             " show what mode we're in
