@@ -168,13 +168,13 @@ imap <c-d>cw <esc><c-d>cwA
 " ========== vim settings ========== {{{
 
 " toggle spell
-nmap <c-d>ss :set spell!<CR>
+nmap <c-d>ss :setlocal spell!<CR>
 
 " toggle wrap
-nmap <c-d>sw :set wrap! linebreak!<CR>
+nmap <c-d>sw :setlocal wrap! linebreak!<CR>
 
 " toggle prose
-nmap <c-d>sp :set spell! wrap! linebreak!<CR>
+nmap <c-d>sp :setlocal spell! wrap! linebreak!<CR>
 
 " }}}
 " ========== search and replace ========== {{{
