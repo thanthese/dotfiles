@@ -45,8 +45,8 @@ vnoremap ∆ :m '>+1<CR>gv=gv
 vnoremap ˚ :m '<-2<CR>gv=gv
 
 " adding blank lines above (alt-h) and below (alt-l)
-nmap ˙ O<esc>
-nmap ¬ o<esc>
+nmap ˙ O<esc>cc<esc>
+nmap ¬ o<esc>cc<esc>
 
 " clear current line (alt-c)
 nmap ç cc<esc>
