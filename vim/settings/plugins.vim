@@ -64,6 +64,23 @@ endfun
 " easy toggle folds in wiki mode
 nmap ` za
 
+" move line(s) to todo.wiki
+vmap <c-d>mt d
+      \:e ~/vimwiki/todo.wiki<cr>
+      \ggP
+      \:b #<cr>
+      \:echo "Line(s) moved to todo."<cr>
+nmap <c-d>mt V<c-d>mt
+
+" move line(s) to tickler.wiki and sort
+vmap <c-d>mk d
+      \:e ~/vimwiki/tickler.wiki<cr>
+      \ggP
+      \:%!sort -n<cr>
+      \:b #<cr>
+      \:echo "Line(s) moved to tickler."<cr>
+nmap <c-d>mk V<c-d>mk
+
 " }}}
 " ========== shell ==========" {{{
 
