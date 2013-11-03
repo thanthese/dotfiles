@@ -36,6 +36,14 @@ nmap \gs :wa<CR>
   \git push;
   \git status<CR>
 
+" git commit: commit current repository
+nmap \gc :wa<CR>
+  \:!cd %:h;
+  \pwd;
+  \git add --all;
+  \git commit -m "$(date)";
+  \git status<CR>
+
 " moving lines around
 nnoremap ∆ :m .+1<CR>==
 nnoremap ˚ :m .-2<CR>==
@@ -74,10 +82,10 @@ map <c-w><c-f> <c-w><c-o>:vertical wincmd f<CR>
 " ========== clipboard ========== {{{
 
 " yank current WORD to clipboard
-nmap <c-d>yw "+yiW:echo "-- WORD Yanked to Clipboard --"<CR>"
+nmap <c-d>yw "+yiW:echo "-- WORD Yanked to Clipboard --"<CR>
 
 " yank line to clipboard
-nmap <c-d>yy 0v$h"+y:echo "-- Line Yanked to Clipboard --"<CR>"
+nmap <c-d>yy 0v$h"+y:echo "-- Line Yanked to Clipboard --"<CR>
 
 " yank all (file) to system clipboard
 nmap <c-d>ya gg"+yG<c-o><c-o>:echo "-- File Yanked to Clipboard --"<CR>
