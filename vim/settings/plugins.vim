@@ -81,6 +81,10 @@ vmap <c-d>mk d
       \:echo "Line(s) moved to tickler."<cr>
 nmap <c-d>mk V<c-d>mk
 
+" easily (un)make list from visual selection
+vmap - :s/^/- /<cr>
+vmap _ :s/^- //<cr>
+
 " }}}
 " ========== shell ==========" {{{
 
