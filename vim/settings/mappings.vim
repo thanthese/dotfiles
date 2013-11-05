@@ -23,8 +23,8 @@ vmap s<Space> <Esc>'>a<Space><Esc>'<i<Space><Esc>
 vmap s<CR> <Esc>'>a<cr><Esc>'<i<cr><Esc>
 
 " correct spelling of last misselled word
-imap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
-nmap <c-s> [s1z=``
+inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
+nnoremap <c-s> [s1z=``
 
 " git save: push current repository to remote git
 nmap \gs :wa<CR>
