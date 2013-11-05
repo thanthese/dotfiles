@@ -56,6 +56,7 @@ highlight VimwikiItalic guifg=goldenrod
 " work on wikis in prose mode
 autocmd! BufReadPre *.wiki call SetupWiki()
 
+" for lists, not for prose
 function! SetupWiki()
   setlocal nowrap
   setlocal textwidth=78
