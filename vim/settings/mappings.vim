@@ -59,6 +59,9 @@ nmap ¬ o<esc>cc<esc>
 " clear current line (alt-c)
 nmap ç cc<esc>
 
+" turn off highlight search
+nnoremap ¬ :nohl<cr>
+
 " }}}
 " ========== make keys work as expected ========== {{{
 

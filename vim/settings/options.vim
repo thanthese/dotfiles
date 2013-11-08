@@ -42,6 +42,7 @@ set noswapfile
 set ignorecase
 set smartcase
 set incsearch
+set hlsearch
 
 " just make tabs do what I want
 set expandtab

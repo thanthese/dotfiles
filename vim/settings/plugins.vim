@@ -49,14 +49,13 @@ nmap <c-c>b :call VimuxInterruptRunner()<CR>
 " fold on headers
 let g:vimwiki_folding='expr'
 
-" bold and italics don't show up on the mac for some reason, so make them obvious
+" bold and italics don't show up on the mac for some reason, so make them
+" obvious
 highlight VimwikiBold guifg=DarkKhaki
 highlight VimwikiItalic guifg=goldenrod
 
-" work on wikis in prose mode
+" local wiki settings
 autocmd! BufReadPre *.wiki call SetupWiki()
-
-" for lists, not for prose
 function! SetupWiki()
   setlocal nowrap
   setlocal textwidth=78
