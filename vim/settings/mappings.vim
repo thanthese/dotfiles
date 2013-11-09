@@ -59,9 +59,6 @@ nmap ¬ o<esc>cc<esc>
 " clear current line (alt-c)
 nmap ç cc<esc>
 
-" turn off highlight search
-nnoremap ¬ :nohl<cr>
-
 " }}}
 " ========== make keys work as expected ========== {{{
 
@@ -177,6 +174,9 @@ imap <c-d>cw <esc><c-d>cwA
 
 " }}}
 " ========== vim settings ========== {{{
+
+" turn off highlight search
+nnoremap ¬ :nohl<cr>
 
 " toggle spell
 nmap <c-d>ss :setlocal spell!<CR>
