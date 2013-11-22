@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " ========== github ========== {{{
 
 Bundle 'Shougo/vimshell.vim'
+Bundle 'arecarn/crunch'
 Bundle 'benmills/vimux'
 Bundle 'bling/vim-airline'
 Bundle 'coderifous/textobj-word-column.vim'
@@ -22,8 +23,8 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-surround'
 
 " Bundle 'Lokaltog/vim-powerline'
 " Bundle 'Shougo/neocomplcache'
