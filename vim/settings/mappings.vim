@@ -179,7 +179,7 @@ imap <c-d>cw <esc><c-d>cwA
 " ========== vim settings ========== {{{
 
 " turn off highlight search
-nnoremap ¬ :nohl<cr>
+nnoremap ÷ :nohl<cr>
 
 " toggle spell
 nmap <c-d>ss :setlocal spell!<CR>
