@@ -59,6 +59,9 @@ nmap ¬ o<esc>cc<esc>
 " clear current line (alt-c)
 nmap ç cc<esc>
 
+" alternative to macros for a selection
+vmap , :norm<space>
+
 " }}}
 " ========== make keys work as expected ========== {{{
 
