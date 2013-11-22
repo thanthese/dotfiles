@@ -54,6 +54,12 @@ let g:vimwiki_folding='expr'
 highlight VimwikiBold guifg=DarkKhaki
 highlight VimwikiItalic guifg=goldenrod
 
+" highlighting 'tags'
+au BufRead,BufNewFile *.wiki hi appt guifg=DarkKhaki ctermfg=DarkGray
+au BufRead,BufNewFile *.wiki syn match appt /#appt/
+au BufRead,BufNewFile *.wiki hi bday guifg=darkgray ctermfg=DarkGray
+au BufRead,BufNewFile *.wiki syn match bday /#bday\|#anniversary\|#holiday/
+
 " local wiki settings
 autocmd! BufReadPre *.wiki call SetupWiki()
 function! SetupWiki()
