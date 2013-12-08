@@ -28,7 +28,7 @@ endfun
 function! Prose()
   setlocal nowrap
   setlocal linebreak
-  setlocal textwidth=72
+  setlocal textwidth=78
   setlocal spell
   setlocal fo+=a
 endfun
