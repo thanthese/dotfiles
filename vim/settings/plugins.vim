@@ -93,8 +93,8 @@ vmap - :s/^/- /<cr>
 vmap _ :s/^- //<cr>
 
 " quckly goto
-nmap <c-d>gt :e ~/vimwiki/todo.wiki<cr>
-nmap <c-d>gk :e ~/vimwiki/tickler.wiki<cr>
+nmap <c-t> :e ~/vimwiki/todo.wiki<cr>
+nmap <c-k> :e ~/vimwiki/tickler.wiki<cr>
 
 " }}}
 " ========== shell ==========" {{{
