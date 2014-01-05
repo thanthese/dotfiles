@@ -118,6 +118,11 @@ nmap \fp :Git pull<cr>:Git push<cr>
 let g:ctrlp_extensions = ['line']
 " let g:ctrlp_cmd = 'CtrlPMixed'
 
+" convenience mappings
+nmap <c-d><c-f> :CtrlP<cr>
+nmap <c-d><c-b> :CtrlPBuffer<cr>
+nmap <c-d><c-m> :CtrlPMixed<cr>
+
 " }}}
 " ========== ack ==========" {{{
 
