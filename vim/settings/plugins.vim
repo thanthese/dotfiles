@@ -121,7 +121,7 @@ let g:ctrlp_extensions = ['line']
 " convenience mappings
 nmap <c-d><c-f> :CtrlP<cr>
 nmap <c-d><c-b> :CtrlPBuffer<cr>
-nmap <c-d><c-m> :CtrlPMixed<cr>
+nmap <c-d><c-m> :CtrlPMRU<cr>
 
 " }}}
 " ========== ack ==========" {{{
