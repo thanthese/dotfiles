@@ -59,7 +59,7 @@ au BufEnter *.wiki hi appt guifg=DarkKhaki
 au BufEnter *.wiki syn match appt /#appt/
 au BufEnter *.wiki hi bday guifg=darkgray
 au BufEnter *.wiki syn match bday
-      \ /#bday\|#holiday\|#bday\|#anniversary\|#gizappt/
+      \ /#bday\|#holiday\|#anniversary\|#gizappt/
 
 " local wiki settings
 autocmd! BufReadPre *.wiki call SetupWiki()
