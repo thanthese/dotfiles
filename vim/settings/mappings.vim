@@ -6,8 +6,8 @@ nmap <Space> :wa<CR>
 " quickly insert default register
 imap <c-r><c-r> <c-r>"
 
-" quick move current line to top of screen
-nmap Q zt
+" quick macro access
+nmap Q @q
 
 " select whatever was just pasted
 map gp `[v`]
