@@ -136,4 +136,7 @@ nnoremap F :SneakBackward! 1<cr>
 xnoremap f <esc>:<c-u>SneakV! 1<cr>
 xnoremap F <esc>:<c-u>SneakVBackward! 1<cr>
 
+" I don't care for sneak's default
+unmap! s
+
 " }}}
