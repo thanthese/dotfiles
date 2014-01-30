@@ -56,3 +56,6 @@ set completeopt=longest   " insert mode completion
 set wildmenu              " command line completion
 set wildmode=list:longest " command line completion options
 set omnifunc=syntaxcomplete#Complete
+
+" so I don't need to zR all the time, hopefully
+set foldlevel=20
