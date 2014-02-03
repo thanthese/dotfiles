@@ -78,7 +78,7 @@ vmap _ :s/^- //<cr>
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).
 function! SmartTaskMove()
-  if(bufname("%") == "vimwiki/tickler.wiki")
+  if(match(bufname("%"), "tickler.wiki") > -1)
     silent exec "norm :e ~/vimwiki/todo.wiki\<cr>"
     silent exec "norm ggP"
     silent exec "norm :b #\<cr>"
