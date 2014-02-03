@@ -71,26 +71,28 @@ endfun
 " easy toggle folds in wiki mode
 nmap ` za
 
-" move line(s) to todo.wiki
-vmap <c-d>mt d
-      \:e ~/vimwiki/todo.wiki<cr>
-      \ggP
-      \:b #<cr>
-      \:echo "Line(s) moved to todo."<cr>
-nmap <c-d>mt V<c-d>mt
-
-" move line(s) to tickler.wiki and sort
-vmap <c-d>mk d
-      \:e ~/vimwiki/tickler.wiki<cr>
-      \ggP
-      \:%!sort -n<cr>
-      \:b #<cr>
-      \:echo "Line(s) moved to tickler."<cr>
-nmap <c-d>mk V<c-d>mk
-
 " easily (un)make list from visual selection
 vmap - :s/^/- /<cr>
 vmap _ :s/^- //<cr>
+
+" Moves task -- line(s) -- in default register to appropriate file depending
+" on context (that is, on the current file).
+function! SmartTaskMove()
+  if(bufname("%") == "vimwiki/tickler.wiki")
+    silent exec "norm :e ~/vimwiki/todo.wiki\<cr>"
+    silent exec "norm ggP"
+    silent exec "norm :b #\<cr>"
+    exec "norm :echo \"Line(s) moved to todo.\"\<cr>"
+  else
+    silent exec "norm :e ~/vimwiki/tickler.wiki\<cr>"
+    silent exec "norm ggP"
+    silent exec "norm :%!sort -n\<cr>"
+    silent exec "norm :b #\<cr>"
+    exec "norm :echo \"Line(s) moved to tickler.\"\<cr>"
+  endif
+endfun
+vmap K d:call SmartTaskMove()<cr>
+nmap K dd:call SmartTaskMove()<cr>
 
 " quckly goto
 nmap <c-d>gt :e ~/vimwiki/todo.wiki<cr>
