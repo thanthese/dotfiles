@@ -133,12 +133,12 @@ nmap \a :Ack --all<space><space>%:h<Left><Left><Left><Left>
 " }}}
 " ========== sneak ==========" {{{
 
-nnoremap f :Sneak! 1<cr>
-nnoremap F :SneakBackward! 1<cr>
-xnoremap f <esc>:<c-u>SneakV! 1<cr>
-xnoremap F <esc>:<c-u>SneakVBackward! 1<cr>
-
-" I don't care for sneak's default
-unmap! s
+" nnoremap f :Sneak! 1<cr>
+" nnoremap F :SneakBackward! 1<cr>
+" xnoremap f <esc>:<c-u>SneakV! 1<cr>
+" xnoremap F <esc>:<c-u>SneakVBackward! 1<cr>
+"
+" " I don't care for sneak's default
+" nunmap s
 
 " }}}
