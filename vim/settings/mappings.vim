@@ -211,3 +211,69 @@ vmap <C-d>/ <Esc>/\%V
 nmap <C-d>/ /\%V
 
 " }}}
+" ========== poor man's seek ========== {{{
+
+nmap fa /a<cr>
+nmap fb /b<cr>
+nmap fc /c<cr>
+nmap fd /d<cr>
+nmap fe /e<cr>
+nmap ff /f<cr>
+nmap fg /g<cr>
+nmap fh /h<cr>
+nmap fi /i<cr>
+nmap fj /j<cr>
+nmap fk /k<cr>
+nmap fl /l<cr>
+nmap fm /m<cr>
+nmap fn /n<cr>
+nmap fo /o<cr>
+nmap fp /p<cr>
+nmap fq /q<cr>
+nmap fr /r<cr>
+nmap fs /s<cr>
+nmap ft /t<cr>
+nmap fu /u<cr>
+nmap fv /v<cr>
+nmap fw /w<cr>
+nmap fx /x<cr>
+nmap fy /y<cr>
+nmap fz /z<cr>
+nmap fA /A<cr>
+nmap fB /B<cr>
+nmap fC /C<cr>
+nmap fD /D<cr>
+nmap fE /E<cr>
+nmap fF /F<cr>
+nmap fG /G<cr>
+nmap fH /H<cr>
+nmap fI /I<cr>
+nmap fJ /J<cr>
+nmap fK /K<cr>
+nmap fL /L<cr>
+nmap fM /M<cr>
+nmap fN /N<cr>
+nmap fO /O<cr>
+nmap fP /P<cr>
+nmap fQ /Q<cr>
+nmap fR /R<cr>
+nmap fS /S<cr>
+nmap fT /T<cr>
+nmap fU /U<cr>
+nmap fV /V<cr>
+nmap fW /W<cr>
+nmap fX /X<cr>
+nmap fY /Y<cr>
+nmap fZ /Z<cr>
+nmap f1 /1<cr>
+nmap f2 /2<cr>
+nmap f3 /3<cr>
+nmap f4 /4<cr>
+nmap f5 /5<cr>
+nmap f6 /6<cr>
+nmap f7 /7<cr>
+nmap f8 /8<cr>
+nmap f9 /9<cr>
+nmap f0 /0<cr>
+
+" }}}
