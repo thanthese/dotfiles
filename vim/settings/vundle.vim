@@ -26,6 +26,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
+Bundle 'vimwiki/vimwiki'
 
 " Bundle 'Lokaltog/vim-powerline'
 " Bundle 'Shougo/neocomplcache'
@@ -45,7 +46,7 @@ Bundle 'tpope/vim-surround'
 " ========== vim scripts ========== {{{
 
 Bundle 'matchit.zip'
-Bundle 'vimwiki'
+" Bundle 'vimwiki'
 
 " Bundle 'FuzzyFinder'
 " Bundle 'L9'
