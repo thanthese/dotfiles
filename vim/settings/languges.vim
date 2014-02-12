@@ -1,8 +1,18 @@
 " go{{{
 
-nmap <c-r> :wa<cr>:!go run %<cr>
+" opt-r to run
+autocmd FileType go nmap ® :wa<cr>:!go run %<cr>
 
+" format on save
 autocmd FileType go autocmd BufWritePre <buffer> Fmt
-autocmd FileType go autocmd BufRead,BufNew <buffer> :setlocal ts=2
+
+" set how to view tabs
+autocmd FileType go autocmd BufEnter <buffer> :setlocal ts=2
+
+" }}}
+" python{{{
+
+" opt-r to run
+autocmd FileType python nmap ® :wa<cr>:!python %<cr>
 
 " }}}

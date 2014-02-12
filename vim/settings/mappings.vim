@@ -60,6 +60,9 @@ nmap ç cc<esc>
 " alternative to macros for a selection
 vmap , :norm<space>
 
+" quick replace
+nmap <c-s> :%s/
+
 " }}}
 " ========== make keys work as expected ========== {{{
 
