@@ -11,6 +11,8 @@ autocmd FileType go autocmd BufWritePre <buffer> Fmt
 " set how to view tabs
 autocmd FileType go autocmd BufEnter <buffer> :setlocal ts=2
 
+autocmd FileType go set noexpandtab
+
 " }}}
 " python{{{
 
