@@ -1,5 +1,7 @@
 " go{{{
 
+" excellent resource: http://0value.com/my-Go-centric-Vim-setup
+
 " opt-r to run
 autocmd FileType go nmap ® :wa<cr>:!go run %<cr>
 

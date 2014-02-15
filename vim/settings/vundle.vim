@@ -11,11 +11,14 @@ Bundle 'gmarik/vundle'
 " }}}
 " ========== github ========== {{{
 
+Bundle 'Blackrush/vim-gocode'
 Bundle 'Shougo/vimshell.vim'
+Bundle 'Townk/vim-autoclose'
 Bundle 'arecarn/crunch'
 Bundle 'benmills/vimux'
 Bundle 'bling/vim-airline'
 Bundle 'coderifous/textobj-word-column.vim'
+Bundle 'dgryski/vim-godef'
 Bundle 'godlygeek/tabular'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'kien/ctrlp.vim'
