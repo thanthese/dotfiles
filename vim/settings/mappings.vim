@@ -44,13 +44,11 @@ nmap \gc :wa<CR>
   \git commit -m "$(date)";
   \git status<CR>
 
-" dragging lines around (from http://vim.wikia.com/wiki/Moving_lines_up_or_down)
-nnoremap ∆ :m .+1<CR>==
-nnoremap ˚ :m .-2<CR>==
-inoremap ∆ <Esc>:m .+1<CR>==gi
-inoremap ˚ <Esc>:m .-2<CR>==gi
-vnoremap ∆ :m '>+1<CR>gv=gv
-vnoremap ˚ :m '<-2<CR>gv=gv
+" moving lines around up
+nnoremap ˚ ddkP
+nnoremap ∆ ddp
+vnoremap ˚ dkP'[V']
+vnoremap ∆ dp'[V']
 
 " adding blank lines above (alt-h) and below (alt-l)
 nmap ˙ O<esc>cc<esc>
