@@ -163,7 +163,8 @@ nmap <c-d>3 vip<c-d>3
 nmap <c-d>4 vip<c-d>4
 nmap <c-d>5 vip<c-d>5
 
-vmap <c-d>s :!smart_sum<cr>
+vnoremap \\ !smart_sum<cr>
+nnoremap \\ !!smart_sum<cr>
 
 " add line numbers to selection
 vmap <c-d>cn :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>

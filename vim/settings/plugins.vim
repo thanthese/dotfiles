@@ -98,7 +98,7 @@ nmap K dd:call SmartTaskMove()<cr>
 nmap <c-d>gt :e ~/vimwiki/todo.wiki<cr>
 nmap <c-d>gk :e ~/vimwiki/tickler.wiki<cr>
 nmap <c-d><c-d> :e ~/vimwiki/todo.wiki<cr>
-nmap <c-d>gK :wa<cr>:e ~/vimwiki/tickler_viz.wiki<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/vimwiki/tickler.wiki<cr>:wa<cr>
+nmap <c-d>gK :wa<cr>:e ~/vimwiki/tickler_viz.wiki<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/vimwiki/tickler.wiki<cr>
 
 " }}}
 " ========== shell ==========" {{{
