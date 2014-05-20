@@ -16,10 +16,3 @@ endfunction
 function! LongDate()
   return "[" . tolower(strftime("'%y%b%d")) . ShortDay(strftime("%a")) . "]"
 endfunction
-
-function! StripTrailingWhitespaces()
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  call cursor(l, c)
-endfun
