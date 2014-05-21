@@ -35,6 +35,8 @@ nmap \gs :wa<CR>
   \git pull;
   \git push;
   \git status<CR>
+" alias: alt-s
+nmap ß \gs
 
 " git commit: commit current repository
 nmap \gc :wa<CR>
