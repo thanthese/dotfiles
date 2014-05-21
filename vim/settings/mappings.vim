@@ -197,6 +197,8 @@ nmap <c-d>sp :setlocal spell! wrap! linebreak!<CR>
 
 " search-replace word-under-cursor in file
 nmap <c-d>R :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
+" alias: alt-r
+nmap ® <c-d>R
 
 " search-replace selection in file
 vmap <c-d>R y:%s/<c-r>"//gc<left><left><Left>
