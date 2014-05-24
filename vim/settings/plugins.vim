@@ -155,4 +155,12 @@ xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
 
+" use smart case settings for case sensitivity
+let g:sneak#use_ic_scs = 1
+
+" }}}
+" multi-cursors{{{
+
+let g:multi_cursor_exit_from_insert_mode =0
+
 " }}}
