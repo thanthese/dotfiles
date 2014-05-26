@@ -62,6 +62,10 @@ nmap ç cc<esc>
 " alternative to macros for a selection
 vmap , :norm<space>
 
+" quick escape back to normal mode (experimental)
+inoremap jk <esc>
+inoremap kj <esc>
+
 " }}}
 " ========== make keys work as expected ========== {{{
 
