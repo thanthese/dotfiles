@@ -1,0 +1,19 @@
+tile_skip_title = true
+tile_layout_priority = minimap, gold_turn
+tile_full_screen = true
+tile_tooltip_ms = 0
+
+mouse_input = false
+remember_name = false
+
+# auto eat while travelling
+auto_eat_chunks = true
+
+# auto sacrifice while travelling
+auto_sacrifice = prompt
+
+# eat oldest chunk on "e" without prompting
+easy_eat_chunks = true
+
+# drop rotting chunks instead of becoming overburdened
+auto_drop_chunks = yes
