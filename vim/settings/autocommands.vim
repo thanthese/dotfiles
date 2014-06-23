@@ -9,3 +9,6 @@ endfun
 
 " on save a .vim file: source file
 autocmd! BufWritePost *.vim source %
+
+" force auto-load (autoread) frequently
+" autocmd CursorHold * checktime
