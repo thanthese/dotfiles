@@ -53,7 +53,6 @@ Bundle 'wellle/targets.vim'
 " ========== vim scripts ========== {{{
 
 Bundle 'matchit.zip'
-" Bundle 'vimwiki'
 
 " Bundle 'FuzzyFinder'
 " Bundle 'L9'

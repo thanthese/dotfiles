@@ -46,6 +46,8 @@ nmap <c-c>b :call VimuxInterruptRunner()<CR>
 " }}}
 " ========== wiki ==========" {{{
 
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/'}]
+
 " fold on headers
 let g:vimwiki_folding='expr'
 
@@ -79,12 +81,12 @@ vmap _ :s/^- //<cr>
 " on context (that is, on the current file).
 function! SmartTaskMove()
   if(match(bufname("%"), "tickler.wiki") > -1)
-    silent exec "norm :e ~/vimwiki/todo.wiki\<cr>"
+    silent exec "norm :e ~/Dropbox/vimwiki/todo.wiki\<cr>"
     silent exec "norm ggP"
     silent exec "norm :b #\<cr>"
     exec "norm :echo \"Line(s) moved to todo.\"\<cr>"
   else
-    silent exec "norm :e ~/vimwiki/tickler.wiki\<cr>"
+    silent exec "norm :e ~/Dropbox/vimwiki/tickler.wiki\<cr>"
     silent exec "norm ggP"
     silent exec "norm :%!sort -n\<cr>"
     silent exec "norm :b #\<cr>"
@@ -95,10 +97,10 @@ vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
 
 " quckly goto
-nmap <c-d>gt :e ~/vimwiki/todo.wiki<cr>
-nmap <c-d>gk :e ~/vimwiki/tickler.wiki<cr>
-nmap <c-d><c-d> :e ~/vimwiki/todo.wiki<cr>
-nmap <c-d>gK :wa<cr>:e ~/vimwiki/tickler_viz.wiki<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/vimwiki/tickler.wiki<cr>
+nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.wiki<cr>
+nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.wiki<cr>
+nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.wiki<cr>
+nmap <c-d>gK :wa<cr>:e ~/Dropbox/vimwiki/tickler_viz.wiki<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.wiki<cr>
 
 " }}}
 " ========== shell ==========" {{{
