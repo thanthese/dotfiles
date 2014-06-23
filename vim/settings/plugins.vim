@@ -44,9 +44,12 @@ nmap <c-c>b :call VimuxInterruptRunner()<CR>
 "let g:VimuxHeight = "40"
 
 " }}}
-" ========== wiki ==========" {{{
+" ========== vimwiki ==========" {{{
 
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'ext': '.txt'}]
+
+" use .txt extension
+let g:vimwiki_global_ext = 0
 
 " fold on headers
 let g:vimwiki_folding='expr'
@@ -57,14 +60,14 @@ highlight VimwikiBold guifg=DarkKhaki
 highlight VimwikiItalic guifg=goldenrod
 
 " highlight fake tags
-au BufEnter *.wiki hi appt guifg=DarkKhaki
-au BufEnter *.wiki syn match appt /#appt/
-au BufEnter *.wiki hi bday guifg=darkgray
-au BufEnter *.wiki syn match bday
+au BufEnter ~/Dropbox/vimwiki/*.txt hi appt guifg=DarkKhaki
+au BufEnter ~/Dropbox/vimwiki/*.txt syn match appt /#appt/
+au BufEnter ~/Dropbox/vimwiki/*.txt hi bday guifg=darkgray
+au BufEnter ~/Dropbox/vimwiki/*.txt syn match bday
       \ /#bday\|#holiday\|#anniversary\|#gizappt/
 
 " local wiki settings
-autocmd! BufReadPre *.wiki call SetupWiki()
+autocmd! BufReadPre ~/Dropbox/vimwiki/*.txt call SetupWiki()
 function! SetupWiki()
   setlocal nowrap
   setlocal textwidth=78
@@ -80,13 +83,13 @@ vmap _ :s/^- //<cr>
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).
 function! SmartTaskMove()
-  if(match(bufname("%"), "tickler.wiki") > -1)
-    silent exec "norm :e ~/Dropbox/vimwiki/todo.wiki\<cr>"
+  if(match(bufname("%"), "tickler.txt") > -1)
+    silent exec "norm :e ~/Dropbox/vimwiki/todo.txt\<cr>"
     silent exec "norm ggP"
     silent exec "norm :b #\<cr>"
     exec "norm :echo \"Line(s) moved to todo.\"\<cr>"
   else
-    silent exec "norm :e ~/Dropbox/vimwiki/tickler.wiki\<cr>"
+    silent exec "norm :e ~/Dropbox/vimwiki/tickler.txt\<cr>"
     silent exec "norm ggP"
     silent exec "norm :%!sort -n\<cr>"
     silent exec "norm :b #\<cr>"
@@ -97,10 +100,10 @@ vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
 
 " quckly goto
-nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.wiki<cr>
-nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.wiki<cr>
-nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.wiki<cr>
-nmap <c-d>gK :wa<cr>:e ~/Dropbox/vimwiki/tickler_viz.wiki<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.wiki<cr>
+nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.txt<cr>
+nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
+nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
+nmap <c-d>gK :wa<cr>:e ~/Dropbox/vimwiki/tickler_viz.txt<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.txt<cr>
 
 " }}}
 " ========== shell ==========" {{{
@@ -161,7 +164,7 @@ omap T <Plug>Sneak_T
 let g:sneak#use_ic_scs = 1
 
 " }}}
-" multi-cursors{{{
+" ========== multi-cursors ========== {{{
 
 " let g:multi_cursor_exit_from_insert_mode = 0
 
