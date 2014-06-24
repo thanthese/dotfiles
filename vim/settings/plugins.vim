@@ -83,7 +83,7 @@ nmap <c-d><c-m> :CtrlPMRU<cr>
 " }}}
 " ========== ack ==========" {{{
 
-nmap \a :Ack <space><space>%:h<Left><Left><Left><Left>
+nmap \a :Ack <space>%:h<Left><Left><Left><Left>
 
 " }}}
 " ========== sneak ==========" {{{
