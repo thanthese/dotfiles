@@ -18,49 +18,15 @@ inoremap <c-f> <Right>
 inoremap <c-a> <Home>
 inoremap <c-e> <End>
 
-" whitespace visual surrounds
-vmap s<Space> <Esc>'>a<Space><Esc>'<i<Space><Esc>
-vmap s<CR> <Esc>'>a<cr><Esc>'<i<cr><Esc>
-
 " correct spelling of last misselled word
 inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 nnoremap <c-s> [s1z=``
 
-" git save: push current repository to remote git
-nmap \gs :wa<CR>
-  \:!cd %:h;
-  \pwd;
-  \git add --all;
-  \git commit -m "$(date)";
-  \git pull;
-  \git push;
-  \git status<CR>
-" alias: alt-s
-nmap ß \gs
-
-" git commit: commit current repository
-nmap \gc :wa<CR>
-  \:!cd %:h;
-  \pwd;
-  \git add --all;
-  \git commit -m "$(date)";
-  \git status<CR>
-
 " moving lines around up
-nnoremap ˚ ddkP
-nnoremap ∆ ddp
-vnoremap ˚ dkP'[V']
-vnoremap ∆ dp'[V']
-
-" adding blank lines above (alt-h) and below (alt-l)
-nmap ˙ O<esc>cc<esc>
-nmap ¬ o<esc>cc<esc>
-
-" clear current line (alt-c)
-nmap ç cc<esc>
-
-" alternative to macros for a selection
-vmap , :norm<space>
+nnoremap <c-k> ddkP
+nnoremap <c-j> ddp
+vnoremap <c-k> dkP'[V']
+vnoremap <c-j> dp'[V']
 
 " }}}
 " ========== make keys work as expected ========== {{{
@@ -100,21 +66,6 @@ vmap <c-d>ys "+y:echo "-- Selection Yanked to Clipboard --"<CR>
 nmap <c-d>yp "+P
 vmap <c-d>yp "+P
 imap <c-d>yp <c-r>+
-
-" }}}
-" ========== windows ========== {{{
-
-" switch window
-nmap <c-h> <c-w>h
-nmap <c-l> <c-w>l
-nmap <c-k> <c-w>k
-nmap <c-j> <c-w>j
-
-" resize window
-nmap <c-Up>    <c-W>-
-nmap <c-Down>  <c-W>+
-nmap <c-Left>  <c-W><
-nmap <c-Right> <c-W>>
 
 " }}}
 " ========== system commands ========== {{{
