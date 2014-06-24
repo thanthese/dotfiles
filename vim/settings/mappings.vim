@@ -65,8 +65,8 @@ imap <c-d>yp <c-r>+
 " ========== system commands ========== {{{
 
 " sort
-nmap <c-d>cs vip!sort -nu<CR>
-vmap <c-d>cs !sort -nu<CR>
+nmap <c-d>cs vip!sort -n<CR>
+vmap <c-d>cs !sort -n<CR>
 
 " generate password
 nmap <c-d>cp :r!pwgen -scny 20 1<CR>

@@ -15,12 +15,12 @@ Plugin 'gmarik/Vundle.vim'
 " install vundle like this:
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-Plugin 'PeterRincker/vim-argumentative'
 Plugin 'coderifous/textobj-word-column.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'justinmk/vim-sneak'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mileszs/ack.vim'
+Plugin 'PeterRincker/vim-argumentative'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
