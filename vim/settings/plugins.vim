@@ -109,3 +109,16 @@ omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
 
 " }}}
+" ========== unimpaired ==========" {{{
+
+" moving lines around up
+nmap <c-j> ]e
+nmap <c-k> [e
+vmap <c-k> [egv
+vmap <c-j> ]egv
+
+" adding blank lines
+nmap <c-l> ]<space>
+nmap <c-h> [<space>
+
+" }}}

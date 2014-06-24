@@ -42,7 +42,7 @@ set nowritebackup
 " searching
 set ignorecase
 set incsearch
-set hlsearch
+set nohlsearch
 set smartcase
 
 " just make tabs do what I want

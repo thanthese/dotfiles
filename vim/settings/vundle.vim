@@ -1,86 +1,76 @@
-" ========== vundle setup ========== {{{
-set nocompatible  " be iMproved
-filetype off      " required!
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" Let Vundle manage Vundle. Required!
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
-" }}}
-" ========== github ========== {{{
+" ======================================================================
 
-Bundle 'PeterRincker/vim-argumentative'
-Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'justinmk/vim-sneak'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vimwiki/vimwiki'
-Bundle 'wellle/targets.vim'
+" install vundle like this:
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-" Bundle 'Blackrush/vim-gocode'
-" Bundle 'Lokaltog/vim-powerline'
-" Bundle 'Shougo/neocomplcache'
-" Bundle 'Shougo/unite.vim'
-" Bundle 'Shougo/vimshell.vim'
-" Bundle 'Townk/vim-autoclose'
-" Bundle 'arecarn/crunch'
-" Bundle 'benmills/vimux'
-" Bundle 'bling/vim-airline'
-" Bundle 'dgryski/vim-godef'
-" Bundle 'jamessan/vim-gnupg'
-" Bundle 'jnwhiteh/vim-golang'
-" Bundle 'junegunn/vim-easy-align'
-" Bundle 'majutsushi/tagbar'
-" Bundle 'nelstrom/vim-markdown-folding'
-" Bundle 'osyo-manga/vim-over'
-" Bundle 'scrooloose/syntastic'
-" Bundle 'terryma/vim-expand-region'
-" Bundle 'terryma/vim-multiple-cursors'
-" Bundle 'terryma/vim-smooth-scroll'
-" Bundle 'thanthese/Tortoise-Typing'
-" Bundle 'thanthese/markdown-outline'
-" Bundle 'tpope/vim-markdown'
-" Bundle 'vim-pandoc/vim-pandoc'
-" Bundle 'vim-pandoc/vim-pandoc-syntax'
-" Bundle 'wgibbs/vim-irblack'
+Plugin 'PeterRincker/vim-argumentative'
+Plugin 'coderifous/textobj-word-column.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'justinmk/vim-sneak'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-speeddating'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vimwiki/vimwiki'
+Plugin 'wellle/targets.vim'
 
-" }}}
-" ========== vim scripts ========== {{{
+" Plugin 'Blackrush/vim-gocode'
+" Plugin 'Lokaltog/vim-powerline'
+" Plugin 'Shougo/neocomplcache'
+" Plugin 'Shougo/unite.vim'
+" Plugin 'Shougo/vimshell.vim'
+" Plugin 'Townk/vim-autoclose'
+" Plugin 'arecarn/crunch'
+" Plugin 'benmills/vimux'
+" Plugin 'bling/vim-airline'
+" Plugin 'dgryski/vim-godef'
+" Plugin 'jamessan/vim-gnupg'
+" Plugin 'jnwhiteh/vim-golang'
+" Plugin 'junegunn/vim-easy-align'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'nelstrom/vim-markdown-folding'
+" Plugin 'osyo-manga/vim-over'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'terryma/vim-expand-region'
+" Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-smooth-scroll'
+" Plugin 'thanthese/Tortoise-Typing'
+" Plugin 'thanthese/markdown-outline'
+" Plugin 'tpope/vim-markdown'
+" Plugin 'vim-pandoc/vim-pandoc'
+" Plugin 'vim-pandoc/vim-pandoc-syntax'
+" Plugin 'wgibbs/vim-irblack'
 
-Bundle 'matchit.zip'
+" ======================================================================
 
-" Bundle 'FuzzyFinder'
-" Bundle 'L9'
-" Bundle 'VimClojure'
-" Bundle 'bufexplorer.zip'
-" Bundle 'rails.vim'
-
-" }}}
-" ========== other sources ========== {{{
-
-" Bundle 'git://git.wincent.com/command-t.git'
-
-" }}}
-" ========== vundle cleanup and help ========== {{{
-
-filetype plugin indent on     " required!
-
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 "
-" See :h vundle for more details or wiki for FAQ
-
-" }}}
+" Brief help
+" :PluginList          - list configured plugins
+" :PluginInstall(!)    - install (update) plugins
+" :PluginSearch(!) foo - search (or refresh cache first) for foo
+" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line

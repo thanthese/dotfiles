@@ -22,12 +22,6 @@ inoremap <c-f> <Right>
 inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 nnoremap <c-s> [s1z=``
 
-" moving lines around up
-nnoremap <c-k> ddkP
-nnoremap <c-j> ddp
-vnoremap <c-k> dkP'[V']
-vnoremap <c-j> dp'[V']
-
 " }}}
 " ========== make keys work as expected ========== {{{
 
