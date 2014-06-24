@@ -97,9 +97,9 @@ nmap _ !!node ~/workflowy-bump/workflowy-bump.js terminal<cr>jddk0
 " ========== search and replace ========== {{{
 
 " search-replace word-under-cursor in file
-nmap <c-d>r :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
+nmap <c-d><c-r> :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
 
 " search-replace selection in file
-vmap <c-d>r y:%s/<c-r>"//gc<left><left><Left>
+vmap <c-d><c-r> y:%s/<c-r>"//gc<left><left><Left>
 
 " }}}
