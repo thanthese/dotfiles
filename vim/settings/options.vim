@@ -8,6 +8,7 @@ set autoread             " reload when underlying file changes (on gvim focus)
 set cryptmethod=blowfish " use strong encryption
 set hidden               " allows changing of buffers without saving
 set lazyredraw           " don't redraw screen during macros
+set linebreak            " wrap on end of word neatly
 set mouse=a              " enable the mouse in the terminal
 set noautochdir          " auto change directory to current file's
 set nocursorline         " controls highlighting line with cursor
@@ -41,7 +42,7 @@ set nowritebackup
 " searching
 set ignorecase
 set incsearch
-set nohlsearch
+set hlsearch
 set smartcase
 
 " just make tabs do what I want

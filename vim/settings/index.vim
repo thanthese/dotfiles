@@ -6,4 +6,3 @@ source ~/dotfiles/vim/settings/commands.vim
 source ~/dotfiles/vim/settings/autocommands.vim
 source ~/dotfiles/vim/settings/plugins.vim
 source ~/dotfiles/vim/settings/folds.vim
-source ~/dotfiles/vim/settings/languges.vim

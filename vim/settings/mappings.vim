@@ -13,10 +13,10 @@ nmap Q @q
 map gp `[v`]
 
 " basic emacs in insert mode
-inoremap <c-b> <Left>
-inoremap <c-f> <Right>
 inoremap <c-a> <Home>
 inoremap <c-e> <End>
+inoremap <c-b> <Left>
+inoremap <c-f> <Right>
 
 " correct spelling of last misselled word
 inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -70,39 +70,15 @@ imap <c-d>yp <c-r>+
 " }}}
 " ========== system commands ========== {{{
 
-" calendar
-nmap <c-d>cc !!cal<CR>
-
 " sort
-nmap <c-d>cs vip!sort -n<CR>
-vmap <c-d>cs !sort -n<CR>
-
-" unique
-nmap <c-d>cu :%!uniq<CR>
-vmap <c-d>cu !uniq<CR>
-
-" dc
-nmap <c-d>cd yip}O<Esc>pvip!dc<CR>
-vmap <c-d>cd !dc<CR>
-
-" bc
-nmap <c-d>cb !!bc<CR>
-vmap <c-d>cb !bc<CR>
-
-" sparkup
-nmap <c-d>ck !!~/sparkup/sparkup<CR>
-vmap <c-d>ck !~/sparkup/sparkup<CR>
-
-" tidy json
-nmap <c-d>ca :%!python -mjson.tool<CR>
-vmap <c-d>ca :!python -mjson.tool<CR>
-
-" tidy xml
-nmap <c-d>cx :Tidy<CR>
-vmap <c-d>cx :Tidy<CR>
+nmap <c-d>cs vip!sort -nu<CR>
+vmap <c-d>cs !sort -nu<CR>
 
 " generate password
 nmap <c-d>cp :r!pwgen -scny 20 1<CR>
+
+" run line directly through the shell as a command
+nmap <c-d>ch yyp!!sh<cr>k
 
 " sum column
 vmap <c-d>1 !awk '{s+=$1}END{print s}'<CR>
@@ -116,56 +92,20 @@ nmap <c-d>3 vip<c-d>3
 nmap <c-d>4 vip<c-d>4
 nmap <c-d>5 vip<c-d>5
 
-vnoremap \\ !smart_sum<cr>
-nnoremap \\ !!smart_sum<cr>
-
-" add line numbers to selection
-vmap <c-d>cn :!cat<space>-n<cr>gv:s/\v^<space>*//g<cr>gv:s/\v\t/<space>/g<cr>
-
-" run line directly through the shell as a command
-nmap <c-d>ch yyp!!sh<cr>k
+" smart sum
+vnoremap <c-d>0 !smart_sum<cr>
+nnoremap <c-d>0 !!smart_sum<cr>
 
 " workflowy-bump
 nmap _ !!node ~/workflowy-bump/workflowy-bump.js terminal<cr>jddk0
 
 " }}}
-" ========== vim settings ========== {{{
-
-" turn off highlight search
-nnoremap ÷ :nohl<cr>
-
-" toggle spell
-nmap <c-d>ss :setlocal spell!<CR>
-
-" toggle wrap
-nmap <c-d>sw :setlocal wrap! linebreak!<CR>
-
-" toggle prose
-nmap <c-d>sp :setlocal spell! wrap! linebreak!<CR>
-
-" }}}
 " ========== search and replace ========== {{{
 
 " search-replace word-under-cursor in file
-nmap <c-d>R :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
-" alias: alt-r
-nmap ® <c-d>R
+nmap <c-d>r :%s/\<<c-r><c-w>\>//gc<Left><Left><Left>
 
 " search-replace selection in file
-vmap <c-d>R y:%s/<c-r>"//gc<left><left><Left>
-
-" search-replace word-under-cursor in paragraph
-nmap <c-d>r yiwvip:s/\<<c-r>"\>//gc<Left><Left><Left>
-
-" search-replace selection in paragraph
-vmap <c-d>r yvip:s/<c-r>"//gc<Left><Left><Left>
-
-" substitute only within last selection
-vmap <C-d>S <Esc><C-d>S
-nmap <C-d>S :%s/\%V
-
-" search only within (last) selection
-vmap <C-d>/ <Esc>/\%V
-nmap <C-d>/ /\%V
+vmap <c-d>r y:%s/<c-r>"//gc<left><left><Left>
 
 " }}}

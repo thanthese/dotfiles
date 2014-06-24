@@ -10,33 +10,6 @@ nmap \| :Tabu /\|<CR>
 vmap \| :Tabu /\|<CR>
 
 " }}}
-" ========== vimux ==========" {{{
-
-" prompt
-nmap <c-c>p :VimuxPromptCommand<CR>
-
-" run command
-vmap <c-c><c-c> "zy :call VimuxRunCommand(@z)<CR>
-nmap <c-c><c-c> vip<c-c><c-c>
-
-" repeat last
-nmap <c-c>r :call VimuxRunLastCommand()<CR>
-
-" inspect
-nmap <c-c>i :call VimuxInspectRunner()<CR>
-
-" close
-nmap <c-c>c :call VimuxCloseRunner()<CR>
-
-" break (interrupt running process)
-"
-nmap <c-c>b :call VimuxInterruptRunner()<CR>
-
-" window settings
-"let g:VimuxOrientation = "h"
-"let g:VimuxHeight = "40"
-
-" }}}
 " ========== vimwiki ==========" {{{
 
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'ext': '.txt'}]
@@ -69,9 +42,11 @@ endfun
 " easy toggle folds in wiki mode
 nmap ` za
 
-" easily (un)make list from visual selection
-vmap - :s/^/- /<cr>
-vmap _ :s/^- //<cr>
+" quckly goto
+nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.txt<cr>
+nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
+nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
+nmap <c-d>gK :wa<cr>:e ~/Dropbox/vimwiki/tickler_viz.txt<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.txt<cr>
 
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).
@@ -92,21 +67,6 @@ endfun
 vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
 
-" quckly goto
-nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.txt<cr>
-nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
-nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
-nmap <c-d>gK :wa<cr>:e ~/Dropbox/vimwiki/tickler_viz.txt<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.txt<cr>
-
-" }}}
-" ========== shell ==========" {{{
-
-" required, apparently because of the awkward way I installed macvim
-let g:vimshell_editor_command="macvim"
-
-" open shell quickly
-nmap \v :VimShellBufferDir<CR>
-
 " }}}
 " ========== fugitive ==========" {{{
 
@@ -116,17 +76,9 @@ nmap \fp :Git pull<cr>:Git push<cr>
 " }}}
 " ========== ctrlp ==========" {{{
 
-let g:ctrlp_extensions = ['line']
-" let g:ctrlp_cmd = 'CtrlPMixed'
-
-" convenience mappings
 nmap <c-d><c-f> :CtrlP<cr>
-" alias: alt-b
-nmap ∫ :CtrlPBuffer<cr>
 nmap <c-d><c-b> :CtrlPBuffer<cr>
 nmap <c-d><c-m> :CtrlPMRU<cr>
-" alias: alt-m
-nmap µ :CtrlPMRU<cr>
 
 " }}}
 " ========== ack ==========" {{{
@@ -135,6 +87,9 @@ nmap \a :Ack <space><space>%:h<Left><Left><Left><Left>
 
 " }}}
 " ========== sneak ==========" {{{
+
+" use smart case settings for case sensitivity
+let g:sneak#use_ic_scs = 1
 
 " use s for normal, two character sneak
 
@@ -152,13 +107,5 @@ xmap t <Plug>Sneak_t
 xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
-
-" use smart case settings for case sensitivity
-let g:sneak#use_ic_scs = 1
-
-" }}}
-" ========== multi-cursors ========== {{{
-
-" let g:multi_cursor_exit_from_insert_mode = 0
 
 " }}}

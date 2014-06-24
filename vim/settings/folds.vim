@@ -1,4 +1,4 @@
-" use markers
+" use markers, {{{ and }}}
 set foldmethod=marker
 
 " no C-style comments
