@@ -12,6 +12,7 @@ vmap \| :Tabu /\|<CR>
 " }}}
 " ========== vimwiki ==========" {{{
 
+" set wiki location and extension
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'ext': '.txt'}]
 
 " use .txt extension
@@ -19,6 +20,9 @@ let g:vimwiki_global_ext = 0
 
 " fold on headers
 let g:vimwiki_folding='expr'
+
+" easy toggle folds in wiki mode (tab is used for something else)
+nmap ` za
 
 " bold and italics don't show up on the mac for some reason, so make them
 " obvious
@@ -38,9 +42,6 @@ function! SetupWiki()
   setlocal nowrap
   setlocal textwidth=78
 endfun
-
-" easy toggle folds in wiki mode
-nmap ` za
 
 " quckly goto
 nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.txt<cr>
