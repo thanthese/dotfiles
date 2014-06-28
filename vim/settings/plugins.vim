@@ -68,6 +68,9 @@ endfun
 vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
 
+" workflowy-bump
+nmap _ !!node ~/workflowy-bump/workflowy-bump.js terminal<cr>jddk0
+
 " }}}
 " ========== fugitive ==========" {{{
 

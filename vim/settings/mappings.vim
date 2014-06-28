@@ -12,15 +12,15 @@ nmap Q @q
 " select whatever was just pasted
 map gp `[v`]
 
+" correct spelling of last misselled word
+inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
+nnoremap <c-s> [s1z=``
+
 " basic emacs in insert mode
 inoremap <c-a> <Home>
 inoremap <c-e> <End>
 inoremap <c-b> <Left>
 inoremap <c-f> <Right>
-
-" correct spelling of last misselled word
-inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
-nnoremap <c-s> [s1z=``
 
 " }}}
 " ========== make keys work as expected ========== {{{
@@ -89,9 +89,6 @@ nmap <c-d>5 vip<c-d>5
 " smart sum
 vnoremap <c-d>0 !smart_sum<cr>
 nnoremap <c-d>0 !!smart_sum<cr>
-
-" workflowy-bump
-nmap _ !!node ~/workflowy-bump/workflowy-bump.js terminal<cr>jddk0
 
 " }}}
 " ========== search and replace ========== {{{
