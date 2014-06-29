@@ -16,12 +16,6 @@ map gp `[v`]
 inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 nnoremap <c-s> [s1z=``
 
-" basic emacs in insert mode
-inoremap <c-a> <Home>
-inoremap <c-e> <End>
-inoremap <c-b> <Left>
-inoremap <c-f> <Right>
-
 " }}}
 " ========== make keys work as expected ========== {{{
 
