@@ -34,7 +34,7 @@ au BufEnter ~/Dropbox/vimwiki/*.txt hi appt guifg=DarkKhaki
 au BufEnter ~/Dropbox/vimwiki/*.txt syn match appt /#appt/
 au BufEnter ~/Dropbox/vimwiki/*.txt hi bday guifg=darkgray
 au BufEnter ~/Dropbox/vimwiki/*.txt syn match bday
-      \ /#bday\|#holiday\|#anniversary\|#gizappt/
+      \ /#bday\|#holiday\|#anniversary\|#giz/
 
 " local wiki settings
 autocmd! BufReadPre ~/Dropbox/vimwiki/*.txt call SetupWiki()

@@ -10,7 +10,7 @@ imap <c-r><c-r> <c-r>"
 nmap Q @q
 
 " select whatever was just pasted
-map gp `[v`]
+nnoremap gp `[v`]
 
 " correct spelling of last misselled word
 inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
