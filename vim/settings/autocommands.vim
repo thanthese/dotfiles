@@ -1,4 +1,4 @@
-" on save any: trim trailing whitespace
+" on save: trim trailing whitespace
 autocmd BufWritePre * :call StripTrailingWhitespaces()
 function! StripTrailingWhitespaces()
   let l = line(".")

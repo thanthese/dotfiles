@@ -29,7 +29,7 @@ set conceallevel=2   " allow concealing magic
 " hide silly gui options
 set guioptions+=c  " use console dialogs
 set guioptions+=v  " vertical layout for dialogs
-set guioptions-=L  " no left  scroll bar
+set guioptions-=L  " no left scroll bar
 set guioptions-=T  " no tool bar
 set guioptions-=m  " no menu bar
 set guioptions-=r  " no right scroll bar
@@ -57,4 +57,4 @@ set wildmenu  " command line completion
 set completeopt-=preview
 
 " so I don't need to zR all the time, hopefully
-set foldlevel=20
+set foldlevel=1

@@ -1,20 +1,23 @@
 " ========== vanity mappings ========== {{{
 
-" quick save
+" save
 nmap <Space> :wa<CR>
 
-" quickly insert default register
-imap <c-r><c-r> <c-r>"
-
-" quick macro access
+" play macro
 nmap Q @q
 
-" select whatever was just pasted
-nnoremap gp `[v`]
+" insert default register
+imap <c-r><c-r> <c-r>"
 
 " correct spelling of last misselled word
 inoremap <c-s> <c-g>u<Esc>[s1z=`]a<c-g>u
 nnoremap <c-s> [s1z=``
+
+" quick toggle buffers
+nnoremap <bs> <c-^>
+
+" select whatever was just pasted
+nnoremap gp `[v`]
 
 " }}}
 " ========== make keys work as expected ========== {{{
@@ -65,7 +68,7 @@ vmap <c-d>cs !sort -n<CR>
 " generate password
 nmap <c-d>cp :r!pwgen -scny 20 1<CR>
 
-" run line directly through the shell as a command
+" execute current line as on shell prompt
 nmap <c-d>ch yyp!!sh<cr>k
 
 " sum column
