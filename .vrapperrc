@@ -1,5 +1,0 @@
-set incsearch
-set hlsearch
-set ignorecase
-
-nmap <SPACE> :wa<ENTER>
