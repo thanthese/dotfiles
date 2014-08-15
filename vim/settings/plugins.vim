@@ -144,3 +144,9 @@ au FileType go nmap <buffer> <leader>t <Plug>(go-test)
 au FileType go nmap <buffer> gd <Plug>(go-def)
 
 " }}}
+" ========== expand region ==========" {{{
+
+" map ) <Plug>(expand_region_expand)
+" map ( <Plug>(expand_region_shrink)
+
+" }}}
