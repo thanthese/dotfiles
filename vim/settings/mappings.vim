@@ -35,7 +35,7 @@ vnoremap j gj
 " yank matches change convention
 nmap Y y$
 
-" goto file opens vertical fold
+" goto file opens vertical split
 map <c-w><c-f> <c-w><c-o>:vertical wincmd f<CR>
 
 " }}}

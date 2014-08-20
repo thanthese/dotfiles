@@ -4,8 +4,11 @@ set foldmethod=marker
 " no C-style comments
 set commentstring=
 
+" so I don't need to zR all the time, hopefully
+set foldlevel=1
+
 " toggle folds easily
-nmap <tab> za
+nmap ` za
 
 " add fold text objects
 xnoremap az :<C-U>silent!normal![zV]z<CR>

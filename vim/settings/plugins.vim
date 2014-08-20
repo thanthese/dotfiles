@@ -44,9 +44,6 @@ function! SetupWiki()
   " setlocal textwidth=78
 endfun
 
-" easy toggle folds in wiki mode (tab is used for something else)
-nmap ` za
-
 " quckly goto
 nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.txt<cr>
 nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>

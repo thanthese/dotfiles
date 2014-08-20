@@ -12,7 +12,7 @@ set linebreak            " wrap on end of word neatly
 set mouse=a              " enable the mouse in the terminal
 set noautochdir          " auto change directory to current file's
 set nocursorline         " controls highlighting line with cursor
-set number               " show line numbers
+set nonumber             " show line numbers
 set ruler                " show cursor position
 set scrolloff=0          " number of lines to keep above and below cursor
 set shortmess+=I         " hide vim intro message
