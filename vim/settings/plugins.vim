@@ -40,8 +40,8 @@ au BufEnter ~/Dropbox/vimwiki/*.txt syn match bday
 " local wiki settings
 autocmd! BufReadPre ~/Dropbox/vimwiki/*.txt call SetupWiki()
 function! SetupWiki()
-  " setlocal nowrap
-  " setlocal textwidth=78
+  setlocal nowrap
+  setlocal textwidth=78
 endfun
 
 " quckly goto
