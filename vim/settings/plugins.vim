@@ -48,7 +48,7 @@ endfun
 nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.txt<cr>
 nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
 nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
-nmap <c-d>gK :wa<cr>:e ~/Dropbox/vimwiki/tickler_viz.txt<cr>:%!python ~/PycharmProjects/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.txt<cr>
+nmap <c-d>gK :wa<cr>:e ~/Dropbox/vimwiki/tickler_viz.txt<cr>:%!python ~/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.txt<cr>
 
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).

@@ -55,6 +55,3 @@ set softtabstop=2
 " menus and completion
 set wildmenu  " command line completion
 set completeopt-=preview
-
-" so I don't need to zR all the time, hopefully
-set foldlevel=1
