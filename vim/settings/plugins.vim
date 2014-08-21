@@ -48,6 +48,8 @@ endfun
 nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.txt<cr>
 nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
 nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
+
+" tickler visualization
 nmap <c-d>gK :wa<cr>
       \:e ~/Dropbox/vimwiki/tickler_viz.txt<cr>
       \:%!python ~/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.txt<cr>
