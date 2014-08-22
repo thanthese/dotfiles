@@ -45,14 +45,9 @@ function! SetupWiki()
 endfun
 
 " quckly goto
-nmap <c-d>gt :e ~/Dropbox/vimwiki/todo.txt<cr>
-nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
 nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
-
-" tickler visualization
-nmap <c-d>gK :wa<cr>
-      \:e ~/Dropbox/vimwiki/tickler_viz.txt<cr>
-      \:%!python ~/tickler_visualization/tickler_visualization.py ~/Dropbox/vimwiki/tickler.txt<cr>
+nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
+nmap <c-d>gw :e ~/Dropbox/vimwiki/waiting.txt<cr>
 
 " goto agenda view
 nmap <c-d>ga :wa<cr>
@@ -79,9 +74,6 @@ function! SmartTaskMove()
 endfun
 vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
-
-" workflowy-bump
-nmap _ !!node ~/workflowy-bump/workflowy-bump.js terminal<cr>jddk0
 
 " }}}
 " ========== fugitive ==========" {{{
@@ -156,5 +148,11 @@ au FileType go nmap <buffer> gd <Plug>(go-def)
 
 nmap <c-n> <Plug>(expand_region_expand)
 vmap <c-p> <Plug>(expand_region_shrink)
+
+" }}}
+" ========== speeddating ==========" {{{
+
+autocmd VimEnter * SpeedDatingFormat %Y %m %d %a
+nmap _ O<c-r>=strftime("%Y %m %d %a")<cr><esc>
 
 " }}}
