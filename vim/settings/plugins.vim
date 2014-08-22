@@ -31,11 +31,10 @@ highlight VimwikiBold guifg=DarkKhaki
 highlight VimwikiItalic guifg=goldenrod
 
 " highlight fake tags
+au BufEnter ~/Dropbox/vimwiki/*.txt hi bday guifg=darkgray
+au BufEnter ~/Dropbox/vimwiki/*.txt syn match bday /#\w*/
 au BufEnter ~/Dropbox/vimwiki/*.txt hi appt guifg=DarkKhaki
 au BufEnter ~/Dropbox/vimwiki/*.txt syn match appt /#appt/
-au BufEnter ~/Dropbox/vimwiki/*.txt hi bday guifg=darkgray
-au BufEnter ~/Dropbox/vimwiki/*.txt syn match bday
-      \ /#bday\|#holiday\|#anniversary\|#fun\|#giz/
 
 " local wiki settings
 autocmd! BufReadPre ~/Dropbox/vimwiki/*.txt call SetupWiki()
@@ -52,9 +51,9 @@ nmap <c-d>gw :e ~/Dropbox/vimwiki/waiting.txt<cr>
 " goto agenda view
 nmap <c-d>ga :wa<cr>
       \:e ~/Dropbox/vimwiki/tickler.txt<cr>
-      \qaq:g/#\\|----/y A<cr>
+      \qaq:g/#\\|-  -  -/y A<cr>
       \:e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
-      \ggvG"APdd:w<cr>
+      \ggdG"APdd:wa<cr>
 
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).
@@ -152,7 +151,7 @@ vmap <c-p> <Plug>(expand_region_shrink)
 " }}}
 " ========== speeddating ==========" {{{
 
-autocmd VimEnter * SpeedDatingFormat %Y %m %d %a
-nmap _ O<c-r>=strftime("%Y %m %d %a")<cr><esc>
+autocmd VimEnter * SpeedDatingFormat %y.%m.%d.%a
+nmap _ O<c-r>=strftime("%y.%m.%d.%a")<cr><esc>
 
 " }}}
