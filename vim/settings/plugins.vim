@@ -75,7 +75,7 @@ vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
 
 " cooking, pull recipe ingredients into file
-nmap <c-d><c-k> <cr>jyi=<c-^>Gpgp:v/^-/d<cr>''j
+nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
 
 " }}}
 " ========== fugitive ==========" {{{
