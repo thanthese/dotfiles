@@ -17,3 +17,60 @@ easy_eat_chunks = true
 
 # drop rotting chunks instead of becoming overburdened
 auto_drop_chunks = yes
+
+
+# ######################################################################
+# # cute ideas
+#
+# default_manual_training = true
+#
+# explore_stop -= stairs, items               # don't break explore on stairs and items
+# explore_stop += glowing_items               # do break on magic items
+#
+# # Waiting
+# rest_wait_both = true                       # always fill HP _and_ MP
+# runrest_ignore_message += rott, decay, contamination, disgusting # don't break if something rots
+#
+# # Hunger
+# confirm_butcher = never                 # always butcher only freshest corpse
+# easy_eat_chunks = true                  # always eat chunks first
+# auto_eat_chunks = true                  # eat chunks while traveling or waiting
+# auto_drop_chunks = true                 # drop rotten chunks if inventory is full
+#
+# # Skill menu at game start by rwbarton
+# {
+# local need_skills_opened = true
+# function ready()
+#   if you.turns() == 0 and need_skills_opened then
+#     need_skills_opened = false
+#     crawl.sendkeys("m")
+#   end
+# end
+# }
+# This causes the 'm' skills menu to pop up at the very beginning of every new game, so you can't forget to set skills.
+# And this one (whose author I cannot recall):
+# ## Pickup aux armour you haven't found yet.
+# {
+# local function autopickup(it, name)
+#     local class  = it.class(true)
+#     if class == "armour" then
+#         local good_slots = {cloak="Cloak", helmet="Helmet",
+#                             gloves="Gloves", boots="Boots"}
+#         st, _ = it.subtype()
+#         if good_slots[st] ~= nil and
+#            items.equipped_at(good_slots[st]) == nil then
+#             return true
+#         end
+#     end
+#     if class == "weapon" then
+#         if name:find("distortion") then
+#             return true
+#         end
+#     end
+#     if class == "missile" then
+#         if name:find("curare") then
+#             return true
+#         end
+#     end
+#     return false
+# end
