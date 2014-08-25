@@ -46,14 +46,15 @@ endfun
 " quckly goto
 nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
 nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
+nmap <c-d>ga :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
 nmap <c-d>gw :e ~/Dropbox/vimwiki/waiting.txt<cr>
 
-" goto agenda view
-nmap <c-d>ga :wa<cr>
-      \:e ~/Dropbox/vimwiki/tickler.txt<cr>
-      \qaq:g/#\\|-  -  -/y A<cr>
-      \:e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
-      \ggdG"APdd:wa<cr>
+" sync agenda file automatically
+" (for some reason only seems to work if it's all on one line)
+autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt silent !grep "\#\|-  -  -" ~/Dropbox/vimwiki/tickler.txt > ~/Dropbox/vimwiki/tickler_agenda.txt
+
+" agenda file read only
+autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
 
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).
