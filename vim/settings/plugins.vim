@@ -56,6 +56,9 @@ autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt silent !grep "\#\|-  -  -" ~
 " agenda file read only
 autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
 
+" cooking, pull recipe ingredients into file
+nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
+
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).
 function! SmartTaskMove()
@@ -74,9 +77,6 @@ function! SmartTaskMove()
 endfun
 vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
-
-" cooking, pull recipe ingredients into file
-nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
 
 " }}}
 " ========== fugitive ==========" {{{
