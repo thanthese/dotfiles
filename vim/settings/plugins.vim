@@ -1,15 +1,3 @@
-" ========== tabular ==========" {{{
-
-nmap \: :Tabu /:<CR>
-vmap \: :Tabu /:<CR>
-nmap \" :Tabu /"<CR>
-vmap \" :Tabu /"<CR>
-nmap \= :Tabu /=<CR>
-vmap \= :Tabu /=<CR>
-nmap \| :Tabu /\|<CR>
-vmap \| :Tabu /\|<CR>
-
-" }}}
 " ========== vimwiki ==========" {{{
 
 " set wiki location and extension
@@ -77,6 +65,18 @@ function! SmartTaskMove()
 endfun
 vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
+
+" }}}
+" ========== tabular ==========" {{{
+
+nmap \: :Tabu /:<CR>
+vmap \: :Tabu /:<CR>
+nmap \" :Tabu /"<CR>
+vmap \" :Tabu /"<CR>
+nmap \= :Tabu /=<CR>
+vmap \= :Tabu /=<CR>
+nmap \| :Tabu /\|<CR>
+vmap \| :Tabu /\|<CR>
 
 " }}}
 " ========== fugitive ==========" {{{
