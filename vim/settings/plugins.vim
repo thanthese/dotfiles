@@ -37,18 +37,17 @@ nmap <c-d>k :e ~/Dropbox/vimwiki/tickler.txt<cr>
 nmap <c-d>a :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
 
 " sync agenda file automatically
-" (for some reason only seems to work if it's all on one line)
 autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt
       \ silent !grep "\#\|___" ~/Dropbox/vimwiki/tickler.txt
       \ > ~/Dropbox/vimwiki/tickler_agenda.txt
 
-" agenda file read only
+" make agenda file read only
 autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
 
 " cooking, pull recipe ingredients into file
 nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
 
-" update todo from tickler
+" pull today's tickler items into todo
 nmap <c-d>u :e ~/Dropbox/vimwiki/tickler.txt<cr>
       \gg?^<c-r>=strftime("%y.%m.%d.%a")<cr><cr>
       \dgg
