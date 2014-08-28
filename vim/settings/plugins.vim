@@ -48,6 +48,13 @@ autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
 " cooking, pull recipe ingredients into file
 nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
 
+" update todo from tickler
+nmap <c-d>u :e ~/Dropbox/vimwiki/tickler.txt<cr>
+      \gg?^<c-r>=strftime("%y.%m.%d.%a")<cr><cr>
+      \dgg
+      \:e ~/Dropbox/vimwiki/todo.txt<cr>ggP
+      \:wa<cr>
+
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).
 function! SmartTaskMove()
