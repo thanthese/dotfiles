@@ -38,7 +38,9 @@ nmap <c-d>a :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
 
 " sync agenda file automatically
 " (for some reason only seems to work if it's all on one line)
-autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt silent !grep "\#\|___" ~/Dropbox/vimwiki/tickler.txt > ~/Dropbox/vimwiki/tickler_agenda.txt
+autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt
+      \ silent !grep "\#\|___" ~/Dropbox/vimwiki/tickler.txt
+      \ > ~/Dropbox/vimwiki/tickler_agenda.txt
 
 " agenda file read only
 autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
