@@ -33,9 +33,8 @@ endfun
 
 " quckly goto
 nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
-nmap <c-d>gk :e ~/Dropbox/vimwiki/tickler.txt<cr>
-nmap <c-d>ga :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
-nmap <c-d>gw :e ~/Dropbox/vimwiki/waiting.txt<cr>
+nmap <c-d>k :e ~/Dropbox/vimwiki/tickler.txt<cr>
+nmap <c-d>a :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
 
 " sync agenda file automatically
 " (for some reason only seems to work if it's all on one line)
