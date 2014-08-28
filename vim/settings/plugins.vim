@@ -31,11 +31,6 @@ function! SetupWiki()
   setlocal textwidth=78
 endfun
 
-" quckly goto
-nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
-nmap <c-d>k :e ~/Dropbox/vimwiki/tickler.txt<cr>
-nmap <c-d>a :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
-
 " sync agenda file automatically
 autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt
       \ silent !grep "\#\|___" ~/Dropbox/vimwiki/tickler.txt
@@ -43,6 +38,11 @@ autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt
 
 " make agenda file read only
 autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
+
+" quckly goto
+nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
+nmap <c-d>k :e ~/Dropbox/vimwiki/tickler.txt<cr>
+nmap <c-d>a :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
 
 " cooking, pull recipe ingredients into file
 nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
