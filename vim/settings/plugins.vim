@@ -31,27 +31,30 @@ function! SetupWiki()
   setlocal textwidth=78
 endfun
 
+" make agenda file read only
+autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
+
 " sync agenda file automatically
 autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt
       \ silent !grep "\#\|___" ~/Dropbox/vimwiki/tickler.txt
       \ > ~/Dropbox/vimwiki/tickler_agenda.txt
 
-" make agenda file read only
-autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
+" cooking: pull recipe ingredients into file
+nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
 
 " quckly goto
 nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
 nmap <c-d>k :e ~/Dropbox/vimwiki/tickler.txt<cr>
 nmap <c-d>a :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
 
-" cooking, pull recipe ingredients into file
-nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
-
-" pull today's tickler items into todo
-nmap <c-d>u :e ~/Dropbox/vimwiki/tickler.txt<cr>
+" pull today's (and missed days') tickler items into todo
+nmap <c-d>u :e ~/Dropbox/vimwiki/todo.txt<cr>
+      \_A DELETEKHSHE4W0anyISS<esc>K
+      \:e ~/Dropbox/vimwiki/tickler.txt<cr>
       \gg?^<c-r>=strftime("%y.%m.%d.%a")<cr><cr>
       \dgg
       \:e ~/Dropbox/vimwiki/todo.txt<cr>ggP
+      \:g/___\\|DELETEKHSHE4W0anyISS/d<cr>
       \:wa<cr>
 
 " Moves task -- line(s) -- in default register to appropriate file depending
@@ -72,6 +75,12 @@ function! SmartTaskMove()
 endfun
 vmap K d:call SmartTaskMove()<cr>
 nmap K dd:call SmartTaskMove()<cr>
+
+" }}}
+" ========== speeddating ==========" {{{
+
+autocmd VimEnter * SpeedDatingFormat %y.%m.%d.%a
+nmap _ O<c-r>=strftime("%y.%m.%d.%a")<cr><esc>
 
 " }}}
 " ========== tabular ==========" {{{
@@ -158,11 +167,5 @@ au FileType go nmap <buffer> gd <Plug>(go-def)
 
 nmap <c-n> <Plug>(expand_region_expand)
 vmap <c-p> <Plug>(expand_region_shrink)
-
-" }}}
-" ========== speeddating ==========" {{{
-
-autocmd VimEnter * SpeedDatingFormat %y.%m.%d.%a
-nmap _ O<c-r>=strftime("%y.%m.%d.%a")<cr><esc>
 
 " }}}
