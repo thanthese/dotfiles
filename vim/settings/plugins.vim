@@ -48,14 +48,18 @@ nmap <c-d>k :e ~/Dropbox/vimwiki/tickler.txt<cr>
 nmap <c-d>a :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
 
 " pull today's (and missed days') tickler items into todo
-nmap <c-d>u :e ~/Dropbox/vimwiki/todo.txt<cr>
-      \_A DELETEKHSHE4W0anyISS<esc>K
-      \:e ~/Dropbox/vimwiki/tickler.txt<cr>
-      \gg?^<c-r>=strftime("%y.%m.%d.%a")<cr><cr>
-      \dgg
-      \:e ~/Dropbox/vimwiki/todo.txt<cr>ggP
-      \:g/___\\|DELETEKHSHE4W0anyISS/d<cr>
-      \:wa<cr>
+nmap <c-d>u :call UpdateTodo()<cr>
+function! UpdateTodo()
+  silent exec "norm :e ~/Dropbox/vimwiki/todo.txt\<cr>"
+  silent exec "norm _A DELETEKHSHE4W0anyISS\<esc>K"
+  silent exec "norm :e ~/Dropbox/vimwiki/tickler.txt\<cr>"
+  silent exec "norm gg?^\<c-r>=strftime(\"%y.%m.%d.%a\")\<cr>\<cr>"
+  silent exec "norm dgg"
+  silent exec "norm :e ~/Dropbox/vimwiki/todo.txt\<cr>ggP"
+  silent exec "norm :g/___\\|DELETEKHSHE4W0anyISS/d\<cr>"
+  silent exec "norm :wa\<cr>"
+  exec "norm :echo \"Todo updated from tickler.\"\<cr>"
+endfun
 
 " Moves task -- line(s) -- in default register to appropriate file depending
 " on context (that is, on the current file).
