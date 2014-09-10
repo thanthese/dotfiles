@@ -1,56 +1,26 @@
-tile_skip_title = true
-tile_layout_priority = minimap, gold_turn
-tile_full_screen = true
-tile_tooltip_ms = 0
+# hunger
+auto_drop_chunks = yes  # drop rotten chunks if inventory is full
+auto_eat_chunks = true  # eat chunks while traveling or waiting
+confirm_butcher = never # always butcher only freshest corpse
+easy_eat_chunks = true  # always eat chunks first
 
-mouse_input = false
-remember_name = false
+# deities
+auto_sacrifice = prompt # prompt for sacrifices I missed
 
-# auto eat while travelling
-auto_eat_chunks = true
+# skill training
+default_manual_training = true # default to manual mode
 
-# auto sacrifice while travelling
-auto_sacrifice = prompt
-
-# eat oldest chunk on "e" without prompting
-easy_eat_chunks = true
-
-# drop rotting chunks instead of becoming overburdened
-auto_drop_chunks = yes
-
+# exploration
+explore_stop -= stairs, items # don't break explore on stairs and items
+explore_stop += glowing_items, artefacts, runes # do break on the good stuff
 
 # ######################################################################
 # # cute ideas
 #
-# default_manual_training = true
+# # don't break if something rots:
+# runrest_ignore_message += rott, decay, contamination, disgusting
 #
-# explore_stop -= stairs, items               # don't break explore on stairs and items
-# explore_stop += glowing_items               # do break on magic items
-#
-# # Waiting
-# rest_wait_both = true                       # always fill HP _and_ MP
-# runrest_ignore_message += rott, decay, contamination, disgusting # don't break if something rots
-#
-# # Hunger
-# confirm_butcher = never                 # always butcher only freshest corpse
-# easy_eat_chunks = true                  # always eat chunks first
-# auto_eat_chunks = true                  # eat chunks while traveling or waiting
-# auto_drop_chunks = true                 # drop rotten chunks if inventory is full
-#
-# # Skill menu at game start by rwbarton
-# {
-# local need_skills_opened = true
-# function ready()
-#   if you.turns() == 0 and need_skills_opened then
-#     need_skills_opened = false
-#     crawl.sendkeys("m")
-#   end
-# end
-# }
-# This causes the 'm' skills menu to pop up at the very beginning of every new game, so you can't forget to set skills.
-# And this one (whose author I cannot recall):
 # ## Pickup aux armour you haven't found yet.
-# {
 # local function autopickup(it, name)
 #     local class  = it.class(true)
 #     if class == "armour" then
