@@ -95,6 +95,8 @@ nmap \" :Tabu /"<CR>
 vmap \" :Tabu /"<CR>
 nmap \= :Tabu /=<CR>
 vmap \= :Tabu /=<CR>
+nmap \# :Tabu /#<CR>
+vmap \# :Tabu /#<CR>
 nmap \| :Tabu /\|<CR>
 vmap \| :Tabu /\|<CR>
 
