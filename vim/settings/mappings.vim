@@ -19,6 +19,12 @@ nnoremap <bs> <c-^>
 " select whatever was just pasted
 nnoremap gp `[v`]
 
+" easily apply norm
+vmap , :norm<space>
+
+" easily apply macro
+vmap Q :norm Q<cr>
+
 " }}}
 " ========== make keys work as expected ========== {{{
 

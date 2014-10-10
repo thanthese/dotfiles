@@ -2,9 +2,9 @@
 
 " set wiki location and extension
 let g:vimwiki_list = [{
-      \ 'path': '~/Dropbox/vimwiki/',
+      \ 'path': '~/Dropbox/wiki/',
       \ 'ext': '.txt',
-      \ 'template_path': '~/Dropbox/vimwiki_html/templates/',
+      \ 'template_path': '~/Dropbox/wiki_html/templates/',
       \ 'template_ext': '.html'}]
 
 " use .txt extension
@@ -19,43 +19,43 @@ highlight VimwikiBold guifg=DarkKhaki
 highlight VimwikiItalic guifg=goldenrod
 
 " highlight fake tags
-au BufEnter ~/Dropbox/vimwiki/*.txt hi bday guifg=darkgray
-au BufEnter ~/Dropbox/vimwiki/*.txt syn match bday /#\w*/
-au BufEnter ~/Dropbox/vimwiki/*.txt hi appt guifg=DarkKhaki
-au BufEnter ~/Dropbox/vimwiki/*.txt syn match appt /#appt/
+au BufEnter ~/Dropbox/wiki/*.txt hi bday guifg=darkgray
+au BufEnter ~/Dropbox/wiki/*.txt syn match bday /[#@]\w*/
+au BufEnter ~/Dropbox/wiki/*.txt hi appt guifg=DarkKhaki
+au BufEnter ~/Dropbox/wiki/*.txt syn match appt /#appt/
 
 " local wiki settings
-autocmd! BufReadPre ~/Dropbox/vimwiki/*.txt call SetupWiki()
+autocmd! BufReadPre ~/Dropbox/wiki/*.txt call SetupWiki()
 function! SetupWiki()
   setlocal nowrap
   setlocal textwidth=78
 endfun
 
 " make agenda file read only
-autocmd! BufEnter ~/Dropbox/vimwiki/tickler_agenda.txt setlocal nomodifiable
+autocmd! BufEnter ~/Dropbox/wiki/tickler_agenda.txt setlocal nomodifiable
 
 " sync agenda file automatically
-autocmd! BufWritePost ~/Dropbox/vimwiki/tickler.txt
-      \ silent !grep "\#\|___" ~/Dropbox/vimwiki/tickler.txt
-      \ > ~/Dropbox/vimwiki/tickler_agenda.txt
+autocmd! BufWritePost ~/Dropbox/wiki/tickler.txt
+      \ silent !grep "\#\|___" ~/Dropbox/wiki/tickler.txt
+      \ > ~/Dropbox/wiki/tickler_agenda.txt
 
 " cooking: pull recipe ingredients into file
 nmap <c-d><c-k> <cr>ggjyi=<c-^>Gpgp:v/^-/d<cr>''j
 
 " quckly goto
-nmap <c-d><c-d> :e ~/Dropbox/vimwiki/todo.txt<cr>
-nmap <c-d>k :e ~/Dropbox/vimwiki/tickler.txt<cr>
-nmap <c-d>a :e ~/Dropbox/vimwiki/tickler_agenda.txt<cr>
+nmap <c-d><c-d> :e ~/Dropbox/wiki/todo.txt<cr>
+nmap <c-d>k :e ~/Dropbox/wiki/tickler.txt<cr>
+nmap <c-d>a :e ~/Dropbox/wiki/tickler_agenda.txt<cr>
 
 " pull today's (and missed days') tickler items into todo
 nmap <c-d>u :call UpdateTodo()<cr>
 function! UpdateTodo()
-  silent exec "norm :e ~/Dropbox/vimwiki/todo.txt\<cr>"
+  silent exec "norm :e ~/Dropbox/wiki/todo.txt\<cr>"
   silent exec "norm _A DELETEKHSHE4W0anyISS\<esc>K"
-  silent exec "norm :e ~/Dropbox/vimwiki/tickler.txt\<cr>"
+  silent exec "norm :e ~/Dropbox/wiki/tickler.txt\<cr>"
   silent exec "norm gg?^\<c-r>=strftime(\"%y.%m.%d.%a\")\<cr>\<cr>"
   silent exec "norm dgg"
-  silent exec "norm :e ~/Dropbox/vimwiki/todo.txt\<cr>ggP"
+  silent exec "norm :e ~/Dropbox/wiki/todo.txt\<cr>ggP"
   silent exec "norm :g/___\\|DELETEKHSHE4W0anyISS/d\<cr>"
   silent exec "norm :wa\<cr>"
   exec "norm :echo \"Todo updated from tickler.\"\<cr>"
@@ -65,12 +65,12 @@ endfun
 " on context (that is, on the current file).
 function! SmartTaskMove()
   if(match(bufname("%"), "tickler.txt") > -1)
-    silent exec "norm :e ~/Dropbox/vimwiki/todo.txt\<cr>"
+    silent exec "norm :e ~/Dropbox/wiki/todo.txt\<cr>"
     silent exec "norm ggP"
     silent exec "norm :b #\<cr>"
     exec "norm :echo \"Line(s) moved to todo.\"\<cr>"
   else
-    silent exec "norm :e ~/Dropbox/vimwiki/tickler.txt\<cr>"
+    silent exec "norm :e ~/Dropbox/wiki/tickler.txt\<cr>"
     silent exec "norm ggP"
     silent exec "norm :%!sort -n\<cr>"
     silent exec "norm :b #\<cr>"
@@ -95,6 +95,8 @@ nmap \" :Tabu /"<CR>
 vmap \" :Tabu /"<CR>
 nmap \= :Tabu /=<CR>
 vmap \= :Tabu /=<CR>
+nmap \# :Tabu /#<CR>
+vmap \# :Tabu /#<CR>
 nmap \| :Tabu /\|<CR>
 vmap \| :Tabu /\|<CR>
 
